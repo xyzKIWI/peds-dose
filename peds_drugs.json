@@ -192,12 +192,6 @@
         "starred_default",
         "uri"
       ],
-      "kmuh_detail": {
-        "臨床用途": "Pain, fever, inflammation",
-        "副作用": "Gastric disturbance, allergy, prolonged bleeding time, edema\n禁忌\nCoronary artery bypass graft surgery, active GI bleeding/ulcer disease, severe renal/hepatic impairment\n警語\nCardiovascular disease or risk factors for cardiovascular diseas(may increase risk of serious cardiovascular thrombotic events,especially with prolonged use or use of higher doses), bleeding tendency or concurrent anticoagulant therapy",
-        "懷孕分級": "＜說明:AU TGA:C＞",
-        "授乳": "＜說明:Maternal use of NSAIDs should be avoided if the breastfeeding infant has platelet dysfunction, thrombocytopenia, or a ductal-dependent cardiac lesion＞"
-      },
       "contraindications": [
         {
           "type": "age_below_months",
@@ -205,7 +199,13 @@
           "severity": "禁用",
           "reason": "NSAID — GI bleeding / 腎毒性風險"
         }
-      ]
+      ],
+      "kmuh_detail": {
+        "臨床用途": "Pain, fever, inflammation",
+        "副作用": "Gastric disturbance, allergy, prolonged bleeding time, edema\n禁忌\nCoronary artery bypass graft surgery, active GI bleeding/ulcer disease, severe renal/hepatic impairment\n警語\nCardiovascular disease or risk factors for cardiovascular diseas(may increase risk of serious cardiovascular thrombotic events,especially with prolonged use or use of higher doses), bleeding tendency or concurrent anticoagulant therapy",
+        "懷孕分級": "＜說明:AU TGA:C＞",
+        "授乳": "＜說明:Maternal use of NSAIDs should be avoided if the breastfeeding infant has platelet dysfunction, thrombocytopenia, or a ductal-dependent cardiac lesion＞"
+      }
     },
     {
       "id": "voren_supp",
@@ -230,12 +230,6 @@
         "fever",
         "uri"
       ],
-      "kmuh_detail": {
-        "臨床用途": "Management of inflammatory disorders, relief of mild to moderate pain",
-        "副作用": "GI upset, dizziness, edema, ↑ ALT, skin rash, prolonged bleeding time, headache\n禁忌\nactive GI bleeding/ulcer disease, Coronary artery bypass graft surgery, severe renal/hepatic impairment\n警語\nCardiovascular disease or risk factors for cardiovascular diseas(may increase risk of serious cardiovascular thrombotic events,especially with prolonged use or use of higher doses), bleeding tendency or concurrent anticoagulant therapy",
-        "懷孕分級": "＜說明:AU TGA:C＞",
-        "授乳": "＜說明:Maternal use of NSAIDs should be avoided if the breastfeeding infant has platelet dysfunction, thrombocytopenia, or a ductal-dependent cardiac lesion＞"
-      },
       "contraindications": [
         {
           "type": "age_below_months",
@@ -243,7 +237,13 @@
           "severity": "不建議",
           "reason": "NSAID — GI bleeding / 腎毒性；嬰幼兒限退燒備用"
         }
-      ]
+      ],
+      "kmuh_detail": {
+        "臨床用途": "Management of inflammatory disorders, relief of mild to moderate pain",
+        "副作用": "GI upset, dizziness, edema, ↑ ALT, skin rash, prolonged bleeding time, headache\n禁忌\nactive GI bleeding/ulcer disease, Coronary artery bypass graft surgery, severe renal/hepatic impairment\n警語\nCardiovascular disease or risk factors for cardiovascular diseas(may increase risk of serious cardiovascular thrombotic events,especially with prolonged use or use of higher doses), bleeding tendency or concurrent anticoagulant therapy",
+        "懷孕分級": "＜說明:AU TGA:C＞",
+        "授乳": "＜說明:Maternal use of NSAIDs should be avoided if the breastfeeding infant has platelet dysfunction, thrombocytopenia, or a ductal-dependent cardiac lesion＞"
+      }
     },
     {
       "id": "peace_syrup",
@@ -293,7 +293,7 @@
       "group_id": "cyproheptadine",
       "kmuh_detail": {
         "臨床用途": "Rhinitis, allergic disorders, migraine prophylaxis\n, appetite stimulation",
-        "副作用": "Sedation, thickening nose/throat mucus, dry mouth/throat/nose, ↑ appetite\n理由\n院方因素-停止採購\n另有同成份同劑量之Cyproh 0.4mg/mL, 120mL/Bot (藥碼：1CYPRO)供替代使用。",
+        "副作用": "Sedation, thickening nose/throat mucus, dry mouth/throat/nose, ↑ appetite\n【】--＞理由：院方因素-停止採購 替代藥：Cyproh 0.4mg/mL, 120mL/Bot\n理由\n院方因素-停止採購\n另有同成份同劑量之Cyproh 0.4mg/mL, 120mL/Bot (藥碼：1CYPRO)供替代使用。",
         "懷孕分級": "B\n藥物安定性\n開封後室溫保存28天 安定性天數：28"
       }
     },
@@ -323,7 +323,7 @@
       "notes": "由 syrup 0.4 mg/mL × 0.6 mL/kg/day 換算為 0.24 mg/kg/day；max 16 mg/day",
       "kmuh_detail": {
         "臨床用途": "Rhinitis, allergic disorders, migraine prophylaxis\n, appetite stimulation",
-        "副作用": "Sedation, thickening nose/throat mucus, dry mouth/throat/nose, ↑ appetite\n理由\n院方因素-停止採購\n另有同成份同劑量之Cyproh 0.4mg/mL, 120mL/Bot (藥碼：1CYPRO)供替代使用。",
+        "副作用": "Sedation, thickening nose/throat mucus, dry mouth/throat/nose, ↑ appetite\n【】--＞理由：院方因素-停止採購 替代藥：Cyproh 0.4mg/mL, 120mL/Bot\n理由\n院方因素-停止採購\n另有同成份同劑量之Cyproh 0.4mg/mL, 120mL/Bot (藥碼：1CYPRO)供替代使用。",
         "懷孕分級": "B\n藥物安定性\n開封後室溫保存28天 安定性天數：28"
       }
     },
@@ -502,7 +502,7 @@
       "group_id": "azithromycin",
       "kmuh_detail": {
         "臨床用途": "Staphylococci, Streptococci, N. gonorrhea, H. influenzae,\nM. catarrhalis, Chlamydia, Mycoplasma, Legionella,\nM. avium complex, Scrub typhus",
-        "副作用": "Headache, dizziness, N/V, diarrhea, abdominal pain, mild ↑ ALT, ↑ QT\n警語\n1. Use with caution in patients with myasthenia gravis; exacerbation and new onset of symptoms have occurred.\n2. Use of azithromycin in neonates and infants ＜6 weeks of age has been associated with infantile hypertrophic pyloric stenosis (IHPS); the strongest association occurred with exposure during the first 2 weeks of life\n藥師調劑警語\n此藥有二種劑型，本品為＜水劑＞，請注意",
+        "副作用": "Headache, dizziness, N/V, diarrhea, abdominal pain, mild ↑ ALT, ↑ QT\n警語\n1. Use with caution in patients with myasthenia gravis; exacerbation and new onset of symptoms have occurred.\n2. Use of azithromycin in neonates and infants ＜6 weeks of age has been associated with infantile hypertrophic pyloric stenosis (IHPS); the strongest association occurred with exposure during the first 2 weeks of life\n藥師調劑警語",
         "懷孕分級": "＜說明:AU TGA:B1＞"
       }
     },
@@ -531,7 +531,7 @@
       "group_id": "azithromycin",
       "kmuh_detail": {
         "臨床用途": "Staphylococci, Streptococci, N. gonorrhea, H. influenzae,\nM. catarrhalis, Chlamydia, Mycoplasma, Legionella,\nM. avium complex, Scrub typhus",
-        "副作用": "Headache, dizziness, N/V, diarrhea, abdominal pain, mild ↑ ALT, ↑ QT\n警語\n1. Use with caution in patients with myasthenia gravis; exacerbation and new onset of symptoms have occurred.\n2. Use of azithromycin in neonates and infants ＜6 weeks of age has been associated with infantile hypertrophic pyloric stenosis (IHPS); the strongest association occurred with exposure during the first 2 weeks of life\n藥師調劑警語\n此藥有二種劑型，本品為＜錠劑＞，請注意",
+        "副作用": "Headache, dizziness, N/V, diarrhea, abdominal pain, mild ↑ ALT, ↑ QT\n警語\n1. Use with caution in patients with myasthenia gravis; exacerbation and new onset of symptoms have occurred.\n2. Use of azithromycin in neonates and infants ＜6 weeks of age has been associated with infantile hypertrophic pyloric stenosis (IHPS); the strongest association occurred with exposure during the first 2 weeks of life\n藥師調劑警語",
         "懷孕分級": "＜說明:AU TGA:B1＞"
       }
     },
@@ -561,10 +561,6 @@
         "uri"
       ],
       "group_id": "amoxicillin",
-      "kmuh_detail": {
-        "臨床用途": "G(+): Streptococci, enterococcus faecalis\nG(-): P. mirabilis, H. pylori",
-        "授乳": "可授乳"
-      },
       "contraindications": [
         {
           "type": "weight_above_kg",
@@ -572,7 +568,11 @@
           "severity": "建議改膠囊",
           "reason": "≥ 30 kg 改 Amoxicillin 500 mg cap"
         }
-      ]
+      ],
+      "kmuh_detail": {
+        "臨床用途": "G(+): Streptococci, enterococcus faecalis\nG(-): P. mirabilis, H. pylori",
+        "授乳": "可授乳"
+      }
     },
     {
       "id": "amoxicillin_cap",
@@ -629,11 +629,6 @@
         "uri"
       ],
       "group_id": "amox_clav_curam",
-      "kmuh_detail": {
-        "臨床用途": "G(+): S.aureus, streptococci, enterococcus faecalis\nG(-): E. coli, Enterobacter, Proteus, H. influenzae\n   ,M. catarrhalis \nAnaerobes: including B. fragilis",
-        "副作用": "Diarrhea, nausea, vomiting, abdominal distress, flatulence, hypersensitivity\n警語\n1.Amoxicillin rash in infectious mononucleosis\n2.Contains aspartame, avoid used in patients with phenylketonurics\n3.Although rarely fatal, drug-induced liver injury has been reported.",
-        "懷孕分級": "＜說明:AU TGA:B1＞"
-      },
       "contraindications": [
         {
           "type": "weight_above_kg",
@@ -641,7 +636,12 @@
           "severity": "建議改錠劑",
           "reason": "≥ 30 kg 改 Curam 875/125 tab"
         }
-      ]
+      ],
+      "kmuh_detail": {
+        "臨床用途": "G(+): S.aureus, streptococci, enterococcus faecalis\nG(-): E. coli, Enterobacter, Proteus, H. influenzae\n   ,M. catarrhalis \nAnaerobes: including B. fragilis",
+        "副作用": "Diarrhea, nausea, vomiting, abdominal distress, flatulence, hypersensitivity\n警語\n1.Amoxicillin rash in infectious mononucleosis\n2.Contains aspartame, avoid used in patients with phenylketonurics\n3.Although rarely fatal, drug-induced liver injury has been reported.",
+        "懷孕分級": "＜說明:AU TGA:B1＞"
+      }
     },
     {
       "id": "curam_tab",
@@ -719,12 +719,6 @@
         "uri"
       ],
       "package": "cap 30/45/75 mg / 60 mg/mL susp",
-      "kmuh_detail": {
-        "臨床用途": "Influenza A or B",
-        "副作用": "N/V, vertigo, insomnia\n*Influenza can be associated with neurologic/behavioral symptoms.",
-        "懷孕分級": "＜說明:AU TGA:B1＞",
-        "授乳": "可授乳"
-      },
       "contraindications": [
         {
           "type": "age_below_weeks",
@@ -732,7 +726,13 @@
           "severity": "不建議",
           "reason": "< 2 週新生兒安全性資料不足"
         }
-      ]
+      ],
+      "kmuh_detail": {
+        "臨床用途": "Influenza A or B",
+        "副作用": "N/V, vertigo, insomnia\n*Influenza can be associated with neurologic/behavioral symptoms.",
+        "懷孕分級": "＜說明:AU TGA:B1＞",
+        "授乳": "可授乳"
+      }
     },
     {
       "id": "rapiacta_iv",
@@ -759,11 +759,6 @@
       "tags": [
         "flu"
       ],
-      "kmuh_detail": {
-        "臨床用途": "Acute influenza A or B infection",
-        "副作用": "Diarrhea, ↑ LFT(rare)",
-        "懷孕分級": "＜說明:AU TGA:B3＞"
-      },
       "contraindications": [
         {
           "type": "age_below_months",
@@ -771,7 +766,12 @@
           "severity": "不建議",
           "reason": "< 6 月安全性資料不足"
         }
-      ]
+      ],
+      "kmuh_detail": {
+        "臨床用途": "Acute influenza A or B infection",
+        "副作用": "Diarrhea, ↑ LFT(rare)",
+        "懷孕分級": "＜說明:AU TGA:B3＞"
+      }
     },
     {
       "id": "xofluza_tab",
@@ -812,11 +812,6 @@
       "tags": [
         "flu"
       ],
-      "kmuh_detail": {
-        "臨床用途": "≧5yr(≧20kg)-adult Influenza A or B",
-        "副作用": "Diarrhea, nausea, headache",
-        "懷孕分級": "＜說明:AU TGA:B3＞"
-      },
       "contraindications": [
         {
           "type": "age_below_months",
@@ -824,7 +819,12 @@
           "severity": "不建議",
           "reason": "< 1 歲安全性資料不足"
         }
-      ]
+      ],
+      "kmuh_detail": {
+        "臨床用途": "≧5yr(≧20kg)-adult Influenza A or B",
+        "副作用": "Diarrhea, nausea, headache",
+        "懷孕分級": "＜說明:AU TGA:B3＞"
+      }
     },
     {
       "id": "relenza_inh",
@@ -860,11 +860,6 @@
       "tags": [
         "flu"
       ],
-      "kmuh_detail": {
-        "臨床用途": "Influenza A or B",
-        "副作用": "Very rare: Rash, bronchospasm\n警語\nUK: Recommended in Pregnancy & breastfeeding by NHS\n藥師調劑警語\n首日需憑「流感抗病毒藥劑使用申請單」與「處方箋」一同領藥",
-        "懷孕分級": "C\n健保藥品規範\n(0):1.瑞樂沙使用於5(含)歲以上兒童及成人，不需依兒童體重或病患身體狀況調整劑量。( 103.1.27高市衛疾管字第10330835700號)\n2.符合公費流感抗病毒藥劑使用條件之5歲以上無瑞樂沙使用禁忌之患者，優先使用瑞樂沙。"
-      },
       "contraindications": [
         {
           "type": "age_below_months",
@@ -872,7 +867,12 @@
           "severity": "不建議",
           "reason": "< 7 歲不建議使用 Diskhaler 吸入劑型"
         }
-      ]
+      ],
+      "kmuh_detail": {
+        "臨床用途": "Influenza A or B",
+        "副作用": "Very rare: Rash, bronchospasm\n警語\nUK: Recommended in Pregnancy & breastfeeding by NHS\n藥師調劑警語\n首日需憑「流感抗病毒藥劑使用申請單」與「處方箋」一同領藥",
+        "懷孕分級": "C\n健保藥品規範\n(0):1.瑞樂沙使用於5(含)歲以上兒童及成人，不需依兒童體重或病患身體狀況調整劑量。( 103.1.27高市衛疾管字第10330835700號)\n2.符合公費流感抗病毒藥劑使用條件之5歲以上無瑞樂沙使用禁忌之患者，優先使用瑞樂沙。"
+      }
     },
     {
       "id": "epinephrine_inh_croup",
@@ -933,7 +933,7 @@
       ],
       "kmuh_detail": {
         "臨床用途": "β2-agonist for bronchospasm.",
-        "副作用": "Headache, tremor, palpitations\n藥師調劑警語\n本品外觀與 Pulmicort 相似，請注意\n理由\n廠商因素-停產(111-2藥委決議淘汰)，有同成份同劑量之Butanyl 5mg/2mL/UDV (藥碼：3BUTAN)供替代使用。",
+        "副作用": "Headache, tremor, palpitations\n藥師調劑警語\n本品外觀與 Pulmicort 相似，請注意\n【】--＞理由：廠商因素-停產(111-2藥委決議淘汰) 替代藥：Butanyl 5mg/2mL/UDV\n理由\n廠商因素-停產(111-2藥委決議淘汰)，有同成份同劑量之Butanyl 5mg/2mL/UDV (藥碼：3BUTAN)供替代使用。",
         "授乳": "可授乳\n健保藥品規範\n(1):成人使用規定:\n1. 阻塞性肺疾病急性發作時，每20分鐘至1小時使用1次。2.急性症狀消失後恢復為每日4- 6 次。3. 視情況繼續居家使用，每次處方以1週為限。4.每月最大劑量為 60小瓶(vial)。\n(2):兒童使用規定:\n1.急性症狀緩解後治療，有需要才使用，每日最 多 6 次，每月最高用量 30 次。 2. 氣喘病人可合併使用吸入性類固醇，可減少長期使用。3. 視情況居家使用，以 2 天為限。"
       }
     },
@@ -966,12 +966,7 @@
       "source": "高醫速算表",
       "tags": [
         "uri"
-      ],
-      "kmuh_detail": {
-        "防錯商品名": "Atrovent Nebulizer0.5mg/2ml*DC",
-        "ATC碼": "R03BB01",
-        "外觀": "辨識\n藥性查詢\n藥品資訊\n操作手冊\n常備藥品清單\n高醫體系\n清除\n中文: (缺藥)\n代碼: 3ATRON"
-      }
+      ]
     },
     {
       "id": "exdila_syrup",
@@ -998,7 +993,7 @@
       "group_id": "procaterol",
       "kmuh_detail": {
         "臨床用途": "Asthma, chronic bronchitis, emphysema.",
-        "副作用": "Palpitations, headache, dry mouth, tremor, angioedema (rare)\n藥師調劑警語\n此藥有二種劑型，本品為＜水劑＞，請注意"
+        "副作用": "Palpitations, headache, dry mouth, tremor, angioedema (rare)\n藥師調劑警語"
       }
     },
     {
@@ -1037,7 +1032,7 @@
       "group_id": "procaterol",
       "kmuh_detail": {
         "臨床用途": "Asthma, chronic bronchitis, emphysema.",
-        "副作用": "Palpitations, headache, dry mouth, tremor, angioedema (rare)\n藥師調劑警語\n此藥有二種劑型，本品為＜錠劑＞。外觀與 Sigmart 相似，請注意。"
+        "副作用": "Palpitations, headache, dry mouth, tremor, angioedema (rare)\n藥師調劑警語"
       }
     },
     {
@@ -1121,7 +1116,7 @@
       ],
       "kmuh_detail": {
         "臨床用途": "Inflammatory, allergic, hematologic, autoimmune disorder； replacement therapy in adrenal insufficiency",
-        "副作用": "Adrenal suppression, hyperglycemia, increased intraocular pressure, peptic ulcer\n禁忌\nHypersensitivity to cow’s milk or its components or other dairy products which may contain trace amounts of milk ingredients； intrathecal/epidural administration；systemic fungal infection\n藥師調劑警語\n此藥有二種劑量，本品為＜低劑量＞ 40mg，請再次確認\n理由\n院方因素-停止採購，有同成分同劑量之Medason 40mg/Vial(藥碼:2MEDAS)供替代使用。"
+        "副作用": "Adrenal suppression, hyperglycemia, increased intraocular pressure, peptic ulcer\n禁忌\nHypersensitivity to cow’s milk or its components or other dairy products which may contain trace amounts of milk ingredients； intrathecal/epidural administration；systemic fungal infection\n藥師調劑警語\n【】--＞理由： 替代藥：Medason 40mg/Vial\n理由\n院方因素-停止採購，有同成分同劑量之Medason 40mg/Vial(藥碼:2MEDAS)供替代使用。"
       }
     },
     {
@@ -1150,10 +1145,6 @@
         "age"
       ],
       "group_id": "metoclopramide",
-      "kmuh_detail": {
-        "臨床用途": "antiemesis, gastroesophageal reflux, diabetic gastroparesis",
-        "副作用": "↑ BP in pheochromocytoma, drowsiness, ↑ prolactin, EPS\n, tardive dyskinesia\n禁忌\nsituations where stimulation of gastrointestinal motility may be dangerous(mechanical GI obstruction, perforation, or hemorrhage), pheochromocytoma, seizure disorder, history of tardive dyskinesia/dystonic reaction to metoclopramide\n警語\n1.投予新生兒時應特別小心，因新生兒的清除時間較長，可能會造成血中濃度過高。且成人安全性資料不能外推至新生兒/兒童族群，使用metoclopramide藥品相關的不良反應如肌張力失調(dystonias)及錐體外路徑反應(extrapyramidal reactions)，於小兒族群比起成人更容易發生。\n2.含阿斯巴甜(Aspartame)賦形劑，苯酮尿症患者不宜使用"
-      },
       "contraindications": [
         {
           "type": "age_below_months",
@@ -1161,7 +1152,11 @@
           "severity": "慎用",
           "reason": "< 1 歲 EPS 風險高"
         }
-      ]
+      ],
+      "kmuh_detail": {
+        "臨床用途": "antiemesis, gastroesophageal reflux, diabetic gastroparesis",
+        "副作用": "↑ BP in pheochromocytoma, drowsiness, ↑ prolactin, EPS\n, tardive dyskinesia\n禁忌\nsituations where stimulation of gastrointestinal motility may be dangerous(mechanical GI obstruction, perforation, or hemorrhage), pheochromocytoma, seizure disorder, history of tardive dyskinesia/dystonic reaction to metoclopramide\n警語\n1.投予新生兒時應特別小心，因新生兒的清除時間較長，可能會造成血中濃度過高。且成人安全性資料不能外推至新生兒/兒童族群，使用metoclopramide藥品相關的不良反應如肌張力失調(dystonias)及錐體外路徑反應(extrapyramidal reactions)，於小兒族群比起成人更容易發生。\n2.含阿斯巴甜(Aspartame)賦形劑，苯酮尿症患者不宜使用"
+      }
     },
     {
       "id": "promeran_tab",
@@ -1216,11 +1211,6 @@
         "age"
       ],
       "group_id": "metoclopramide",
-      "kmuh_detail": {
-        "臨床用途": "Gastroparesis, gastroesophageal reflux, prevention of chemotherapy-induced nausea and vomiting, hiccup(off-label)",
-        "副作用": "CNS depression(dizziness, fatigue, drowsiness), extrapyramidal symptoms(EPS), ↑ prolactin, diarrhea, blood pressure change\n警語\nIf extrapyramidal symptoms occur, administer IM,\n IV 25-50mg diphenhydramine.\n藥師調劑警語\n此藥有二種劑型，本品為＜針劑＞，請注意",
-        "懷孕分級": "＜說明:AU TGA:A  FDA:B＞"
-      },
       "contraindications": [
         {
           "type": "age_below_months",
@@ -1228,7 +1218,12 @@
           "severity": "慎用",
           "reason": "< 1 歲 EPS 風險高"
         }
-      ]
+      ],
+      "kmuh_detail": {
+        "臨床用途": "Gastroparesis, gastroesophageal reflux, prevention of chemotherapy-induced nausea and vomiting, hiccup(off-label)",
+        "副作用": "CNS depression(dizziness, fatigue, drowsiness), extrapyramidal symptoms(EPS), ↑ prolactin, diarrhea, blood pressure change\n警語\nIf extrapyramidal symptoms occur, administer IM,\n IV 25-50mg diphenhydramine.\n藥師調劑警語",
+        "懷孕分級": "＜說明:AU TGA:A  FDA:B＞"
+      }
     },
     {
       "id": "novamin_inj",
@@ -1252,11 +1247,6 @@
       "tags": [
         "age"
       ],
-      "kmuh_detail": {
-        "臨床用途": "Nausea/vomiting, headache, psychosis",
-        "副作用": "EPS, dyspnea, headache, drowsiness, orthostatic hypotension\n藥師調劑警語\n本品外觀與 Anxicam 相似，請注意",
-        "授乳": "可授乳 ＜說明:compatible for short-term use .......AUS, LactMed＞"
-      },
       "contraindications": [
         {
           "type": "age_below_years",
@@ -1264,7 +1254,12 @@
           "severity": "禁用",
           "reason": "< 2 歲禁用（呼吸抑制 + EPS）"
         }
-      ]
+      ],
+      "kmuh_detail": {
+        "臨床用途": "Nausea/vomiting, headache, psychosis",
+        "副作用": "EPS, dyspnea, headache, drowsiness, orthostatic hypotension\n藥師調劑警語\n本品外觀與 Anxicam 相似，請注意",
+        "授乳": "可授乳 ＜說明:compatible for short-term use .......AUS, LactMed＞"
+      }
     },
     {
       "id": "kascoal_tab",
@@ -1516,12 +1511,6 @@
       ],
       "source": "高醫速算表 + Lexicomp",
       "tags": [],
-      "kmuh_detail": {
-        "臨床用途": "Pain management",
-        "副作用": "CNS/respiratory depression, nausea, vomiting, constipation, pruritus, ↑ICP, hypotension, bradycardia\n禁忌\nsignificant respiratory depression;acute alcoholism; convulsive disorders; severe hepatic impairment",
-        "懷孕分級": "＜說明:AU TGA:C＞",
-        "管制性藥品": "管1"
-      },
       "contraindications": [
         {
           "type": "age_below_months",
@@ -1529,7 +1518,13 @@
           "severity": "慎用",
           "reason": "新生兒呼吸抑制風險高，劑量減半"
         }
-      ]
+      ],
+      "kmuh_detail": {
+        "臨床用途": "Pain management",
+        "副作用": "CNS/respiratory depression, nausea, vomiting, constipation, pruritus, ↑ICP, hypotension, bradycardia\n禁忌\nsignificant respiratory depression;acute alcoholism; convulsive disorders; severe hepatic impairment",
+        "懷孕分級": "＜說明:AU TGA:C＞",
+        "管制性藥品": "管1"
+      }
     },
     {
       "id": "fentanyl_inj",
@@ -1720,13 +1715,7 @@
       "notes": "Status epilepticus 替代藥（首選 lorazepam）",
       "source": "Lexicomp",
       "tags": [],
-      "group_id": "diazepam",
-      "kmuh_detail": {
-        "防錯商品名": "Valium 10mg(Diazepam)羅氏*停產",
-        "ATC碼": "N05BA01",
-        "藥品給藥": "一用即棄",
-        "外觀": "辨識\n藥性查詢\n藥品資訊\n操作手冊\n常備藥品清單\n高醫體系\n清除\n中文: (缺藥)\n代碼: 2VALIU"
-      }
+      "group_id": "diazepam"
     },
     {
       "id": "diazepam_pr",
@@ -1780,7 +1769,7 @@
       "urgency_label": "💊 口服維持",
       "kmuh_detail": {
         "臨床用途": "Broad spectrum antiepileptic",
-        "副作用": "CNS depression(fatigue, dizziness, somnolence), headache, ,agitation, psychiatric and behavioral abnormalities, myelosuppresion, hypersensitivity reactions(Stevens-Johnson syndrome, toxic epidermal necrolysis, drug reaction with eosinophilia and systemic symptoms (DRESS), and acute generalized exanthematous pustulosis)\n警語\nCCr mL/min Dosage mg Frequency\n ＞=80      500-1500   q12h\n 50-79      500-1000  q12h\n 30-49      250-750  q12h\n ＜30      250-500  q12h\nDialysis 500-1000  q24h\n藥師調劑警語\n此藥有三種劑型，本品為＜水劑＞，請注意",
+        "副作用": "CNS depression(fatigue, dizziness, somnolence), headache, ,agitation, psychiatric and behavioral abnormalities, myelosuppresion, hypersensitivity reactions(Stevens-Johnson syndrome, toxic epidermal necrolysis, drug reaction with eosinophilia and systemic symptoms (DRESS), and acute generalized exanthematous pustulosis)\n警語\nCCr mL/min Dosage mg Frequency\n ＞=80      500-1500   q12h\n 50-79      500-1000  q12h\n 30-49      250-750  q12h\n ＜30      250-500  q12h\nDialysis 500-1000  q24h\n藥師調劑警語",
         "懷孕分級": "＜說明:AU TGA:B3\nNo evidence of ↑ risk of malformations........ UKTIS＞"
       }
     },
@@ -1809,7 +1798,7 @@
       "urgency_label": "💊 口服維持",
       "kmuh_detail": {
         "臨床用途": "Broad spectrum antiepileptic",
-        "副作用": "CNS depression(fatigue, dizziness, somnolence), headache, ,agitation, psychiatric and behavioral abnormalities, myelosuppresion, hypersensitivity reactions(Stevens-Johnson syndrome, toxic epidermal necrolysis, drug reaction with eosinophilia and systemic symptoms (DRESS), and acute generalized exanthematous pustulosis)\n警語\nCCr mL/min Dosage mg Frequency\n ＞=80      500-1500    q12h\n 50-79      500-1000    q12h\n 30-49      250-750     q12h\n ＜30      250-500     q12h\nDialysis    500-1000    q24h\n藥師調劑警語\n此藥有三種劑型，本品為＜錠劑＞，請注意",
+        "副作用": "CNS depression(fatigue, dizziness, somnolence), headache, ,agitation, psychiatric and behavioral abnormalities, myelosuppresion, hypersensitivity reactions(Stevens-Johnson syndrome, toxic epidermal necrolysis, drug reaction with eosinophilia and systemic symptoms (DRESS), and acute generalized exanthematous pustulosis)\n警語\nCCr mL/min Dosage mg Frequency\n ＞=80      500-1500    q12h\n 50-79      500-1000    q12h\n 30-49      250-750     q12h\n ＜30      250-500     q12h\nDialysis    500-1000    q24h\n藥師調劑警語",
         "懷孕分級": "＜說明:AU TGA:B3\nNo evidence of ↑ risk of malformations........ UKTIS＞"
       }
     },
@@ -1841,7 +1830,7 @@
       "urgency_label": "🚨 急性 loading",
       "kmuh_detail": {
         "臨床用途": "Broad spectrum antiepileptic",
-        "副作用": "CNS depression(fatigue, dizziness, somnolence), headache, ,agitation, psychiatric and behavioral abnormalities, myelosuppresion, hypersensitivity reactions(Stevens-Johnson syndrome, toxic epidermal necrolysis, drug reaction with eosinophilia and systemic symptoms (DRESS), and acute generalized exanthematous pustulosis)\n警語\nCCr mL/min Dosage mg Frequency\n ＞=80      500-1500     q12h\n 50-79      500-1000     q12h\n 30-49      250-750     q12h\n ＜30      250-500     q12h\nDialysis    500-1000     q24h\n藥師調劑警語\n此藥有三種劑型，本品為＜針劑＞，請注意",
+        "副作用": "CNS depression(fatigue, dizziness, somnolence), headache, ,agitation, psychiatric and behavioral abnormalities, myelosuppresion, hypersensitivity reactions(Stevens-Johnson syndrome, toxic epidermal necrolysis, drug reaction with eosinophilia and systemic symptoms (DRESS), and acute generalized exanthematous pustulosis)\n警語\nCCr mL/min Dosage mg Frequency\n ＞=80      500-1500     q12h\n 50-79      500-1000     q12h\n 30-49      250-750     q12h\n ＜30      250-500     q12h\nDialysis    500-1000     q24h\n藥師調劑警語",
         "懷孕分級": "＜說明:AU TGA:B3\nNo evidence of ↑ risk of malformations........ UKTIS＞"
       }
     },
@@ -1874,7 +1863,7 @@
       "urgency_label": "💊 口服維持",
       "kmuh_detail": {
         "臨床用途": "Broad spectrum antiepileptic, bipolar disorder(Off-label TFDA), migraine prophylaxis(Off-label TFDA)",
-        "副作用": "GI upset, alopecia, tremor, drowsiness, hepatotoxicity, pancreatitis, ↑ NH3, ↑ BW, myelosuppression\n禁忌\nmigraine prophylaxis/bipolar disorder in pregnant women, hepatic disease or significant impairment, known mitochondrial disorders caused by mutations in mitochondrial DNA polymerase gamma (POLG; eg, Alpers-Huttenlocher syndrome [AHS]), urea cycle disorders, known systemic primary carnitine deficiency with uncorrected hypocarnitinemia, known porphyria\n警語\n相較於接受lamotrigine或levetiracetam治療的男性，受孕前3個月內接受valproate治療的男性所生之子女罹患神經發育缺陷 (Neurodevelopmental Disorder, NDD)的風險增加，廠商建議在valproate治療期間及停止治療後3個月內採取有效避孕\n藥師調劑警語\n此藥有三種劑型，本品為＜水劑＞，請注意",
+        "副作用": "GI upset, alopecia, tremor, drowsiness, hepatotoxicity, pancreatitis, ↑ NH3, ↑ BW, myelosuppression\n禁忌\nmigraine prophylaxis/bipolar disorder in pregnant women, hepatic disease or significant impairment, known mitochondrial disorders caused by mutations in mitochondrial DNA polymerase gamma (POLG; eg, Alpers-Huttenlocher syndrome [AHS]), urea cycle disorders, known systemic primary carnitine deficiency with uncorrected hypocarnitinemia, known porphyria\n警語\n相較於接受lamotrigine或levetiracetam治療的男性，受孕前3個月內接受valproate治療的男性所生之子女罹患神經發育缺陷 (Neurodevelopmental Disorder, NDD)的風險增加，廠商建議在valproate治療期間及停止治療後3個月內採取有效避孕\n藥師調劑警語",
         "懷孕分級": "D ＜說明:AU TGA(D):A broad range of congenital malformations can occur in babies born to women who take sodium valproate during pregnancy, and the risk of malformations increases with increasing dose of valproate.＞"
       }
     },
@@ -1906,7 +1895,7 @@
       "urgency_label": "💊 口服維持",
       "kmuh_detail": {
         "臨床用途": "Broad spectrum antiepileptic, bipolar disorder(Off-label TFDA),migraine prophylaxis(Off-label TFDA)",
-        "副作用": "GI upset, alopecia, tremor, drowsiness, hepatotoxicity, pancreatitis, ↑ NH3, ↑ BW, myelosuppression\n禁忌\nmigraine prophylaxis/bipolar disorder in pregnant women, hepatic disease or significant impairment, known mitochondrial disorders caused by mutations in mitochondrial DNA polymerase gamma (POLG; eg, Alpers-Huttenlocher syndrome [AHS]), urea cycle disorders, known systemic primary carnitine deficiency with uncorrected hypocarnitinemia, known porphyria\n警語\n相較於接受lamotrigine或levetiracetam治療的男性，受孕前3個月內接受valproate治療的男性所生之子女罹患神經發育缺陷 (Neurodevelopmental Disorder, NDD)的風險增加，廠商建議在valproate治療期間及停止治療後3個月內採取有效避孕\n藥師調劑警語\n此藥有三種劑型，本品為＜錠劑＞，易潮解，請注意",
+        "副作用": "GI upset, alopecia, tremor, drowsiness, hepatotoxicity, pancreatitis, ↑ NH3, ↑ BW, myelosuppression\n禁忌\nmigraine prophylaxis/bipolar disorder in pregnant women, hepatic disease or significant impairment, known mitochondrial disorders caused by mutations in mitochondrial DNA polymerase gamma (POLG; eg, Alpers-Huttenlocher syndrome [AHS]), urea cycle disorders, known systemic primary carnitine deficiency with uncorrected hypocarnitinemia, known porphyria\n警語\n相較於接受lamotrigine或levetiracetam治療的男性，受孕前3個月內接受valproate治療的男性所生之子女罹患神經發育缺陷 (Neurodevelopmental Disorder, NDD)的風險增加，廠商建議在valproate治療期間及停止治療後3個月內採取有效避孕\n藥師調劑警語",
         "懷孕分級": "D ＜說明:AU TGA(D):A broad range of congenital malformations can occur in babies born to women who take sodium valproate during pregnancy, and the risk of malformations increases with increasing dose of valproate.＞"
       }
     },
@@ -1941,7 +1930,7 @@
       "urgency_label": "🚨 急性 loading",
       "kmuh_detail": {
         "臨床用途": "Broad spectrum antiepileptic",
-        "副作用": "GI upset, alopecia, tremor, drowsiness, hepatotoxicity, pancreatitis, ↑ NH3, ↑ BW, myelosuppression\n禁忌\nmigraine prophylaxis/bipolar disorder in pregnant women, hepatic disease or significant impairment, known mitochondrial disorders caused by mutations in mitochondrial DNA polymerase gamma (POLG; eg, Alpers-Huttenlocher syndrome [AHS]), urea cycle disorders, known systemic primary carnitine deficiency with uncorrected hypocarnitinemia, known porphyria\n警語\n相較於接受lamotrigine或levetiracetam治療的男性，受孕前3個月內接受valproate治療的男性所生之子女罹患神經發育缺陷 (Neurodevelopmental Disorder, NDD)的風險增加，廠商建議在valproate治療期間及停止治療後3個月內採取有效避孕\n藥師調劑警語\n此藥有三種劑型，本品為＜針劑＞，請注意",
+        "副作用": "GI upset, alopecia, tremor, drowsiness, hepatotoxicity, pancreatitis, ↑ NH3, ↑ BW, myelosuppression\n禁忌\nmigraine prophylaxis/bipolar disorder in pregnant women, hepatic disease or significant impairment, known mitochondrial disorders caused by mutations in mitochondrial DNA polymerase gamma (POLG; eg, Alpers-Huttenlocher syndrome [AHS]), urea cycle disorders, known systemic primary carnitine deficiency with uncorrected hypocarnitinemia, known porphyria\n警語\n相較於接受lamotrigine或levetiracetam治療的男性，受孕前3個月內接受valproate治療的男性所生之子女罹患神經發育缺陷 (Neurodevelopmental Disorder, NDD)的風險增加，廠商建議在valproate治療期間及停止治療後3個月內採取有效避孕\n藥師調劑警語",
         "懷孕分級": "D ＜說明:AU TGA(D):A broad range of congenital malformations can occur in babies born to women who take sodium valproate during pregnancy, and the risk of malformations increases with increasing dose of valproate.＞"
       }
     },
@@ -2055,7 +2044,7 @@
       "tags": [],
       "kmuh_detail": {
         "臨床用途": "Induction of anesthesia, ↓ intracranial pressure, status seizure.",
-        "副作用": "Marked respiratory depression, laryngospasm, bronchospasm, coughing, ↓BP, ↓CO.\n禁忌\nRespiratory obstruction, severe asthma, severe shock.\n警語\n1.Extravasation may cause tissue necrosis.\n2.Discard unused portions after 24h.\n3.Should not mix with acid solution(eg. Taita\n solution)\n理由\n藥證已註銷\n院方因素-停止採購(106-1藥委會決議)"
+        "副作用": "Marked respiratory depression, laryngospasm, bronchospasm, coughing, ↓BP, ↓CO.\n禁忌\nRespiratory obstruction, severe asthma, severe shock.\n警語\n1.Extravasation may cause tissue necrosis.\n2.Discard unused portions after 24h.\n3.Should not mix with acid solution(eg. Taita\n solution)\n【】\n理由\n藥證已註銷\n院方因素-停止採購(106-1藥委會決議)"
       }
     },
     {
@@ -2152,7 +2141,7 @@
       "group_id": "diphenhydramine",
       "kmuh_detail": {
         "臨床用途": "Allergy",
-        "副作用": "Sedation, dizziness\n理由\n院方因素-停止採購。"
+        "副作用": "Sedation, dizziness\n【】\n理由\n院方因素-停止採購。"
       }
     },
     {
