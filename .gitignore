@@ -26,3 +26,4 @@ __pycache__/
 *.pyc
 .DS_Store
 AGENTS.md
+integrate_kmuh_detail.py
