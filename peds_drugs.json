@@ -232,7 +232,7 @@
       ],
       "kmuh_detail": {
         "臨床用途": "Management of inflammatory disorders, relief of mild to moderate pain",
-        "副作用": "GI upset, dizziness, edema, ↑ ALT, skin rash, prolonged bleeding time, headache\n禁忌\nactive GI bleeding/ulcer disease, Coronary artery bypass graft surgery, severe renal/hepatic impairment\n警語\nCardiovascular disease or risk factors for cardiovascular diseas(may increase risk of serious cardiovascular thrombotic events,especially with prolonged use or use of higher doses), bleeding tendency or concurrent anticoagulant therapy\n護理給藥警語\n限肛門使用。\n藥品狀態\n庫存量不足，只有新慢箋不可開立",
+        "副作用": "GI upset, dizziness, edema, ↑ ALT, skin rash, prolonged bleeding time, headache\n禁忌\nactive GI bleeding/ulcer disease, Coronary artery bypass graft surgery, severe renal/hepatic impairment\n警語\nCardiovascular disease or risk factors for cardiovascular diseas(may increase risk of serious cardiovascular thrombotic events,especially with prolonged use or use of higher doses), bleeding tendency or concurrent anticoagulant therapy\n限肛門使用。\n藥品狀態\n庫存量不足，只有新慢箋不可開立",
         "懷孕分級": "＜說明:AU TGA:C＞",
         "授乳": "＜說明:Maternal use of NSAIDs should be avoided if the breastfeeding infant has platelet dysfunction, thrombocytopenia, or a ductal-dependent cardiac lesion＞"
       },
@@ -405,7 +405,7 @@
       "group_id": "nac",
       "kmuh_detail": {
         "臨床用途": "Mucolysis",
-        "副作用": "GI upset\n醫師處方警語\n顆粒劑的鋁箔包裝開封後藥品易潮解，不建議分包\n護理給藥警語\n顆粒劑的鋁箔包裝開封後藥品易潮解，使用前以適量的水溶解後飲用",
+        "副作用": "GI upset\n顆粒劑的鋁箔包裝開封後藥品易潮解，不建議分包\n顆粒劑的鋁箔包裝開封後藥品易潮解，使用前以適量的水溶解後飲用",
         "懷孕分級": "＜說明:AU TGA:B2＞"
       }
     },
@@ -448,7 +448,7 @@
       "group_id": "nac",
       "kmuh_detail": {
         "臨床用途": "Mucolysis",
-        "副作用": "GI upset\n警語\nNo more effective than placebo at preventing CA-AKI.\n     .........2021 American College of Radiology\n醫師處方警語\n不需磨粉：發泡錠，泡水即可溶且容易吸濕\n護理給藥警語\n1.本品為發泡錠,必須加少量水溶解,配製後立即使用2.最好不要將其他藥品與本品溶液混在一起\n藥師調劑警語\n1.本品為發泡錠,必須加少量水溶解,配製後立即使用2.最好不要將其他藥品與本品溶液混在一起",
+        "副作用": "GI upset\n警語\nNo more effective than placebo at preventing CA-AKI.\n     .........2021 American College of Radiology\n不需磨粉：發泡錠，泡水即可溶且容易吸濕\n1.本品為發泡錠,必須加少量水溶解,配製後立即使用2.最好不要將其他藥品與本品溶液混在一起\n藥師調劑警語\n1.本品為發泡錠,必須加少量水溶解,配製後立即使用2.最好不要將其他藥品與本品溶液混在一起",
         "授乳": "可授乳"
       }
     },
@@ -502,7 +502,7 @@
       "group_id": "azithromycin",
       "kmuh_detail": {
         "臨床用途": "Staphylococci, Streptococci, N. gonorrhea, H. influenzae,\nM. catarrhalis, Chlamydia, Mycoplasma, Legionella,\nM. avium complex, Scrub typhus",
-        "副作用": "Headache, dizziness, N/V, diarrhea, abdominal pain, mild ↑ ALT, ↑ QT\n警語\n1. Use with caution in patients with myasthenia gravis; exacerbation and new onset of symptoms have occurred.\n2. Use of azithromycin in neonates and infants ＜6 weeks of age has been associated with infantile hypertrophic pyloric stenosis (IHPS); the strongest association occurred with exposure during the first 2 weeks of life\n護理給藥警語\n此藥有二種劑型，本品為＜水劑＞\n藥師調劑警語\n此藥有二種劑型，本品為＜水劑＞，請注意\n藥品狀態\n庫存量不足，只有新慢箋不可開立",
+        "副作用": "Headache, dizziness, N/V, diarrhea, abdominal pain, mild ↑ ALT, ↑ QT\n警語\n1. Use with caution in patients with myasthenia gravis; exacerbation and new onset of symptoms have occurred.\n2. Use of azithromycin in neonates and infants ＜6 weeks of age has been associated with infantile hypertrophic pyloric stenosis (IHPS); the strongest association occurred with exposure during the first 2 weeks of life\n此藥有二種劑型，本品為＜水劑＞\n藥師調劑警語\n此藥有二種劑型，本品為＜水劑＞，請注意\n藥品狀態\n庫存量不足，只有新慢箋不可開立",
         "懷孕分級": "＜說明:AU TGA:B1＞"
       }
     },
@@ -531,7 +531,7 @@
       "group_id": "azithromycin",
       "kmuh_detail": {
         "臨床用途": "Staphylococci, Streptococci, N. gonorrhea, H. influenzae,\nM. catarrhalis, Chlamydia, Mycoplasma, Legionella,\nM. avium complex, Scrub typhus",
-        "副作用": "Headache, dizziness, N/V, diarrhea, abdominal pain, mild ↑ ALT, ↑ QT\n警語\n1. Use with caution in patients with myasthenia gravis; exacerbation and new onset of symptoms have occurred.\n2. Use of azithromycin in neonates and infants ＜6 weeks of age has been associated with infantile hypertrophic pyloric stenosis (IHPS); the strongest association occurred with exposure during the first 2 weeks of life\n護理給藥警語\n此藥有二種劑型，本品為＜錠劑＞\n藥師調劑警語\n此藥有二種劑型，本品為＜錠劑＞，請注意\n藥品狀態\n庫存量不足，只有新慢箋不可開立",
+        "副作用": "Headache, dizziness, N/V, diarrhea, abdominal pain, mild ↑ ALT, ↑ QT\n警語\n1. Use with caution in patients with myasthenia gravis; exacerbation and new onset of symptoms have occurred.\n2. Use of azithromycin in neonates and infants ＜6 weeks of age has been associated with infantile hypertrophic pyloric stenosis (IHPS); the strongest association occurred with exposure during the first 2 weeks of life\n此藥有二種劑型，本品為＜錠劑＞\n藥師調劑警語\n此藥有二種劑型，本品為＜錠劑＞，請注意\n藥品狀態\n庫存量不足，只有新慢箋不可開立",
         "懷孕分級": "＜說明:AU TGA:B1＞"
       }
     },
@@ -631,7 +631,7 @@
       "group_id": "amox_clav_curam",
       "kmuh_detail": {
         "臨床用途": "G(+): S.aureus, streptococci, enterococcus faecalis\nG(-): E. coli, Enterobacter, Proteus, H. influenzae\n   ,M. catarrhalis \nAnaerobes: including B. fragilis",
-        "副作用": "Diarrhea, nausea, vomiting, abdominal distress, flatulence, hypersensitivity\n警語\n1.Amoxicillin rash in infectious mononucleosis\n2.Contains aspartame, avoid used in patients with phenylketonurics\n3.Although rarely fatal, drug-induced liver injury has been reported.\n護理給藥警語\n此藥有3種劑型，本品為【水劑】\n藥品狀態\n庫存量不足，只有新慢箋不可開立",
+        "副作用": "Diarrhea, nausea, vomiting, abdominal distress, flatulence, hypersensitivity\n警語\n1.Amoxicillin rash in infectious mononucleosis\n2.Contains aspartame, avoid used in patients with phenylketonurics\n3.Although rarely fatal, drug-induced liver injury has been reported.\n此藥有3種劑型，本品為【水劑】\n藥品狀態\n庫存量不足，只有新慢箋不可開立",
         "懷孕分級": "＜說明:AU TGA:B1＞"
       },
       "contraindications": [
@@ -670,7 +670,7 @@
       "group_id": "amox_clav_curam",
       "kmuh_detail": {
         "臨床用途": "G(+): S.aureus, streptococci, enterococcus faecalis\nG(-): E. coli, Enterobacter, Proteus, H. influenzae\n   ,M. catarrhalis \nAnaerobes: including B. fragilis",
-        "副作用": "diarrhea, gastrointestinal upset\n警語\nAmoxicillin rash in infectious mononucleosis\n醫師處方警語\n不建議磨粉:易潮解，使用前才磨粉或剝半\n護理給藥警語\n此藥有3種劑型，本品為【錠劑】，易潮解，使用前才磨粉或剝半\n藥品狀態\n庫存量不足，只有新慢箋不可開立\n缺藥理由\n廠商因素-供貨不及暫缺，有同成分同劑量不同劑型之Curam Dispersible 複方/Tab*口溶錠(藥碼：1CURAD)供替代使用。",
+        "副作用": "diarrhea, gastrointestinal upset\n警語\nAmoxicillin rash in infectious mononucleosis\n不建議磨粉:易潮解，使用前才磨粉或剝半\n此藥有3種劑型，本品為【錠劑】，易潮解，使用前才磨粉或剝半\n藥品狀態\n庫存量不足，只有新慢箋不可開立\n缺藥理由\n廠商因素-供貨不及暫缺，有同成分同劑量不同劑型之Curam Dispersible 複方/Tab*口溶錠(藥碼：1CURAD)供替代使用。",
         "懷孕分級": "＜說明:AU TGA:B1＞",
         "授乳": "可授乳 ＜說明:仿單:在授乳的期間仍可使用本品，本藥用於母體時，對於餵哺母乳的嬰兒尚無任何已知的有害影響，唯一的例外是當微量的藥物隨著母乳進入嬰兒體內時，可能會有造成過敏的危險＞"
       }
@@ -761,7 +761,7 @@
       ],
       "kmuh_detail": {
         "臨床用途": "Acute influenza A or B infection",
-        "副作用": "Diarrhea, ↑ LFT(rare)\n護理給藥警語\n施打前才可拆外盒，限IVD途徑使用，開封後冷藏保存24小時",
+        "副作用": "Diarrhea, ↑ LFT(rare)\n施打前才可拆外盒，限IVD途徑使用，開封後冷藏保存24小時",
         "懷孕分級": "＜說明:AU TGA:B3＞"
       },
       "contraindications": [
@@ -862,7 +862,7 @@
       ],
       "kmuh_detail": {
         "臨床用途": "Influenza A or B",
-        "副作用": "Very rare: Rash, bronchospasm\n警語\nUK: Recommended in Pregnancy & breastfeeding by NHS\n護理給藥警語\n一般用法：2 puff Q12H 5day,限吸入使用，首日需憑「流感抗病毒藥劑使用申請單」與「處方箋」一同領藥\n藥師調劑警語\n首日需憑「流感抗病毒藥劑使用申請單」與「處方箋」一同領藥",
+        "副作用": "Very rare: Rash, bronchospasm\n警語\nUK: Recommended in Pregnancy & breastfeeding by NHS\n一般用法：2 puff Q12H 5day,限吸入使用，首日需憑「流感抗病毒藥劑使用申請單」與「處方箋」一同領藥\n藥師調劑警語\n首日需憑「流感抗病毒藥劑使用申請單」與「處方箋」一同領藥",
         "懷孕分級": "C\n健保藥品規範\n(0):1.瑞樂沙使用於5(含)歲以上兒童及成人，不需依兒童體重或病患身體狀況調整劑量。( 103.1.27高市衛疾管字第10330835700號)\n2.符合公費流感抗病毒藥劑使用條件之5歲以上無瑞樂沙使用禁忌之患者，優先使用瑞樂沙。"
       },
       "contraindications": [
@@ -933,7 +933,7 @@
       ],
       "kmuh_detail": {
         "臨床用途": "β2-agonist for bronchospasm.",
-        "副作用": "Headache, tremor, palpitations\n護理給藥警語\n限吸入使用，本品外觀與 Pulmicort 相似\n藥師調劑警語\n本品外觀與 Pulmicort 相似，請注意\n藥品狀態\n【缺藥】--＞理由：廠商因素-停產(111-2藥委決議淘汰) 替代藥：Butanyl 5mg/2mL/UDV\n缺藥理由\n廠商因素-停產(111-2藥委決議淘汰)，有同成份同劑量之Butanyl 5mg/2mL/UDV (藥碼：3BUTAN)供替代使用。",
+        "副作用": "Headache, tremor, palpitations\n限吸入使用，本品外觀與 Pulmicort 相似\n藥師調劑警語\n本品外觀與 Pulmicort 相似，請注意\n藥品狀態\n【缺藥】--＞理由：廠商因素-停產(111-2藥委決議淘汰) 替代藥：Butanyl 5mg/2mL/UDV\n缺藥理由\n廠商因素-停產(111-2藥委決議淘汰)，有同成份同劑量之Butanyl 5mg/2mL/UDV (藥碼：3BUTAN)供替代使用。",
         "授乳": "可授乳\n健保藥品規範\n(1):成人使用規定:\n1. 阻塞性肺疾病急性發作時，每20分鐘至1小時使用1次。2.急性症狀消失後恢復為每日4- 6 次。3. 視情況繼續居家使用，每次處方以1週為限。4.每月最大劑量為 60小瓶(vial)。\n(2):兒童使用規定:\n1.急性症狀緩解後治療，有需要才使用，每日最 多 6 次，每月最高用量 30 次。 2. 氣喘病人可合併使用吸入性類固醇，可減少長期使用。3. 視情況居家使用，以 2 天為限。"
       }
     },
@@ -998,7 +998,7 @@
       "group_id": "procaterol",
       "kmuh_detail": {
         "臨床用途": "Asthma, chronic bronchitis, emphysema.",
-        "副作用": "Palpitations, headache, dry mouth, tremor, angioedema (rare)\n護理給藥警語\n此藥有二種劑型，本品為＜水劑＞\n藥師調劑警語\n此藥有二種劑型，本品為＜水劑＞，請注意"
+        "副作用": "Palpitations, headache, dry mouth, tremor, angioedema (rare)\n此藥有二種劑型，本品為＜水劑＞\n藥師調劑警語\n此藥有二種劑型，本品為＜水劑＞，請注意"
       }
     },
     {
@@ -1037,7 +1037,7 @@
       "group_id": "procaterol",
       "kmuh_detail": {
         "臨床用途": "Asthma, chronic bronchitis, emphysema.",
-        "副作用": "Palpitations, headache, dry mouth, tremor, angioedema (rare)\n護理給藥警語\n此藥有二種劑型，本品為＜錠劑＞。裸錠外觀與 Sigmart 相似\n藥師調劑警語\n此藥有二種劑型，本品為＜錠劑＞。外觀與 Sigmart 相似，請注意。"
+        "副作用": "Palpitations, headache, dry mouth, tremor, angioedema (rare)\n此藥有二種劑型，本品為＜錠劑＞。裸錠外觀與 Sigmart 相似\n藥師調劑警語\n此藥有二種劑型，本品為＜錠劑＞。外觀與 Sigmart 相似，請注意。"
       }
     },
     {
@@ -1121,7 +1121,7 @@
       ],
       "kmuh_detail": {
         "臨床用途": "Inflammatory, allergic, hematologic, autoimmune disorder； replacement therapy in adrenal insufficiency",
-        "副作用": "Adrenal suppression, hyperglycemia, increased intraocular pressure, peptic ulcer\n禁忌\nHypersensitivity to cow’s milk or its components or other dairy products which may contain trace amounts of milk ingredients； intrathecal/epidural administration；systemic fungal infection\n護理給藥警語\n室溫下開瓶 48 小時用畢，此藥有二種劑量，本品為＜低劑量＞ 40mg\n藥師調劑警語\n此藥有二種劑量，本品為＜低劑量＞ 40mg，請再次確認\n藥品狀態\n【缺藥】--＞理由： 替代藥：Medason 40mg/Vial\n缺藥理由\n院方因素-停止採購，有同成分同劑量之Medason 40mg/Vial(藥碼:2MEDAS)供替代使用。"
+        "副作用": "Adrenal suppression, hyperglycemia, increased intraocular pressure, peptic ulcer\n禁忌\nHypersensitivity to cow’s milk or its components or other dairy products which may contain trace amounts of milk ingredients； intrathecal/epidural administration；systemic fungal infection\n室溫下開瓶 48 小時用畢，此藥有二種劑量，本品為＜低劑量＞ 40mg\n藥師調劑警語\n此藥有二種劑量，本品為＜低劑量＞ 40mg，請再次確認\n藥品狀態\n【缺藥】--＞理由： 替代藥：Medason 40mg/Vial\n缺藥理由\n院方因素-停止採購，有同成分同劑量之Medason 40mg/Vial(藥碼:2MEDAS)供替代使用。"
       }
     },
     {
@@ -1152,7 +1152,7 @@
       "group_id": "metoclopramide",
       "kmuh_detail": {
         "臨床用途": "antiemesis, gastroesophageal reflux, diabetic gastroparesis",
-        "副作用": "↑ BP in pheochromocytoma, drowsiness, ↑ prolactin, EPS\n, tardive dyskinesia\n禁忌\nsituations where stimulation of gastrointestinal motility may be dangerous(mechanical GI obstruction, perforation, or hemorrhage), pheochromocytoma, seizure disorder, history of tardive dyskinesia/dystonic reaction to metoclopramide\n警語\n1.投予新生兒時應特別小心，因新生兒的清除時間較長，可能會造成血中濃度過高。且成人安全性資料不能外推至新生兒/兒童族群，使用metoclopramide藥品相關的不良反應如肌張力失調(dystonias)及錐體外路徑反應(extrapyramidal reactions)，於小兒族群比起成人更容易發生。\n2.含阿斯巴甜(Aspartame)賦形劑，苯酮尿症患者不宜使用\n護理給藥警語\n請勿冷藏"
+        "副作用": "↑ BP in pheochromocytoma, drowsiness, ↑ prolactin, EPS\n, tardive dyskinesia\n禁忌\nsituations where stimulation of gastrointestinal motility may be dangerous(mechanical GI obstruction, perforation, or hemorrhage), pheochromocytoma, seizure disorder, history of tardive dyskinesia/dystonic reaction to metoclopramide\n警語\n1.投予新生兒時應特別小心，因新生兒的清除時間較長，可能會造成血中濃度過高。且成人安全性資料不能外推至新生兒/兒童族群，使用metoclopramide藥品相關的不良反應如肌張力失調(dystonias)及錐體外路徑反應(extrapyramidal reactions)，於小兒族群比起成人更容易發生。\n2.含阿斯巴甜(Aspartame)賦形劑，苯酮尿症患者不宜使用\n請勿冷藏"
       },
       "contraindications": [
         {
@@ -1187,7 +1187,7 @@
       "group_id": "metoclopramide",
       "kmuh_detail": {
         "臨床用途": "Diabetic gastroparesis, prevention of nausea/vomiting, gastroesophageal reflux",
-        "副作用": "CNS depression(drowsiness, dizziness), extrapyramidal reaction, Tardive dyskinesia, hyperprolactinemia, changes in blood pressure\n禁忌\npheochromocytoma or other catecholamine-releasing paragangliomas\n警語\n1.Metoclopramide can cause tardive dyskinesia.\n2.Discontinue metoclopramide in patients who develop signs or symptoms of tardive dyskinesia.\n3.Avoid treatment with metoclopramide for longer than 12 weeks because of the increased risk of developing tardive dyskinesia with longer-term use.\n醫師處方警語\nMetoclopramide base 3.84mg equal to previous Primperan 5mg/Tab",
+        "副作用": "CNS depression(drowsiness, dizziness), extrapyramidal reaction, Tardive dyskinesia, hyperprolactinemia, changes in blood pressure\n禁忌\npheochromocytoma or other catecholamine-releasing paragangliomas\n警語\n1.Metoclopramide can cause tardive dyskinesia.\n2.Discontinue metoclopramide in patients who develop signs or symptoms of tardive dyskinesia.\n3.Avoid treatment with metoclopramide for longer than 12 weeks because of the increased risk of developing tardive dyskinesia with longer-term use.\nMetoclopramide base 3.84mg equal to previous Primperan 5mg/Tab",
         "懷孕分級": "＜說明:AU TGA:A FDA:B＞"
       }
     },
@@ -1254,7 +1254,7 @@
       ],
       "kmuh_detail": {
         "臨床用途": "Nausea/vomiting, headache, psychosis",
-        "副作用": "EPS, dyspnea, headache, drowsiness, orthostatic hypotension\n護理給藥警語\n建議肌肉注射，本品外觀與 Anxicam 相似\n藥師調劑警語\n本品外觀與 Anxicam 相似，請注意",
+        "副作用": "EPS, dyspnea, headache, drowsiness, orthostatic hypotension\n建議肌肉注射，本品外觀與 Anxicam 相似\n藥師調劑警語\n本品外觀與 Anxicam 相似，請注意",
         "授乳": "可授乳 ＜說明:compatible for short-term use .......AUS, LactMed＞"
       },
       "contraindications": [
@@ -1425,7 +1425,7 @@
       ],
       "kmuh_detail": {
         "臨床用途": "Diarrhea",
-        "副作用": "Constipation (rare)\n醫師處方警語\n不需磨粉：粉劑，每包以30-50cc的水稀釋\n護理給藥警語\n成人：每包以30-50cc的水稀釋。兒童：請將一日量泡製好的藥液平分3-4次服用",
+        "副作用": "Constipation (rare)\n不需磨粉：粉劑，每包以30-50cc的水稀釋\n成人：每包以30-50cc的水稀釋。兒童：請將一日量泡製好的藥液平分3-4次服用",
         "懷孕分級": "＜說明:As a precautionary measure, due to trace Lead presents as an impurity & minimal risk levels of lead have not been determined.＞",
         "授乳": "＜說明:As a precautionary measure＞\n藥物安定性\n安定性天數：1"
       }
@@ -1518,7 +1518,7 @@
       "tags": [],
       "kmuh_detail": {
         "臨床用途": "Pain management",
-        "副作用": "CNS/respiratory depression, nausea, vomiting, constipation, pruritus, ↑ICP, hypotension, bradycardia\n禁忌\nsignificant respiratory depression;acute alcoholism; convulsive disorders; severe hepatic impairment\n醫師處方警語\n途徑IVP請醫護共同監測5分鐘。\n護理給藥警語\n【警】高警訊  此藥有二種劑量，本品為＜低劑量＞途徑IVP請醫護共同監測5分鐘。",
+        "副作用": "CNS/respiratory depression, nausea, vomiting, constipation, pruritus, ↑ICP, hypotension, bradycardia\n禁忌\nsignificant respiratory depression;acute alcoholism; convulsive disorders; severe hepatic impairment\n【警】高警訊  此藥有二種劑量，本品為＜低劑量＞",
         "懷孕分級": "＜說明:AU TGA:C＞",
         "管制性藥品": "管1"
       },
@@ -1559,7 +1559,7 @@
       "tags": [],
       "kmuh_detail": {
         "臨床用途": "Adjunct to general anesthesia, pain",
-        "副作用": "Nausea, vomiting, constipation, dry mouth, CNS depression, flushing, hypotension, chest wall rigidity, respiratory depression\n警語\nDelayed respiratory depression may occur within 6 h ( rare case ＞ 6 h) after epidural fentanyl administration.\n醫師處方警語\n途徑IVP 須醫護共同監測5分鐘\n護理給藥警語\n1.【警】高警訊2. 途徑IVP請醫護共同監測5分鐘。",
+        "副作用": "Nausea, vomiting, constipation, dry mouth, CNS depression, flushing, hypotension, chest wall rigidity, respiratory depression\n警語\nDelayed respiratory depression may occur within 6 h ( rare case ＞ 6 h) after epidural fentanyl administration.\n途徑IVP 須醫護共同監測5分鐘\n1.【警】高警訊2.",
         "懷孕分級": "＜說明:AU TGA:C＞",
         "管制性藥品": "管2"
       }
@@ -1602,7 +1602,7 @@
       "tags": [],
       "kmuh_detail": {
         "臨床用途": "Tracheal Intubation",
-        "副作用": "HR ↑ or ↓, BP ↑ or ↓, respiratory depression, ↑ IOP, myalgia, ↑ K, malignant hyperthemia\n禁忌\n↑ K (burns/trauma), malignant hyperthermia, acute narrow-angle glaucoma, penetrating eye injuries\n警語\n1.It’s not favored for long procedure/prolonged muscular\n relaxation as it will develop Phase II block and should\n be replaced by non-depolarizing blockade.\n2.It must wear off on its own and time is the only truly \n safe reversal agent.\n3.Aminoglycoside rapid IV bolus may ↑ neuromuscular\n blocking action of succinylcholine.\n護理給藥警語\n【警】高警訊:Check vital sign/On Monitor"
+        "副作用": "HR ↑ or ↓, BP ↑ or ↓, respiratory depression, ↑ IOP, myalgia, ↑ K, malignant hyperthemia\n禁忌\n↑ K (burns/trauma), malignant hyperthermia, acute narrow-angle glaucoma, penetrating eye injuries\n警語\n1.It’s not favored for long procedure/prolonged muscular\n relaxation as it will develop Phase II block and should\n be replaced by non-depolarizing blockade.\n2.It must wear off on its own and time is the only truly \n safe reversal agent.\n3.Aminoglycoside rapid IV bolus may ↑ neuromuscular\n blocking action of succinylcholine.\n【警】高警訊:Check vital sign/On Monitor"
       }
     },
     {
@@ -1665,7 +1665,7 @@
       ],
       "kmuh_detail": {
         "臨床用途": "Sedation (premedication, during regional or local anesthesia, postoperative), status epilepticus",
-        "副作用": "Hypotension, respiratory depression, prolonged postoperative sedation\n警語\n1.ICU sedation: after ＞ 48h infusion, it often\n accumulates and produces excessive sedation. \n2.↓ dose for elderly or debilitated p’t and when\n CNS depressants are used concomitantly.\n醫師處方警語\n途徑IVP請醫護共同監測5分鐘。\n護理給藥警語\n1.【警】建議使用N/S。高警訊:Check vital sign/On Monitor2.途徑IVP請醫護共同監測5分鐘。",
+        "副作用": "Hypotension, respiratory depression, prolonged postoperative sedation\n警語\n1.ICU sedation: after ＞ 48h infusion, it often\n accumulates and produces excessive sedation. \n2.↓ dose for elderly or debilitated p’t and when\n CNS depressants are used concomitantly.\n1.【警】建議使用N/S。高警訊:Check vital sign/On Monitor2.",
         "懷孕分級": "C ＜說明:AU TGA:C＞\n特性\nRecovery time:\nShort term: 0.5-2h, Prolonged use: 1-2d",
         "管制性藥品": "管4"
       }
@@ -1751,7 +1751,7 @@
       "package": "2.5 mL/管",
       "kmuh_detail": {
         "臨床用途": "Anxiety, muscle spasms, alcohol withdrawal, insomnia",
-        "副作用": "Drowsiness, amnesia, ↓RR, confusion, slurred speech, ataxia, dependence.\n警語\nUnstable -COPD, -sleep apnoea, -myasthenia gravis\n護理給藥警語\n本品裸錠外觀與 Colchicine 相似\n藥師調劑警語\n本品外觀與 Colchicine 相似，請注意",
+        "副作用": "Drowsiness, amnesia, ↓RR, confusion, slurred speech, ataxia, dependence.\n警語\nUnstable -COPD, -sleep apnoea, -myasthenia gravis\n本品裸錠外觀與 Colchicine 相似\n藥師調劑警語\n本品外觀與 Colchicine 相似，請注意",
         "管制性藥品": "管4"
       }
     },
@@ -1780,7 +1780,7 @@
       "urgency_label": "💊 口服維持",
       "kmuh_detail": {
         "臨床用途": "Broad spectrum antiepileptic",
-        "副作用": "CNS depression(fatigue, dizziness, somnolence), headache, ,agitation, psychiatric and behavioral abnormalities, myelosuppresion, hypersensitivity reactions(Stevens-Johnson syndrome, toxic epidermal necrolysis, drug reaction with eosinophilia and systemic symptoms (DRESS), and acute generalized exanthematous pustulosis)\n警語\nCCr mL/min Dosage mg Frequency\n ＞=80      500-1500   q12h\n 50-79      500-1000  q12h\n 30-49      250-750  q12h\n ＜30      250-500  q12h\nDialysis 500-1000  q24h\n護理給藥警語\n此藥有三種劑型，本品為＜水劑＞\n藥師調劑警語\n此藥有三種劑型，本品為＜水劑＞，請注意",
+        "副作用": "CNS depression(fatigue, dizziness, somnolence), headache, ,agitation, psychiatric and behavioral abnormalities, myelosuppresion, hypersensitivity reactions(Stevens-Johnson syndrome, toxic epidermal necrolysis, drug reaction with eosinophilia and systemic symptoms (DRESS), and acute generalized exanthematous pustulosis)\n警語\nCCr mL/min Dosage mg Frequency\n ＞=80      500-1500   q12h\n 50-79      500-1000  q12h\n 30-49      250-750  q12h\n ＜30      250-500  q12h\nDialysis 500-1000  q24h\n此藥有三種劑型，本品為＜水劑＞\n藥師調劑警語\n此藥有三種劑型，本品為＜水劑＞，請注意",
         "懷孕分級": "＜說明:AU TGA:B3\nNo evidence of ↑ risk of malformations........ UKTIS＞"
       }
     },
@@ -1809,7 +1809,7 @@
       "urgency_label": "💊 口服維持",
       "kmuh_detail": {
         "臨床用途": "Broad spectrum antiepileptic",
-        "副作用": "CNS depression(fatigue, dizziness, somnolence), headache, ,agitation, psychiatric and behavioral abnormalities, myelosuppresion, hypersensitivity reactions(Stevens-Johnson syndrome, toxic epidermal necrolysis, drug reaction with eosinophilia and systemic symptoms (DRESS), and acute generalized exanthematous pustulosis)\n警語\nCCr mL/min Dosage mg Frequency\n ＞=80      500-1500    q12h\n 50-79      500-1000    q12h\n 30-49      250-750     q12h\n ＜30      250-500     q12h\nDialysis    500-1000    q24h\n護理給藥警語\n此藥有三種劑型，本品為＜錠劑＞\n藥師調劑警語\n此藥有三種劑型，本品為＜錠劑＞，請注意",
+        "副作用": "CNS depression(fatigue, dizziness, somnolence), headache, ,agitation, psychiatric and behavioral abnormalities, myelosuppresion, hypersensitivity reactions(Stevens-Johnson syndrome, toxic epidermal necrolysis, drug reaction with eosinophilia and systemic symptoms (DRESS), and acute generalized exanthematous pustulosis)\n警語\nCCr mL/min Dosage mg Frequency\n ＞=80      500-1500    q12h\n 50-79      500-1000    q12h\n 30-49      250-750     q12h\n ＜30      250-500     q12h\nDialysis    500-1000    q24h\n此藥有三種劑型，本品為＜錠劑＞\n藥師調劑警語\n此藥有三種劑型，本品為＜錠劑＞，請注意",
         "懷孕分級": "＜說明:AU TGA:B3\nNo evidence of ↑ risk of malformations........ UKTIS＞"
       }
     },
@@ -1841,7 +1841,7 @@
       "urgency_label": "🚨 急性 loading",
       "kmuh_detail": {
         "臨床用途": "Broad spectrum antiepileptic",
-        "副作用": "CNS depression(fatigue, dizziness, somnolence), headache, ,agitation, psychiatric and behavioral abnormalities, myelosuppresion, hypersensitivity reactions(Stevens-Johnson syndrome, toxic epidermal necrolysis, drug reaction with eosinophilia and systemic symptoms (DRESS), and acute generalized exanthematous pustulosis)\n警語\nCCr mL/min Dosage mg Frequency\n ＞=80      500-1500     q12h\n 50-79      500-1000     q12h\n 30-49      250-750     q12h\n ＜30      250-500     q12h\nDialysis    500-1000     q24h\n護理給藥警語\n此藥有三種劑型，本品為＜針劑＞\n藥師調劑警語\n此藥有三種劑型，本品為＜針劑＞，請注意",
+        "副作用": "CNS depression(fatigue, dizziness, somnolence), headache, ,agitation, psychiatric and behavioral abnormalities, myelosuppresion, hypersensitivity reactions(Stevens-Johnson syndrome, toxic epidermal necrolysis, drug reaction with eosinophilia and systemic symptoms (DRESS), and acute generalized exanthematous pustulosis)\n警語\nCCr mL/min Dosage mg Frequency\n ＞=80      500-1500     q12h\n 50-79      500-1000     q12h\n 30-49      250-750     q12h\n ＜30      250-500     q12h\nDialysis    500-1000     q24h\n此藥有三種劑型，本品為＜針劑＞\n藥師調劑警語\n此藥有三種劑型，本品為＜針劑＞，請注意",
         "懷孕分級": "＜說明:AU TGA:B3\nNo evidence of ↑ risk of malformations........ UKTIS＞"
       }
     },
@@ -1906,7 +1906,7 @@
       "urgency_label": "💊 口服維持",
       "kmuh_detail": {
         "臨床用途": "Broad spectrum antiepileptic, bipolar disorder(Off-label TFDA),migraine prophylaxis(Off-label TFDA)",
-        "副作用": "GI upset, alopecia, tremor, drowsiness, hepatotoxicity, pancreatitis, ↑ NH3, ↑ BW, myelosuppression\n禁忌\nmigraine prophylaxis/bipolar disorder in pregnant women, hepatic disease or significant impairment, known mitochondrial disorders caused by mutations in mitochondrial DNA polymerase gamma (POLG; eg, Alpers-Huttenlocher syndrome [AHS]), urea cycle disorders, known systemic primary carnitine deficiency with uncorrected hypocarnitinemia, known porphyria\n警語\n相較於接受lamotrigine或levetiracetam治療的男性，受孕前3個月內接受valproate治療的男性所生之子女罹患神經發育缺陷 (Neurodevelopmental Disorder, NDD)的風險增加，廠商建議在valproate治療期間及停止治療後3個月內採取有效避孕\n醫師處方警語\n不建議磨粉：易潮解，請使用前再磨粉。磨粉容易造成胃刺激，如需磨粉請服多量開水，或可使用同成分之水劑\n護理給藥警語\n易潮解，使用前才磨粉。磨粉容易造成胃刺激，如需磨粉請服多量開水。\n藥師調劑警語\n此藥有三種劑型，本品為＜錠劑＞，易潮解，請注意",
+        "副作用": "GI upset, alopecia, tremor, drowsiness, hepatotoxicity, pancreatitis, ↑ NH3, ↑ BW, myelosuppression\n禁忌\nmigraine prophylaxis/bipolar disorder in pregnant women, hepatic disease or significant impairment, known mitochondrial disorders caused by mutations in mitochondrial DNA polymerase gamma (POLG; eg, Alpers-Huttenlocher syndrome [AHS]), urea cycle disorders, known systemic primary carnitine deficiency with uncorrected hypocarnitinemia, known porphyria\n警語\n相較於接受lamotrigine或levetiracetam治療的男性，受孕前3個月內接受valproate治療的男性所生之子女罹患神經發育缺陷 (Neurodevelopmental Disorder, NDD)的風險增加，廠商建議在valproate治療期間及停止治療後3個月內採取有效避孕\n不建議磨粉：易潮解，請使用前再磨粉。磨粉容易造成胃刺激，如需磨粉請服多量開水，或可使用同成分之水劑\n易潮解，使用前才磨粉。磨粉容易造成胃刺激，如需磨粉請服多量開水。\n藥師調劑警語\n此藥有三種劑型，本品為＜錠劑＞，易潮解，請注意",
         "懷孕分級": "D ＜說明:AU TGA(D):A broad range of congenital malformations can occur in babies born to women who take sodium valproate during pregnancy, and the risk of malformations increases with increasing dose of valproate.＞"
       }
     },
@@ -1941,7 +1941,7 @@
       "urgency_label": "🚨 急性 loading",
       "kmuh_detail": {
         "臨床用途": "Broad spectrum antiepileptic",
-        "副作用": "GI upset, alopecia, tremor, drowsiness, hepatotoxicity, pancreatitis, ↑ NH3, ↑ BW, myelosuppression\n禁忌\nmigraine prophylaxis/bipolar disorder in pregnant women, hepatic disease or significant impairment, known mitochondrial disorders caused by mutations in mitochondrial DNA polymerase gamma (POLG; eg, Alpers-Huttenlocher syndrome [AHS]), urea cycle disorders, known systemic primary carnitine deficiency with uncorrected hypocarnitinemia, known porphyria\n警語\n相較於接受lamotrigine或levetiracetam治療的男性，受孕前3個月內接受valproate治療的男性所生之子女罹患神經發育缺陷 (Neurodevelopmental Disorder, NDD)的風險增加，廠商建議在valproate治療期間及停止治療後3個月內採取有效避孕\n醫師處方警語\n【防滲】\n護理給藥警語\n【滲漏易損傷】此藥有三種劑型，本品為＜針劑＞配製後2-8℃ 24小時\n藥師調劑警語\n此藥有三種劑型，本品為＜針劑＞，請注意",
+        "副作用": "GI upset, alopecia, tremor, drowsiness, hepatotoxicity, pancreatitis, ↑ NH3, ↑ BW, myelosuppression\n禁忌\nmigraine prophylaxis/bipolar disorder in pregnant women, hepatic disease or significant impairment, known mitochondrial disorders caused by mutations in mitochondrial DNA polymerase gamma (POLG; eg, Alpers-Huttenlocher syndrome [AHS]), urea cycle disorders, known systemic primary carnitine deficiency with uncorrected hypocarnitinemia, known porphyria\n警語\n相較於接受lamotrigine或levetiracetam治療的男性，受孕前3個月內接受valproate治療的男性所生之子女罹患神經發育缺陷 (Neurodevelopmental Disorder, NDD)的風險增加，廠商建議在valproate治療期間及停止治療後3個月內採取有效避孕\n【防滲】\n【滲漏易損傷】此藥有三種劑型，本品為＜針劑＞配製後2-8℃ 24小時\n藥師調劑警語\n此藥有三種劑型，本品為＜針劑＞，請注意",
         "懷孕分級": "D ＜說明:AU TGA(D):A broad range of congenital malformations can occur in babies born to women who take sodium valproate during pregnancy, and the risk of malformations increases with increasing dose of valproate.＞"
       }
     },
@@ -2152,7 +2152,7 @@
       "group_id": "diphenhydramine",
       "kmuh_detail": {
         "臨床用途": "Allergy",
-        "副作用": "Sedation, dizziness\n護理給藥警語\n建議應緩慢靜脈注射(Diphenhydramine速率不超過25mg/min)\n藥品狀態\n【缺藥】\n缺藥理由\n院方因素-停止採購。"
+        "副作用": "Sedation, dizziness\n建議應緩慢靜脈注射(Diphenhydramine速率不超過25mg/min)\n藥品狀態\n【缺藥】\n缺藥理由\n院方因素-停止採購。"
       }
     },
     {
@@ -2215,7 +2215,7 @@
       ],
       "kmuh_detail": {
         "臨床用途": "AF or VT especially in LV dysfunction or CHF",
-        "副作用": "↓ or ↑ thyroid function, hypotension, headache, ↑ LFT\n, Pulmonary infiltrate(rapid or slow onset), corneal\ndeposits (usually benign), optic neuropathy (rare)\n禁忌\nMarked sinus bradycardia, 2°-3° AV block unless pacemaker is available, QT↑ , Torsades de pointes\n警語\nIV amiodarone in WPW with AF is potentially harmful.\n醫師處方警語\n途徑IVP請醫護共同監測5分鐘。\n護理給藥警語\n1.【滲漏易損傷】限用 D5W， 禁用 PVC2. 途徑IVP請醫護共同監測5分鐘。\n藥師調劑警語\n建議標準稀釋液為D5W ( 稀釋濃度＞600mg/L )",
+        "副作用": "↓ or ↑ thyroid function, hypotension, headache, ↑ LFT\n, Pulmonary infiltrate(rapid or slow onset), corneal\ndeposits (usually benign), optic neuropathy (rare)\n禁忌\nMarked sinus bradycardia, 2°-3° AV block unless pacemaker is available, QT↑ , Torsades de pointes\n警語\nIV amiodarone in WPW with AF is potentially harmful.\n1.【滲漏易損傷】限用 D5W， 禁用 PVC2. \n藥師調劑警語\n建議標準稀釋液為D5W ( 稀釋濃度＞600mg/L )",
         "懷孕分級": "C ＜說明:AUS＞\n一般藥品稀釋液\n2G525(Vitagen 5%, 250mL/Bot)\n2G525P(Gitose 5%\"N.K.250mL/Bag)\n2G55(Gitose(Dextrose)5% 500mL/Bag)"
       }
     },
@@ -2244,7 +2244,7 @@
       ],
       "kmuh_detail": {
         "臨床用途": "Ventricular arrhythmias",
-        "副作用": "Seizures, loss of consciousness, respiratory depression or arrest, sensory changes, anxiety, euphoria.\n禁忌\nStokes-Adams attacks; WPW; SA, AV or intraventricular blocks.\n醫師處方警語\n途徑IVP請醫護共同監測5分鐘。\n護理給藥警語\n途徑IVP請醫護共同監測5分鐘。",
+        "副作用": "Seizures, loss of consciousness, respiratory depression or arrest, sensory changes, anxiety, euphoria.\n禁忌\nStokes-Adams attacks; WPW; SA, AV or intraventricular blocks.",
         "授乳": "可授乳"
       }
     },
@@ -2278,7 +2278,7 @@
       ],
       "kmuh_detail": {
         "臨床用途": "Preoperative medication to inhibit salivation and secretions, symptomatic bradycardia",
-        "副作用": "Dry mouth, mydriasis, blurred vision, tachycardia, delirium, tremor.\n禁忌\nNarrow-angle glaucoma, GI tract obstruction, obstructive uropathy.\n醫師處方警語\n途徑IVP請醫護共同監測5分鐘。\n護理給藥警語\n途徑IVP請醫護共同監測5分鐘。",
+        "副作用": "Dry mouth, mydriasis, blurred vision, tachycardia, delirium, tremor.\n禁忌\nNarrow-angle glaucoma, GI tract obstruction, obstructive uropathy.",
         "懷孕分級": "＜說明:AU TGA:A＞",
         "授乳": "＜說明:Long-term use of atropine might reduce milk production, but a single systemic or ophthalmic dose is not likely to interfere with breastfeeding.＞"
       }
@@ -2331,7 +2331,7 @@
       ],
       "kmuh_detail": {
         "臨床用途": "Paroxysmal supraventricular tachycardia(PSVT)",
-        "副作用": "Cardiac arrhythmia, facial flushing, dyspnea, dizziness, headache , chest pressure, nausea\n禁忌\n2°-3°AV block, sick sinus syndrome, symptomatic bradycardia(except with a functioning artificial pacemaker), known or suspected bronchoconstrictive or bronchospastic lung disease, asthma, severe hypotension, Long QT syndrome\n警語\nContinuous ECG during administration help diagnostically and can distinguish drug failure to terminate arrhythmias vs successful termination with immediate arrhythmia reinitiation.\n醫師處方警語\n途徑IVP請醫護共同監測5分鐘。\n護理給藥警語\n1.未經稀釋即可以快速靜脈注射(超過２秒)給藥2.途徑IVP請醫護共同監測5分鐘。",
+        "副作用": "Cardiac arrhythmia, facial flushing, dyspnea, dizziness, headache , chest pressure, nausea\n禁忌\n2°-3°AV block, sick sinus syndrome, symptomatic bradycardia(except with a functioning artificial pacemaker), known or suspected bronchoconstrictive or bronchospastic lung disease, asthma, severe hypotension, Long QT syndrome\n警語\nContinuous ECG during administration help diagnostically and can distinguish drug failure to terminate arrhythmias vs successful termination with immediate arrhythmia reinitiation.\n1.未經稀釋即可以快速靜脈注射(超過２秒)給藥2.",
         "懷孕分級": "＜說明:AU TGA:B2＞"
       }
     }
