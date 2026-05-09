@@ -1,0 +1,27 @@
+# 高醫機密 / 院內資料 — 絕不上 public repo
+.chromium_profile/
+.kmuh_crawl_progress.json
+
+# KMUH 全藥物資料庫（ 5008 藥，避免公開）
+kmuh_all_drugs.db
+kmuh_all_drugs.json
+kmuh_all_drugs.csv
+kmuh_all_drugs_report.md
+
+# 驗證中間檔
+drugs_to_verify.csv
+priority_kmuh_mapping.csv
+kmuh_verification.csv
+kmuh_verification_report.md
+kmuh_verification_log.json
+
+# 爬蟲 / mapper script（含 staff portal URL，避免外流）
+kmuh_crawl_all.py
+kmuh_verify.py
+kmuh_verify_v3.py
+map_priority_codes.py
+
+# Python / OS
+__pycache__/
+*.pyc
+.DS_Store

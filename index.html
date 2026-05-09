@@ -1,0 +1,1266 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>兒科藥物劑量速算</title>
+<style>
+* { box-sizing: border-box; }
+:root {
+  --bg: #f7f8fa;
+  --card: #ffffff;
+  --border: #e5e7eb;
+  --text: #111827;
+  --muted: #6b7280;
+  --accent: #2563eb;
+  --accent-soft: #dbeafe;
+  --warn: #dc2626;
+  --warn-soft: #fee2e2;
+  --emergency: #f59e0b;
+  --emergency-soft: #fef3c7;
+  --ok: #059669;
+  --star: #f59e0b;
+  --shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0f172a;
+    --card: #1e293b;
+    --border: #334155;
+    --text: #f1f5f9;
+    --muted: #94a3b8;
+    --accent: #3b82f6;
+    --accent-soft: #1e3a8a;
+    --warn: #ef4444;
+    --warn-soft: #7f1d1d;
+    --emergency: #fbbf24;
+    --emergency-soft: #78350f;
+    --shadow: 0 1px 3px rgba(0,0,0,0.4);
+  }
+}
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+  font-size: 15px;
+}
+header {
+  position: sticky;
+  top: 0;
+  background: var(--card);
+  border-bottom: 1px solid var(--border);
+  padding: 12px 16px;
+  z-index: 100;
+  box-shadow: var(--shadow);
+}
+h1 {
+  margin: 0 0 8px;
+  font-size: 18px;
+  font-weight: 700;
+}
+.controls {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+.controls label {
+  display: flex;
+  flex-direction: column;
+  font-size: 12px;
+  color: var(--muted);
+}
+.controls input {
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 4px;
+}
+.controls input:focus { outline: 2px solid var(--accent); border-color: var(--accent); }
+.tabs {
+  display: flex;
+  gap: 4px;
+  overflow-x: auto;
+  margin: 0 -16px;
+  padding: 0 16px;
+  scrollbar-width: none;
+}
+.tabs::-webkit-scrollbar { display: none; }
+.tab {
+  padding: 8px 14px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text);
+  border-radius: 999px;
+  cursor: pointer;
+  white-space: nowrap;
+  font-size: 13px;
+  font-weight: 500;
+}
+.tab.active { background: var(--accent); color: white; border-color: var(--accent); }
+.search-bar {
+  margin-top: 8px;
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 15px;
+}
+main {
+  padding: 12px 16px 80px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.cat-group {
+  margin-bottom: 20px;
+}
+.cat-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 16px 0 8px;
+  padding: 0 4px;
+}
+.drug-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 12px 14px;
+  margin-bottom: 10px;
+  box-shadow: var(--shadow);
+  position: relative;
+}
+.drug-card.emergency { border-left: 4px solid var(--emergency); }
+.drug-card.starred { border-left: 4px solid var(--star); }
+.drug-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+.drug-name {
+  font-size: 16px;
+  font-weight: 700;
+  flex: 1;
+  min-width: 0;
+}
+.drug-name .gen { color: var(--text); }
+.drug-name .brand { color: var(--muted); font-weight: 500; font-size: 14px; display: block; }
+.star-btn {
+  background: none;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  padding: 0 4px;
+  color: var(--border);
+  flex-shrink: 0;
+  line-height: 1;
+}
+.star-btn.on { color: var(--star); }
+.drug-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 10px;
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+.drug-meta .code {
+  background: var(--accent-soft);
+  color: var(--accent);
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-family: ui-monospace, monospace;
+  font-weight: 600;
+}
+.drug-meta .route {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+.dose-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 8px 0;
+  border-top: 1px dashed var(--border);
+}
+.dose-row:first-of-type { border-top: none; }
+.dose-label {
+  font-size: 13px;
+  color: var(--muted);
+  flex: 1;
+  min-width: 0;
+}
+.dose-label strong { color: var(--text); display: block; font-size: 13px; }
+.dose-value {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--accent);
+  text-align: right;
+  white-space: nowrap;
+}
+.dose-value .unit { font-size: 12px; color: var(--muted); font-weight: 500; margin-left: 2px; }
+.dose-value.range { font-size: 16px; }
+.notes {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid var(--border);
+}
+.notes-warning {
+  background: var(--warn-soft);
+  color: var(--warn);
+  padding: 6px 8px;
+  border-radius: 6px;
+  margin-top: 6px;
+  font-size: 12px;
+}
+.indications-list .ind-item {
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px dashed var(--border);
+}
+.ind-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 4px;
+}
+.ind-meta {
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 2px;
+}
+.disclaimer {
+  background: var(--warn-soft);
+  color: var(--warn);
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 12px;
+  margin: 0 0 16px;
+}
+.empty {
+  text-align: center;
+  color: var(--muted);
+  padding: 40px 20px;
+  font-size: 14px;
+}
+.tag-pill {
+  display: inline-block;
+  font-size: 10px;
+  padding: 1px 6px;
+  border-radius: 4px;
+  margin-left: 4px;
+  background: var(--emergency-soft);
+  color: var(--emergency);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.weight-summary {
+  background: var(--accent-soft);
+  color: var(--accent);
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+.fluid-calc {
+  background: var(--card);
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  margin: 8px 0;
+}
+.fluid-calc .formula { font-family: ui-monospace, monospace; font-size: 14px; }
+.fluid-calc .result { font-size: 22px; font-weight: 700; color: var(--accent); margin-top: 4px; }
+.bands { font-size: 13px; }
+.bands div { padding: 4px 0; }
+button.export-btn {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  cursor: pointer;
+}
+.footer-info {
+  text-align: center;
+  color: var(--muted);
+  font-size: 11px;
+  padding: 20px 0;
+}
+@media (min-width: 700px) {
+  .drug-list-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .drug-list-grid .drug-card { margin-bottom: 0; }
+}
+/* PALS algorithm view */
+.pals-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--warn);
+  border-radius: 12px;
+  padding: 14px 16px;
+  margin-bottom: 16px;
+  box-shadow: var(--shadow);
+}
+.pals-card h2 {
+  margin: 0 0 4px;
+  font-size: 17px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.pals-card .subtitle {
+  font-size: 11px;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+.pals-section {
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid var(--border);
+}
+.pals-section-title {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+}
+.pals-steps { padding-left: 18px; margin: 0; font-size: 14px; }
+.pals-steps li { margin-bottom: 4px; }
+.pals-decision {
+  background: var(--bg);
+  border-radius: 8px;
+  padding: 10px 12px;
+  margin: 8px 0;
+}
+.pals-decision .question {
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--warn);
+  margin-bottom: 8px;
+}
+.pals-branch {
+  border-left: 3px solid var(--accent);
+  padding: 6px 10px;
+  margin: 6px 0;
+  background: var(--card);
+  border-radius: 0 6px 6px 0;
+}
+.pals-branch.yes { border-left-color: var(--warn); }
+.pals-branch.no { border-left-color: var(--ok); }
+.pals-branch-label {
+  font-weight: 700;
+  font-size: 13px;
+  margin-bottom: 4px;
+}
+.pals-branch-actions {
+  font-size: 13px;
+  padding-left: 16px;
+  margin: 4px 0 0;
+}
+.pals-branch-actions li { margin-bottom: 3px; }
+.pals-qrs-row {
+  display: flex;
+  gap: 8px;
+  margin-top: 6px;
+  flex-wrap: wrap;
+}
+.pals-qrs-card {
+  flex: 1;
+  min-width: 200px;
+  background: var(--bg);
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  font-size: 13px;
+}
+.pals-qrs-card .qrs-tag {
+  display: inline-block;
+  font-size: 11px;
+  padding: 1px 6px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  border-radius: 4px;
+  margin-bottom: 4px;
+  font-weight: 600;
+}
+.pals-drug-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 6px 8px;
+  background: var(--bg);
+  border-radius: 6px;
+  margin: 4px 0;
+  font-size: 13px;
+}
+.pals-drug-row .drug-name-mini {
+  font-weight: 600;
+  flex: 1;
+}
+.pals-drug-row .drug-route { font-size: 11px; color: var(--muted); }
+.pals-drug-row .drug-dose { font-weight: 700; color: var(--accent); white-space: nowrap; }
+.pals-energy {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 8px;
+  background: var(--warn-soft);
+  border-radius: 6px;
+  margin: 4px 0;
+  font-size: 13px;
+  color: var(--warn);
+}
+.pals-energy .label { font-weight: 600; }
+.pals-energy .val { font-weight: 700; }
+.pals-causes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px 12px;
+  font-size: 13px;
+}
+.pals-causes ul { padding-left: 18px; margin: 4px 0; }
+.pals-causes li { margin-bottom: 2px; }
+.pals-criteria-row {
+  display: flex;
+  gap: 8px;
+  margin: 6px 0;
+  flex-wrap: wrap;
+}
+.pals-criteria-card {
+  flex: 1;
+  min-width: 200px;
+  background: var(--bg);
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  font-size: 13px;
+}
+.pals-criteria-card .crit-label { font-weight: 700; margin-bottom: 4px; font-size: 13px; }
+.pals-citation {
+  font-size: 11px;
+  color: var(--muted);
+  text-align: center;
+  margin-top: 6px;
+  padding-top: 6px;
+  border-top: 1px solid var(--border);
+}
+.pals-figure-link {
+  display: inline-block;
+  background: var(--accent-soft);
+  color: var(--accent);
+  padding: 6px 12px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  margin-top: 8px;
+}
+.pals-figure-link:hover { text-decoration: underline; }
+/* Grouped drug card (multiple forms under one generic) */
+.drug-group {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  margin-bottom: 10px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+.drug-group.starred { border-left: 4px solid var(--star); }
+.drug-group-header {
+  padding: 12px 14px 8px;
+  border-bottom: 1px solid var(--border);
+  background: linear-gradient(0deg, transparent, var(--bg) 0%, transparent 100%);
+}
+.drug-group-header .drug-name { font-size: 16px; font-weight: 700; }
+.drug-group-form {
+  padding: 10px 14px;
+  border-top: 1px solid var(--border);
+}
+.drug-group-form:first-of-type { border-top: none; }
+.drug-group-form .form-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 4px;
+}
+.drug-group-form .form-brand {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+}
+.drug-group-form .form-meta {
+  display: flex;
+  gap: 6px;
+  font-size: 11px;
+  color: var(--muted);
+  margin-bottom: 6px;
+  flex-wrap: wrap;
+}
+</style>
+</head>
+<body>
+<header>
+  <h1>兒科藥物劑量速算 <span style="font-size:12px;color:var(--muted);font-weight:400;">v0.1</span></h1>
+  <div class="controls">
+    <label>體重 (kg)
+      <input type="number" id="weight" step="0.1" min="0" max="100" placeholder="例 17.5" inputmode="decimal">
+    </label>
+    <label>年齡 (歲)
+      <input type="number" id="age" step="0.1" min="0" max="18" placeholder="例 5" inputmode="decimal">
+    </label>
+  </div>
+  <input type="search" class="search-bar" id="search" placeholder="搜尋：藥名 / 商品名 / HIS 代碼 / 情境（如 seizure）">
+  <div class="tabs" id="tabs">
+    <button class="tab active" data-view="all">全部</button>
+    <button class="tab" data-view="starred">⭐ 釘選</button>
+    <button class="tab" data-view="uri">🤧 URI</button>
+    <button class="tab" data-view="age">🤢 AGE</button>
+    <button class="tab" data-view="flu">🤒 流感</button>
+    <button class="tab" data-view="pals">🫀 PALS</button>
+    <button class="tab" data-view="emergency">🚨 急救</button>
+    <button class="tab" data-view="sedation">鎮靜</button>
+    <button class="tab" data-view="seizure">抽搐</button>
+    <button class="tab" data-view="antibiotic">抗生素</button>
+    <button class="tab" data-view="antipyretic">退燒</button>
+    <button class="tab" data-view="ml_only">水劑換算</button>
+  </div>
+</header>
+<main>
+  <div class="disclaimer">
+    ⚠️ 個人速算工具。藥碼以高醫 HIS 為主（部分待驗證），最終劑量以醫師臨床判斷為準。資料來源：高醫速算表 + 小兒常用藥丹 + Lexicomp / Nelson。
+  </div>
+  <div id="weight-summary"></div>
+  <div id="drug-list"></div>
+  <div class="footer-info">⭐ 點藥右上角星星可釘選 · 資料儲存於本機瀏覽器</div>
+</main>
+
+<script>
+// ============================================================================
+// DATA — embedded inline so it works offline / no fetch issues
+// ============================================================================
+const DRUG_DATA = {"_meta": {"version": "0.1.0", "last_updated": "2026-05-09", "scope": "Pediatric ED — common drugs for KMUH", "primary_source": "Lexicomp / Nelson / UpToDate, cross-referenced with 高醫速算表 (初版) and 小兒常用藥丹", "disclaimer": "個人速算工具。僅供臨床醫師快速參考，最終劑量以主治醫師臨床判斷為準。藥碼以高醫 HIS 為準，請於開藥前再次核對。", "schema_notes": {"calc.type": "mg_per_kg_per_dose | mg_per_kg_per_day | ml_per_kg_per_dose | ml_per_kg_per_day | tab_per_kg_per_day | fixed_age_band | dilution", "indications": "陣列，支援同藥多適應症（如 ketamine IM induction vs IV sedation vs IV analgesia）"}}, "categories": [{"id": "antipyretic", "label": "退燒/止痛", "order": 1}, {"id": "rhinitis", "label": "流鼻水/過敏", "order": 2}, {"id": "cough_cold", "label": "止咳/感冒", "order": 3}, {"id": "expectorant", "label": "化痰", "order": 4}, {"id": "antibiotic", "label": "抗生素", "order": 5}, {"id": "flu", "label": "流感", "order": 6}, {"id": "croup_bronchodilator", "label": "Croup / 支氣管擴張", "order": 7}, {"id": "steroid", "label": "類固醇", "order": 8}, {"id": "antiemetic", "label": "止吐", "order": 9}, {"id": "gi_other", "label": "腸胃道（脹氣/便秘/止瀉/益生菌）", "order": 10}, {"id": "fluid", "label": "點滴/輸液", "order": 11}, {"id": "analgesic_inj", "label": "止痛針劑", "order": 12}, {"id": "sedation", "label": "鎮靜/麻醉誘導", "order": 13}, {"id": "seizure", "label": "抽搐/癲癇", "order": 14}, {"id": "allergy_eps", "label": "過敏/EPS", "order": 15}, {"id": "muscle_relaxant", "label": "肌肉鬆弛", "order": 16}, {"id": "pals_arrest", "label": "PALS 心臟停止/心律不整", "order": 17}], "drugs": [{"id": "antiphen_syrup", "generic": "Acetaminophen", "brand": "Anti-phen syrup 24 mg/mL · 安佳熱糖漿", "concentration_mg_per_ml": 24, "package": "60 mL/bot", "kmuh_code": "ACEO17", "category": "antipyretic", "form": "syrup", "route": "PO", "calc": {"type": "mg_per_kg_per_dose", "low": 10, "high": 15, "max_dose_mg": 1000, "max_doses_per_day": 5, "max_mg_per_day": 4000}, "frequency": "Q4-6H PRN", "notes": "速算: BW÷4 ~ BW÷2 mL/dose；間隔 ≥4 小時；可與 Ibuprofen 半小時錯開使用", "source": "Lexicomp + 高醫速算表", "tags": ["fever", "common", "starred_default", "uri", "age"], "group_id": "acetaminophen"}, {"id": "acetaminophen_tab", "generic": "Acetaminophen", "brand": "Panadol / Acetaminophen 500mg tab", "concentration_mg_per_unit": 500, "unit": "tab", "kmuh_code": "PANO28", "category": "antipyretic", "form": "tab", "route": "PO", "calc": {"type": "mg_per_kg_per_dose", "low": 10, "high": 15, "max_dose_mg": 1000, "max_doses_per_day": 5}, "frequency": "Q4-6H PRN", "notes": "Max 1#/dose；通常 ≥30 kg 才開錠劑", "source": "Lexicomp + 高醫速算表", "tags": ["fever", "common", "uri", "age"], "group_id": "acetaminophen"}, {"id": "idefen_syrup", "generic": "Ibuprofen", "brand": "Idofen syrup 20 mg/mL · 舒抑痛口服懸液", "concentration_mg_per_ml": 20, "package": "60 mL/bot", "kmuh_code": "IBU000", "category": "antipyretic", "form": "syrup", "route": "PO", "calc": {"type": "mg_per_kg_per_dose", "low": 5, "high": 10, "max_dose_mg": 400, "max_mg_per_day": 1200, "max_ml_per_day": 60}, "frequency": "Q6-8H PRN", "notes": "速算: BW÷4 ~ BW÷2 mL/dose；< 6 月禁用；≥ 6 月-12 歲適用", "source": "Lexicomp + 高醫速算表", "tags": ["fever", "common", "starred_default", "uri"]}, {"id": "voren_supp", "generic": "Diclofenac", "brand": "Voren supp 12.5 mg · 非炎栓劑", "concentration_mg_per_unit": 12.5, "unit": "supp", "kmuh_code": "ACTO01", "category": "antipyretic", "form": "supp", "route": "PR", "calc": {"type": "supp_by_weight", "kg_per_supp_low": 25, "kg_per_supp_high": 12.5, "max_doses_per_day": 2}, "frequency": "Q6H PRN", "notes": "速算: BW÷25 ~ BW÷12.5 顆；Max 2 顆/日；嬰幼兒退燒備用", "source": "高醫速算表", "tags": ["fever", "uri"]}, {"id": "peace_syrup", "generic": "Triprolidine + Pseudoephedrine", "brand": "Peace syrup", "concentration_note": "Triprolidine 0.25 mg + Pseudoephedrine 6 mg/mL", "kmuh_code": null, "category": "rhinitis", "form": "syrup", "route": "PO", "calc": {"type": "ml_per_kg_per_day", "low": 0.6, "high": 0.6, "doses_per_day": 3}, "frequency": "TID PC", "source": "高醫速算表", "tags": ["common", "uri"]}, {"id": "cypromin_syrup", "generic": "Cyproheptadine", "brand": "Cypromin syrup 0.4 mg/mL · 喜普液", "concentration_mg_per_ml": 0.4, "package": "60 mL/bot", "kmuh_code": "CYPO00", "category": "rhinitis", "form": "syrup", "route": "PO", "calc": {"type": "ml_per_kg_per_day", "low": 0.6, "high": 0.6, "doses_per_day": 3}, "frequency": "TID PC", "notes": "First-gen antihistamine，年紀大可改 cetirizine", "source": "高醫速算表", "tags": ["common", "uri"], "group_id": "cyproheptadine"}, {"id": "cypromin_tab", "generic": "Cyproheptadine", "brand": "Cypromin 4mg tab", "concentration_mg_per_unit": 4, "unit": "tab", "kmuh_code": "CYPO04", "category": "rhinitis", "form": "tab", "route": "PO", "calc": {"type": "ml_per_kg_per_day_then_convert", "low": 0.6, "high": 0.6, "doses_per_day": 3, "note": "等效換算"}, "frequency": "TID PC", "source": "高醫速算表", "tags": ["uri"], "group_id": "cyproheptadine"}, {"id": "secorine_syrup", "generic": "複方感冒藥水 (Chlorpheniramine + Methylephedrine + Guaiacol glycolate)", "brand": "Secorine syrup 息咳寧糖漿", "kmuh_code": "SECO05", "category": "cough_cold", "form": "syrup", "route": "PO", "calc": {"type": "ml_per_kg_per_day", "low": 1, "high": 1, "doses_per_day": 3}, "frequency": "TID PC", "source": "高醫速算表", "tags": ["uri"]}, {"id": "glyo_syrup", "generic": "Glycyrrhiza Mixture", "brand": "甘草止咳水 · Compound Glycyrrhiza Mixture", "kmuh_code": "GLYO02", "category": "cough_cold", "form": "syrup", "route": "PO", "calc": {"type": "ml_per_kg_per_day", "low": 1, "high": 1, "doses_per_day": 3}, "frequency": "TID PC", "notes": "<1 歲避免使用（含複方甘草，禁用於小嬰兒）", "source": "高醫速算表", "warnings": ["<1 歲禁用"], "tags": ["uri"]}, {"id": "actein_granule", "generic": "N-acetylcysteine", "brand": "Actein granule 200 mg/3g/sac · 愛克痰", "concentration_mg_per_unit": 200, "unit": "包", "kmuh_code": "FLUO32", "category": "expectorant", "form": "granule", "route": "PO", "calc": {"type": "pack_per_10kg_per_day", "packs_per_10kg_per_day": 1, "doses_per_day": 3}, "frequency": "TID PC", "source": "高醫速算表", "tags": ["uri"], "group_id": "nac"}, {"id": "acc_effervescent", "generic": "N-acetylcysteine", "brand": "ACC600 Effervescent Tab · 袪痰寧發泡錠", "concentration_mg_per_unit": 600, "unit": "粒", "kmuh_code": "1ACCEF", "category": "expectorant", "form": "tab_eff", "route": "PO", "calc": {"type": "age_band", "bands": [{"age_low": 0, "age_high": 6, "dose": "不建議 (<6 歲改用 Actein granule)"}, {"age_low": 6, "age_high": 14, "dose": "0.5 # BID PC"}, {"age_low": 14, "age_high": 999, "dose": "1 # BID-TID PC"}]}, "frequency": "BID-TID PC", "notes": "袪痰寧發泡錠 600mg；化學溶於水後喝；< 6 歲建議用 Actein granule 200mg/包", "source": "高醫藥品庫 + Lexicomp", "tags": ["uri"], "group_id": "nac"}, {"id": "soltan_syrup", "generic": "Ambroxol", "brand": "Mucosolvan syrup · 平痰息（KMUH 主用 Mubroxol tab）", "concentration_mg_per_ml": 3, "kmuh_code": "MUCO33", "category": "expectorant", "form": "syrup", "route": "PO", "calc": {"type": "ml_per_kg_per_day", "low": 0.6, "high": 0.6, "doses_per_day": 3}, "frequency": "TID PC", "source": "高醫速算表", "tags": ["uri"]}, {"id": "zithromax_susp", "generic": "Azithromycin", "brand": "Zithromax syrup 40 mg/mL · 日舒懸液", "concentration_mg_per_ml": 40, "concentration_note": "200 mg/5 mL = 40 mg/mL", "package": "15 mL/bot", "kmuh_code": "ZITO02", "category": "antibiotic", "form": "susp", "route": "PO", "calc": {"type": "mg_per_kg_per_day", "low": 10, "high": 10, "doses_per_day": 1, "max_mg_per_day": 500}, "frequency": "QD", "duration_note": "Mycoplasma: 3 天；中耳炎: 5 天", "notes": "速算: 0.25 mL/kg QD；須先加水 9mL 稀釋成 15mL，搖勻；稀釋後室溫安定 7 天", "source": "Lexicomp + 高醫速算表 + 中榮 PDF", "tags": ["common", "uri"], "group_id": "azithromycin"}, {"id": "zithromax_tab", "generic": "Azithromycin", "brand": "Zithromax 250 mg tab · 日舒", "concentration_mg_per_unit": 250, "unit": "粒", "kmuh_code": "ZITO03", "category": "antibiotic", "form": "tab", "route": "PO", "calc": {"type": "mg_per_kg_per_day", "low": 10, "high": 10, "doses_per_day": 1, "max_mg_per_day": 500}, "frequency": "QD", "source": "Lexicomp", "tags": ["uri"], "group_id": "azithromycin"}, {"id": "amoxicillin_susp", "generic": "Amoxicillin", "brand": "Amoxicillin susp 25 mg/mL · 安默西林", "concentration_mg_per_ml": 25, "concentration_note": "1500 mg / 60 mL = 25 mg/mL", "package": "60 mL/bot", "kmuh_code": "AMXO99", "category": "antibiotic", "form": "susp", "route": "PO", "calc": {"type": "mg_per_kg_per_day", "low": 80, "high": 90, "doses_per_day": 2, "max_mg_per_day": 3000}, "frequency": "Q12H PC", "notes": "中耳炎/CAP 高劑量；單純 URI 可改 50 mg/kg/day。較大孩子請改錠劑", "source": "Lexicomp + 高醫速算表", "tags": ["common", "uri"], "group_id": "amoxicillin"}, {"id": "amoxicillin_cap", "generic": "Amoxicillin", "brand": "Amoxicillin 500 mg cap · 愛默士黴素", "concentration_mg_per_unit": 500, "unit": "粒", "kmuh_code": "AMXO04", "category": "antibiotic", "form": "cap", "route": "PO", "calc": {"type": "mg_per_kg_per_day", "low": 80, "high": 90, "doses_per_day": 2, "max_mg_per_day": 3000}, "frequency": "Q12H PC", "source": "Lexicomp", "tags": ["uri"], "group_id": "amoxicillin"}, {"id": "soonmelt", "generic": "Amoxicillin/Clavulanate (low-dose clav)", "brand": "Soonmelt (Amo 25mg + Clav 6.25mg)", "concentration_note": "搭配 Amoxicillin！通常半 Amox + 半 Soonmelt，避免拉肚子", "kmuh_code": "AUGO04", "category": "antibiotic", "form": "susp", "route": "PO", "calc": {"type": "mg_per_kg_per_day", "low": 80, "high": 90, "doses_per_day": 2, "max_mg_per_day": 3000, "calc_basis": "Amoxicillin component"}, "frequency": "Q12H PC", "notes": "用一半 Amoxicillin + 一半 Soonmelt，總 amox 量 80-90 mg/kg/day，clav < 10 mg/kg/day", "source": "高醫速算表", "tags": ["uri"]}, {"id": "curam_susp", "generic": "Amoxicillin/Clavulanate", "brand": "Curam Powder for Oral Susp · 諾快寧口服懸液", "concentration_note": "60 mL/bot 配水後使用；Amox 400 mg + Clav 57 mg / 5 mL（7:1 ratio）", "concentration_mg_per_ml": 80, "package": "60 mL/bot", "kmuh_code": "1CUR60", "category": "antibiotic", "form": "susp", "route": "PO", "calc": {"type": "mg_per_kg_per_day", "low": 80, "high": 90, "doses_per_day": 2, "max_mg_per_day": 3000, "calc_basis": "Amoxicillin component"}, "frequency": "Q12H PC", "notes": "中耳炎/CAP 高劑量；7:1 配方降低拉肚子；較大孩子請改錠劑", "source": "Lexicomp + 高醫速算表", "tags": ["common", "uri"], "group_id": "amox_clav_curam"}, {"id": "curam_tab", "generic": "Amoxicillin/Clavulanate", "brand": "Curam 875/125 tab · 諾快寧", "concentration_mg_per_unit": 875, "unit": "粒", "concentration_note": "Amoxicillin 875 mg + Clav 125 mg", "kmuh_code": "AMOO00", "category": "antibiotic", "form": "tab", "route": "PO", "calc": {"type": "mg_per_kg_per_day", "low": 80, "high": 90, "doses_per_day": 2, "max_mg_per_day": 3000, "calc_basis": "Amoxicillin component"}, "frequency": "Q12H PC", "source": "Lexicomp", "tags": ["uri"], "group_id": "amox_clav_curam"}, {"id": "tamiflu", "generic": "Oseltamivir", "brand": "Tamiflu / Eraflu · 克流感 / 易剋冒", "concentration_note": "依年齡/體重不同 cap 規格 (30/45/75 mg)", "kmuh_code": "1TAM75", "category": "flu", "form": "cap/susp", "route": "PO", "calc": {"type": "weight_band", "bands": [{"weight_low": 0, "weight_high": 15, "dose": "30 mg BID × 5 days"}, {"weight_low": 15, "weight_high": 23, "dose": "45 mg BID × 5 days"}, {"weight_low": 23, "weight_high": 40, "dose": "60 mg BID × 5 days"}, {"weight_low": 40, "weight_high": 999, "dose": "75 mg BID × 5 days"}]}, "frequency": "BID × 5 days", "notes": "症狀 48 小時內開始最有效；參考台灣兒科醫學會抗病毒藥物使用建議", "source": "Lexicomp / Taiwan Pediatric Society", "tags": ["common", "flu", "starred_default", "uri"], "group_id": "flu_oseltamivir"}, {"id": "rapiacta_iv", "generic": "Peramivir", "brand": "Rapiacta · 瑞貝塔點滴靜脈注射液", "concentration_mg_per_ml": 5, "package": "300 mg / 60 mL/Bag", "kmuh_code": "2RAPI3", "category": "flu", "form": "iv_bag", "route": "IV", "calc": {"type": "mg_per_kg_per_dose", "low": 10, "high": 12, "max_dose_mg": 600}, "frequency": "Single dose × 1（IV over 15-30 min）", "notes": "≥6 月：10-12 mg/kg single dose；成人 600 mg。流感住院 / 不耐口服可選；疾管署疫情期間有公費（2RAPIA），平時用 2RAPI3 自費版。", "warnings": ["稀釋至 30-100 mL N/S，IV over 15-30 min"], "source": "Lexicomp + 高醫藥品庫", "tags": ["flu"]}, {"id": "xofluza_tab", "generic": "Baloxavir marboxil", "brand": "Xofluza 20 mg tab · 紓伏效膜衣錠", "concentration_mg_per_unit": 20, "unit": "粒", "kmuh_code": "1XOFLU", "category": "flu", "form": "tab", "route": "PO", "calc": {"type": "weight_band", "bands": [{"weight_low": 0, "weight_high": 20, "dose": "≥1 歲 + <20 kg：2 mg/kg PO single dose"}, {"weight_low": 20, "weight_high": 80, "dose": "40 mg (2 #) PO single dose"}, {"weight_low": 80, "weight_high": 999, "dose": "80 mg (4 #) PO single dose"}]}, "frequency": "Single dose × 1", "notes": "≥1 歲適用；單次口服即可（療程結束）；勿與 dairy/calcium 同服（吸收下降）", "warnings": ["症狀 48 小時內服用最有效"], "source": "Lexicomp + 高醫藥品庫", "tags": ["flu"]}, {"id": "relenza_inh", "generic": "Zanamivir", "brand": "Relenza rotadisk · 瑞樂沙旋達碟", "concentration_mg_per_unit": 5, "unit": "blister", "kmuh_code": "3RELEN", "category": "flu", "form": "inhaler_dpi", "route": "IH (Diskhaler)", "calc": {"type": "age_band", "bands": [{"age_low": 0, "age_high": 7, "dose": "<7 歲不建議"}, {"age_low": 7, "age_high": 999, "dose": "10 mg (2 blisters) BID × 5 days"}]}, "frequency": "BID × 5 days", "notes": "≥7 歲適用；使用 Diskhaler 吸入器；氣喘 / COPD 患者慎用（可能誘發支氣管痙攣）", "warnings": ["氣喘 / COPD 慎用 — 誘發支氣管痙攣風險"], "source": "Lexicomp + 高醫藥品庫", "tags": ["flu"]}, {"id": "epinephrine_inh_croup", "generic": "Epinephrine (Adrenalin)", "brand": "Bosmin / Adrenalin 1 mg/mL/Amp", "concentration_mg_per_ml": 1, "package": "1 mL/Amp", "kmuh_code": "BOSI00", "category": "croup_bronchodilator", "form": "inhalation_amp", "route": "IH (nebulizer)", "calc": {"type": "ml_per_kg_per_dose", "low": 0.5, "high": 0.5, "max_ml_per_dose": 5}, "frequency": "ST (一次)", "notes": "Croup: 0.5 mL/kg of 1:1000 (1 mg/mL)；≤4 歲 max 2.5 mL，>4 歲 max 5 mL；觀察 2-4 小時看反彈", "source": "高醫速算表 + Lexicomp", "tags": ["emergency", "uri"]}, {"id": "terbutaline_neb", "generic": "Terbutaline", "brand": "Bricanyl 2.5 mg/mL/Amp", "concentration_mg_per_ml": 2.5, "package": "2 mL/Amp", "kmuh_code": "BRIE03", "category": "croup_bronchodilator", "form": "inhalation_amp", "route": "IH (nebulizer)", "calc": {"type": "weight_band", "bands": [{"weight_low": 0, "weight_high": 20, "dose": "0.5 amp/dose"}, {"weight_low": 20, "weight_high": 999, "dose": "1 amp/dose"}]}, "frequency": "ST", "source": "高醫速算表", "tags": ["uri"]}, {"id": "ipratropium_neb", "generic": "Ipratropium", "brand": "Atrovent 0.25 mg/mL", "concentration_mg_per_ml": 0.25, "package": "2 mL/Amp", "kmuh_code": "ATRE08", "category": "croup_bronchodilator", "form": "inhalation_amp", "route": "IH", "calc": {"type": "weight_band", "bands": [{"weight_low": 0, "weight_high": 20, "dose": "0.5 amp/dose"}, {"weight_low": 20, "weight_high": 999, "dose": "1 amp/dose"}]}, "frequency": "ST", "source": "高醫速算表", "tags": ["uri"]}, {"id": "exdila_syrup", "generic": "Procaterol", "brand": "Exdila / Meptin liquid 5 mcg/mL · 滅喘淨液", "concentration_mcg_per_ml": 5, "package": "60 mL/bot", "kmuh_code": "MEPO07", "category": "croup_bronchodilator", "form": "syrup", "route": "PO", "calc": {"type": "ml_per_kg_per_dose", "low": 0.25, "high": 0.25, "doses_per_day": 2, "max_ml_per_dose": 10}, "frequency": "BID PC", "source": "高醫速算表", "tags": ["uri"], "group_id": "procaterol"}, {"id": "meptin_tab", "generic": "Procaterol", "brand": "Meptin 25 mcg tab · 滅喘淨微", "concentration_mcg_per_unit": 25, "unit": "粒", "kmuh_code": "1MEPTI", "category": "croup_bronchodilator", "form": "tab", "route": "PO", "calc": {"type": "weight_band", "bands": [{"weight_low": 0, "weight_high": 15, "dose": "0.5 # BID"}, {"weight_low": 15, "weight_high": 30, "dose": "1 # BID"}, {"weight_low": 30, "weight_high": 999, "dose": "1-2 # BID"}]}, "frequency": "BID PC", "notes": "依體重分組；< 6 歲建議用 Meptin liquid", "source": "Lexicomp + 高醫藥品庫", "group_id": "procaterol"}, {"id": "prednisolone_tab", "generic": "Prednisolone", "brand": "Prednisolone 5 mg tab", "concentration_mg_per_unit": 5, "unit": "粒", "kmuh_code": "PREO00", "category": "steroid", "form": "tab", "route": "PO", "indications": [{"label": "Croup (single dose)", "calc": {"type": "mg_per_kg_per_dose", "low": 2, "high": 2, "max_dose_mg": 50, "note": "Dexamethasone 0.3-0.6 mg/kg 等效換算為 prednisolone 2 mg/kg"}, "frequency": "ST × 1 dose"}, {"label": "Asthma loading", "calc": {"type": "mg_per_kg_per_dose", "low": 2, "high": 2, "max_dose_mg": 50}, "frequency": "Loading × 1，maintain 2 mg/kg/day（在院 loading，回家帶 3 天藥）"}], "source": "高醫速算表 + Lexicomp", "tags": ["uri"]}, {"id": "methylpred_inj", "generic": "Methylprednisolone", "brand": "Solu-Medrol 40 mg/Vial", "concentration_mg_per_unit": 40, "unit": "Vial", "kmuh_code": "SOLI12", "category": "steroid", "form": "vial", "route": "IM/IV", "indications": [{"label": "Croup (single dose, equiv. dex 0.6 mg/kg)", "calc": {"type": "mg_per_kg_per_dose", "low": 1.6, "high": 1.6, "max_dose_mg": 60}, "frequency": "ST × 1 dose"}, {"label": "Asthma loading", "calc": {"type": "mg_per_kg_per_dose", "low": 1.6, "high": 1.6, "max_dose_mg": 60}, "frequency": "ST，maintain 同等量分次 q6h"}], "source": "高醫速算表 + Lexicomp", "notes": "等效劑量：methylpred ≈ 4× dexamethasone", "tags": ["uri"]}, {"id": "aswell_syrup", "generic": "Metoclopramide", "brand": "Aswell syrup · 安適胃寧液", "concentration_mg_per_ml": 1, "kmuh_code": "METO72", "category": "antiemetic", "form": "syrup", "route": "PO", "calc": {"type": "mg_per_kg_per_dose", "low": 0.1, "high": 0.2, "max_dose_mg": 10, "doses_per_day": 3}, "frequency": "TID PC PRN", "notes": "注意 EPS 副作用，可與 diphenhydramine 並用預防", "warnings": ["EPS"], "source": "高醫速算表", "tags": ["age"], "group_id": "metoclopramide"}, {"id": "promeran_tab", "generic": "Metoclopramide", "brand": "Promeran 3.84 mg tab · 胃明朗膜衣錠", "concentration_mg_per_unit": 3.84, "unit": "粒", "kmuh_code": "1PROME", "category": "antiemetic", "form": "tab", "route": "PO", "calc": {"type": "mg_per_kg_per_dose", "low": 0.1, "high": 0.2, "max_dose_mg": 10}, "frequency": "TID PC PRN", "warnings": ["EPS 副作用 — 兒童風險高，可與 diphenhydramine 並用預防"], "source": "Lexicomp + 高醫藥品庫", "group_id": "metoclopramide"}, {"id": "primperan_inj", "generic": "Metoclopramide", "brand": "Primperan 5 mg/mL/Amp · 腹寧朗", "concentration_mg_per_ml": 5, "package": "2 mL/Amp", "kmuh_code": "PRII00", "category": "antiemetic", "form": "amp", "route": "IV/IM", "calc": {"type": "mg_per_kg_per_dose", "low": 0.1, "high": 0.2, "max_dose_mg": 10}, "frequency": "Q6-8H PRN", "warnings": ["EPS — 常與 diphenhydramine (Vena) 並用"], "source": "高醫速算表", "tags": ["age"], "group_id": "metoclopramide"}, {"id": "novamin_inj", "generic": "Prochlorperazine", "brand": "Novamin 5 mg/Amp", "concentration_mg_per_unit": 5, "unit": "Amp", "kmuh_code": "NOVI00", "category": "antiemetic", "form": "amp", "route": "IM", "calc": {"type": "mg_per_kg_per_dose", "low": 0.1, "high": 0.1, "max_dose_mg": 10}, "frequency": "Q6-8H PRN", "notes": "較不易 EPS", "source": "高醫速算表", "tags": ["age"]}, {"id": "kascoal_tab", "generic": "Simethicone", "brand": "Kascoal 40 mg tab · 卡舒考", "concentration_mg_per_unit": 40, "unit": "粒", "kmuh_code": "GASO01", "category": "gi_other", "form": "tab", "route": "PO", "calc": {"type": "age_band", "bands": [{"age_low": 0, "age_high": 2, "dose": "0.5 # QID"}, {"age_low": 2, "age_high": 12, "dose": "1 # QID"}, {"age_low": 12, "age_high": 999, "dose": "1-3 # QID"}]}, "frequency": "QID PC", "source": "高醫速算表", "tags": ["age"]}, {"id": "lgg_pack", "generic": "Lactobacillus rhamnosus GG (LGG)", "brand": "LGG 10 mg/g/sac", "kmuh_code": "LACO02", "category": "gi_other", "form": "pack", "route": "PO", "calc": {"type": "age_band", "bands": [{"age_low": 3, "age_high": 6, "dose": "0.3-0.5 包 TID"}, {"age_low": 6, "age_high": 12, "dose": "0.5-1 包 TID"}, {"age_low": 12, "age_high": 999, "dose": "成人劑量"}]}, "source": "高醫速算表", "tags": ["age"]}, {"id": "mgo_tab", "generic": "Magnesium Oxide", "brand": "MgO 250 mg tab · 氧化鎂", "concentration_mg_per_unit": 250, "unit": "粒", "kmuh_code": "MGOO01", "category": "gi_other", "form": "tab", "route": "PO", "calc": {"type": "age_band", "bands": [{"age_low": 0, "age_high": 2, "dose": "BW÷20 # TID-QID"}, {"age_low": 2, "age_high": 5, "dose": "0.5-1 # TID-QID"}, {"age_low": 6, "age_high": 11, "dose": "1-2 # TID-QID"}, {"age_low": 12, "age_high": 999, "dose": "2 # TID-QID"}]}, "frequency": "TID-QID PC", "max_per_day_note": "Max 2.1 g/day", "source": "高醫速算表", "tags": []}, {"id": "glycerin_supp", "generic": "Glycerin supp", "brand": "甘油球久仁浣腸液", "kmuh_code": "GLYE99", "category": "gi_other", "form": "enema", "route": "PR", "calc": {"type": "ml_per_kg_per_dose", "low": 0.5, "high": 0.5}, "frequency": "ST PRN", "source": "高醫速算表", "tags": []}, {"id": "smecta", "generic": "Diosmectite", "brand": "Smecta 3 g/sac · 思蜜達", "kmuh_code": "DIOO01", "category": "gi_other", "form": "pack", "route": "PO", "calc": {"type": "pack_per_30kg_per_dose", "doses_per_day": 3, "formula": "BW÷30 包/dose TID"}, "frequency": "TID PC", "notes": "1 歲以下 1 pack/day, 1-2 歲 2 pack/day, >2 歲 3 pack/day。如有服用其他藥物需間隔 1 小時", "source": "高醫速算表 + 藥丹", "tags": ["age"]}, {"id": "taita1", "generic": "Taita 點滴系列", "brand": "Taita No.1 · 台大1號注射液（D5W）", "package": "500 mL/Bag", "kmuh_code": "2T1", "category": "fluid", "form": "iv_solution", "route": "IV", "calc": {"type": "fluid_421_rule"}, "notes": "D5W 等滲；新生兒/嬰兒常用補水基底", "source": "高醫藥品庫", "group_id": "taita"}, {"id": "taita2", "generic": "Taita 點滴系列", "brand": "Taita No.2 · 台大二號注射液", "kmuh_code": "TT2I00", "category": "fluid", "form": "iv_solution", "route": "IV", "calc": {"type": "fluid_421_rule", "formula": "4-2-1 rule: 第一個 10kg × 4 + 第二個 10kg × 2 + 之後每 kg × 1 = mL/hr"}, "source": "高醫速算表", "tags": ["age"], "group_id": "taita"}, {"id": "taita5", "generic": "Taita 點滴系列", "brand": "Taita No.5 · 台大5號注射液", "kmuh_code": "TT5I00", "category": "fluid", "form": "iv_solution", "route": "IV", "calc": {"type": "fluid_421_rule"}, "notes": "糖份較高，容易疼痛", "source": "高醫速算表", "tags": ["age"], "group_id": "taita"}, {"id": "morphine_inj", "generic": "Morphine", "brand": "Morphine 10 mg/mL/Amp 嗎啡注射劑", "concentration_mg_per_ml": 10, "package": "1 mL/Amp", "kmuh_code": "MORI99", "category": "analgesic_inj", "form": "amp", "route": "IV/IM/SC", "calc": {"type": "mg_per_kg_per_dose", "low": 0.05, "high": 0.1, "max_dose_mg": 5, "doses_per_day_freq": "Q4H"}, "frequency": "Q4-8H PRN", "notes": "管制藥；注意呼吸抑制；新生兒減半", "warnings": ["呼吸抑制", "管制藥"], "source": "高醫速算表 + Lexicomp", "tags": []}, {"id": "fentanyl_inj", "generic": "Fentanyl", "brand": "Fentanyl 50 mcg/mL", "concentration_mcg_per_ml": 50, "package": "2 mL/Amp = 100 mcg", "kmuh_code": "FENI99", "category": "analgesic_inj", "form": "amp", "route": "IV", "calc": {"type": "mcg_per_kg_per_dose", "low": 0.5, "high": 1, "max_dose_mcg": 50, "note": "可上至 4 mcg/kg 但需密切監測"}, "frequency": "Q1-2H PRN", "notes": "管制藥；快速 push 注意 chest wall rigidity；通常 procedural sedation 用 1 mcg/kg", "warnings": ["呼吸抑制", "胸壁僵硬", "管制藥"], "source": "Lexicomp + 高醫速算表", "tags": []}, {"id": "succinylcholine", "generic": "Succinylcholine", "brand": "Relaxin 50 mg/mL", "concentration_mg_per_ml": 50, "package": "10 mL/vial", "kmuh_code": "SUCI01", "category": "muscle_relaxant", "form": "vial", "route": "IV/IM", "indications": [{"label": "RSI IV", "calc": {"type": "mg_per_kg_per_dose", "low": 1, "high": 2}, "frequency": "ST"}, {"label": "RSI IM", "calc": {"type": "mg_per_kg_per_dose", "low": 3, "high": 4}, "frequency": "ST"}], "warnings": ["高鉀血症（燒傷/外傷/神經肌肉疾病禁用）", "Malignant hyperthermia"], "source": "Lexicomp + 高醫速算表", "tags": []}, {"id": "midazolam_dormicum", "generic": "Midazolam", "brand": "Dormicum 5 mg/mL", "concentration_mg_per_ml": 5, "package": "3 mL/Amp = 15 mg/Amp", "kmuh_code": "DORI03", "category": "sedation", "form": "amp", "route": "IV/IM/IN/PO", "indications": [{"label": "IM (status epilepticus)", "calc": {"type": "mg_per_kg_per_dose", "low": 0.2, "high": 0.2, "max_dose_mg": 10}, "route": "IM", "onset": "5-10 min", "notes": "RAMPART trial: IM midaz ≥ IV lorazepam in efficacy"}, {"label": "Procedural sedation (IV)", "calc": {"type": "mg_per_kg_per_dose", "low": 0.05, "high": 0.1, "max_dose_mg": 5}, "route": "IV", "onset": "1-3 min", "duration": "30-60 min", "frequency": "Slow IV push，可 2-3 min 後 repeat"}, {"label": "Intranasal (anxiolysis/seizure)", "calc": {"type": "mg_per_kg_per_dose", "low": 0.2, "high": 0.3, "max_dose_mg": 10}, "route": "IN", "onset": "5-10 min", "notes": "用 5 mg/mL 濃度，分兩鼻孔；癲癇現場可用"}], "warnings": ["呼吸抑制（與 opioid 共用尤其）", "稀有 paradoxical agitation"], "source": "Lexicomp + 高醫速算表 + 藥丹", "tags": ["emergency", "starred_default"]}, {"id": "lorazepam_inj", "generic": "Lorazepam", "brand": "Anxicam (Lorazepam) 2 mg/mL", "concentration_mg_per_ml": 2, "package": "1 mL/Amp", "kmuh_code": "ATII01", "category": "seizure", "form": "amp", "route": "IV", "calc": {"type": "mg_per_kg_per_dose", "low": 0.1, "high": 0.1, "max_dose_mg": 4}, "frequency": "Slow IV push (over 2-5 min)，5-10 min 可 repeat", "notes": "速記：20 kg 打一支（2 mg）；first-line for status epilepticus", "source": "Lexicomp + 藥丹", "tags": ["emergency", "seizure_first_line", "starred_default"]}, {"id": "diazepam_iv", "generic": "Diazepam", "brand": "Diazepam 5 mg/mL", "concentration_mg_per_ml": 5, "package": "2 mL/Amp = 10 mg/Amp", "kmuh_code": null, "category": "seizure", "form": "amp", "route": "IV", "calc": {"type": "mg_per_kg_per_dose", "low": 0.2, "high": 0.3, "max_dose_mg": 10}, "frequency": "Slow IV push (over 2-3 min)，5 min 可 repeat", "notes": "Status epilepticus 替代藥（首選 lorazepam）", "source": "Lexicomp", "tags": [], "group_id": "diazepam"}, {"id": "diazepam_pr", "generic": "Diazepam", "brand": "Stesolid rectal tube", "concentration_note": "5 mg/2.5 mL/管 或 10 mg/2.5 mL/管（依年齡選用）", "kmuh_code": null, "category": "seizure", "form": "rectal_tube", "route": "PR", "calc": {"type": "mg_per_kg_per_dose", "low": 0.5, "high": 0.5, "max_dose_mg": 20}, "frequency": "ST，可在 5-10 min 後 repeat 一次", "notes": "院前/居家熱痙攣常用；無 IV 路時方便", "source": "Lexicomp + 藥丹", "tags": [], "group_id": "diazepam", "package": "2.5 mL/管"}, {"id": "keppra_iv", "generic": "Levetiracetam", "brand": "Keppra 500 mg/Vial", "concentration_mg_per_unit": 500, "unit": "Vial", "kmuh_code": null, "category": "seizure", "form": "vial", "route": "IV", "calc": {"type": "mg_per_kg_per_dose", "low": 60, "high": 60, "max_dose_mg": 4500}, "frequency": "IV loading over 5-15 min × 1（status epilepticus）", "notes": "ESETT 2019: 60 mg/kg over 10 min，效果與 fosphenytoin、valproate 相當；1 vial (500 mg) 稀釋至 50-100 mL N/S", "source": "Lexicomp / ESETT trial 2019", "tags": ["emergency", "seizure_second_line"]}, {"id": "depakine_iv", "generic": "Valproate Sodium", "brand": "Depakine 400 mg/vial", "concentration_mg_per_unit": 400, "unit": "vial", "kmuh_code": null, "category": "seizure", "form": "vial", "route": "IV", "calc": {"type": "mg_per_kg_per_dose", "low": 40, "high": 40, "max_dose_mg": 3000}, "frequency": "IV loading over 10 min（status epilepticus）", "notes": "ESETT 2019: 40 mg/kg over 10 min；1 vial (400 mg) 稀釋至 50 mL N/S；rate 1.5-3 mg/kg/min", "warnings": ["肝病、線粒體疾病禁用", "POMC encephalopathy"], "source": "Lexicomp / ESETT trial 2019", "tags": ["seizure_second_line"]}, {"id": "ketamine", "generic": "Ketamine", "brand": "Ketalar 50 mg/mL", "concentration_mg_per_ml": 50, "package": "10 mL/vial = 500 mg/Vial", "kmuh_code": null, "category": "sedation", "form": "vial", "route": "IV/IM", "indications": [{"label": "IM (induction / procedural sedation)", "calc": {"type": "mg_per_kg_per_dose", "low": 4, "high": 5, "max_dose_mg": 100}, "route": "IM", "onset": "3-5 min", "duration": "12-25 min（recovery 90-150 min）", "frequency": "ST × 1（induction）；procedural sedation 必要時 q5-15 min repeat 2-5 mg/kg", "notes": "適用無 IV 路且需要快速鎮靜（暴躁躁動病人、困難氣道、長骨骨折 reduction）"}, {"label": "IV (induction / procedural sedation)", "calc": {"type": "mg_per_kg_per_dose", "low": 1, "high": 2, "max_dose_mg": 50}, "route": "IV", "onset": "30-60 sec", "duration": "5-10 min", "frequency": "Slow IV push over 30-60 sec；procedural sedation 必要時 q5-15 min repeat 0.5-1 mg/kg", "notes": "Hemodynamic-stable induction agent，適合 hypotension/shock 病人"}, {"label": "IV sub-dissociative analgesia", "calc": {"type": "mg_per_kg_per_dose", "low": 0.1, "high": 0.3, "max_dose_mg": 20}, "route": "IV", "onset": "1-2 min", "duration": "5-15 min", "frequency": "Slow IV over 10 min（避免 emergence reaction）；可 q15-30 min repeat", "notes": "急性疼痛，opioid-sparing；可 IV drip 0.1-0.3 mg/kg/hr"}], "warnings": ["傳統認為 ICP elevation — 近年文獻挑戰此說法（多數 TBI 病人安全）；嚴重 ICP 仍應謹慎", "Hypersalivation — atropine 0.01 mg/kg 預給藥常規不再必須（per ACEP 2011 guideline）", "Emergence reactions — 預先給 midazolam 0.05 mg/kg 或 emergence 後處理；學齡兒童風險較高", "喉痙攣 ~0.4%（年紀 <3 月或上呼吸道感染 active 風險高）", "禁忌：年齡 <3 月（喉痙攣風險高）、active psychosis、未控制 HTN、thyrotoxicosis、global eyeball injury"], "monitoring": "SpO2、ETCO2、HR、BP；備好 O2、Ambu、suction、atropine、midazolam", "source": "Lexicomp + ACEP Clinical Policy 2011 + 高醫速算表", "tags": ["emergency", "rsi", "starred_default"]}, {"id": "citosol", "generic": "Thiopental", "brand": "Citosol", "concentration_note": "0.5 amp 加 N/S 至 20 mL；1/3-1/4 體重 mL 起始", "kmuh_code": null, "category": "sedation", "form": "vial", "route": "IV", "calc": {"type": "ml_by_weight_after_dilution", "starting_ml": "BW÷4 ~ BW÷3 mL", "max_ml": "BW mL", "note": "0.5 amp 稀釋至 20 mL 後"}, "notes": "影像檢查鎮靜（CT/MRI）；可重複到睡著為止；總量不超過體重 mL 數", "warnings": ["呼吸抑制", "低血壓"], "source": "藥丹", "tags": []}, {"id": "chloral_hydrate", "generic": "Chloral Hydrate 10%", "brand": "Clodrin 10% solution", "concentration_mg_per_ml": 100, "package": "30 mL/bot", "kmuh_code": null, "category": "sedation", "form": "solution", "route": "PO/PR", "calc": {"type": "mg_per_kg_per_dose", "low": 25, "high": 100, "max_dose_mg": 1000, "max_total_mg": 2000, "note": "可在 30 min 後再給 25-50 mg/kg；總量 max 100 mg/kg/procedure 或 2000 mg/procedure"}, "frequency": "ST，必要時 30 min 後 repeat", "notes": "Procedural sedation（影像、EEG、AS）；onset 30-60 min，duration 1-2 hr。10% solution = 100 mg/mL，故 0.5 mL/kg = 50 mg/kg", "warnings": ["呼吸抑制", "心律不整（高劑量）", "舊版指南止於 50 mg/kg；新版 Lexicomp 接受 25-100 mg/kg/dose"], "source": "Lexicomp + 中榮 PDF", "tags": ["sedation"]}, {"id": "vena_inj", "generic": "Diphenhydramine", "brand": "Vena 30 mg/mL/Amp", "concentration_mg_per_ml": 30, "package": "1 mL/Amp", "kmuh_code": "VENI17", "category": "allergy_eps", "form": "amp", "route": "IV/IM", "calc": {"type": "mg_per_kg_per_dose", "low": 1, "high": 1, "max_dose_mg": 50}, "frequency": "Q6H PRN", "notes": "First-line for allergic reaction；常與 metoclopramide 合用預防 EPS", "source": "高醫速算表 + Lexicomp", "tags": ["common", "allergy", "age"]}, {"id": "epinephrine_arrest", "generic": "Epinephrine — Cardiac Arrest", "brand": "Bosmin / Adrenalin（arrest 用 1:10000 = 0.1 mg/mL）", "concentration_mg_per_ml": 0.1, "concentration_note": "Arrest 用 0.1 mg/mL = 1:10000（原液 1 mg/mL × 1 amp 加 9 mL N/S 稀釋成 10 mL）", "package": "原液 1 mg/mL/Amp", "kmuh_code": "BOSI00", "category": "pals_arrest", "form": "amp", "route": "IV/IO", "calc": {"type": "mg_per_kg_per_dose", "low": 0.01, "high": 0.01, "max_dose_mg": 1}, "frequency": "Q3-5 min during arrest", "notes": "Cardiac arrest / 嚴重 bradycardia；mL 數 = 0.1 mL/kg of 0.1 mg/mL（1:10000）。Push 後 follow flush 5 mL N/S", "warnings": ["勿與 NaHCO3 同 IV line 推（會 inactivate）"], "source": "AHA/AAP 2025 PALS", "tags": ["emergency", "pals", "starred_default"]}, {"id": "amiodarone_arrest", "generic": "Amiodarone — VF/pVT arrest", "brand": "Cordarone 50 mg/mL", "concentration_mg_per_ml": 50, "package": "150 mg / 3 mL/Amp", "kmuh_code": null, "category": "pals_arrest", "form": "amp", "route": "IV/IO", "calc": {"type": "mg_per_kg_per_dose", "low": 5, "high": 5, "max_dose_mg": 300}, "frequency": "Bolus during arrest，最多 repeat 3 次（subsequent max 150 mg/dose）", "notes": "Refractory VF/pVT；arrest 時 push (rapid)；非 arrest 的 wide-QRS tachy 應 IV over 20-60 min", "warnings": ["非 arrest 時勿 rapid push（hypotension）"], "source": "AHA/AAP 2025 PALS", "tags": ["emergency", "pals"]}, {"id": "lidocaine_arrest", "generic": "Lidocaine — VF/pVT arrest", "brand": "Xylocaine 2% (20 mg/mL)", "concentration_mg_per_ml": 20, "package": "5 mL/Amp", "kmuh_code": null, "category": "pals_arrest", "form": "amp", "route": "IV/IO", "calc": {"type": "mg_per_kg_per_dose", "low": 1, "high": 1, "max_dose_mg": 100}, "frequency": "Bolus during arrest；ROSC 後 maintenance 20-50 mcg/kg/min", "notes": "Amiodarone 替代藥；refractory VF/pVT 第二線選擇之一", "source": "AHA/AAP 2025 PALS", "tags": ["emergency", "pals"]}, {"id": "atropine_brady", "generic": "Atropine — Bradycardia", "brand": "Atropine 0.5 mg/mL/Amp", "concentration_mg_per_ml": 0.5, "package": "1 mL/Amp = 0.5 mg", "kmuh_code": null, "category": "pals_arrest", "form": "amp", "route": "IV/IO", "calc": {"type": "mg_per_kg_per_dose", "low": 0.02, "high": 0.02, "max_dose_mg": 0.5, "min_dose_mg": 0.1}, "frequency": "可重複 1 次（單劑 max 0.5 mg）", "notes": "Symptomatic bradycardia 由 increased vagal tone 或 primary AV block 造成時用。一般 brady 首選還是 epinephrine。Min dose 0.1 mg（避免 paradoxical bradycardia）", "warnings": ["Min 0.1 mg 否則可能反向心搏更慢"], "source": "AHA/AAP 2025 PALS", "tags": ["emergency", "pals", "starred_default"]}, {"id": "adenosine", "generic": "Adenosine — SVT", "brand": "Adenosine (Adenocor) 3 mg/mL", "concentration_mg_per_ml": 3, "package": "2 mL/Vial = 6 mg", "kmuh_code": null, "category": "pals_arrest", "form": "vial", "route": "IV/IO", "indications": [{"label": "1st dose (SVT)", "calc": {"type": "mg_per_kg_per_dose", "low": 0.1, "high": 0.1, "max_dose_mg": 6}, "route": "IV/IO", "frequency": "Rapid push + immediate 5-10 mL N/S flush（用 stopcock 雙針同時推）", "notes": "用最近 IV line（越近心臟越好）；給藥後 print rhythm strip"}, {"label": "2nd dose (if no response in 1-2 min)", "calc": {"type": "mg_per_kg_per_dose", "low": 0.2, "high": 0.2, "max_dose_mg": 12}, "route": "IV/IO", "frequency": "Rapid push + flush", "notes": "可再 repeat 一次（max single 12 mg）"}], "warnings": ["注意短暫 asystole / heart block 是預期反應（半衰期 <10 秒）", "氣喘患者可能誘發支氣管痙攣"], "source": "AHA/AAP 2025 PALS", "tags": ["emergency", "pals", "starred_default"]}], "pals_algorithms": [{"id": "cardiac_arrest", "title": "兒科心臟停止 Cardiac Arrest", "subtitle": "依 AHA/AAP 2025 PALS Figure 2", "icon": "💔", "steps_initial": ["Start CPR：bag-mask ventilation + O2", "Attach monitor / defibrillator"], "decision_tree": {"question": "Rhythm shockable？", "yes": {"label": "VF / pulseless VT", "actions": ["Shock ASAP（1st: 2 J/kg）", "CPR × 2 min，建立 IV/IO", "Rhythm 仍 shockable → Shock（2nd: 4 J/kg）", "CPR × 2 min；Epinephrine q3-5 min；考慮 advanced airway + capnography", "Rhythm 仍 shockable → Shock（≥4 J/kg, max 10 J/kg or 成人量）", "CPR × 2 min；Amiodarone OR Lidocaine；treat reversible causes", "重複 shock → CPR → drug 循環直到 ROSC 或停止"]}, "no": {"label": "Asystole / PEA", "actions": ["Epinephrine ASAP", "CPR × 2 min；建立 IV/IO；Epi q3-5 min；考慮 advanced airway + capnography", "Rhythm 變 shockable → 跳到 Shock pathway（步驟 5）", "Rhythm 仍非 shockable → CPR × 2 min；treat reversible causes", "ROSC？→ Post-Cardiac Arrest Care；無 ROSC → 重複"]}}, "drugs": ["epinephrine_arrest", "amiodarone_arrest", "lidocaine_arrest"], "energy_doses": [{"label": "Defibrillation 1st", "j_per_kg": 2}, {"label": "Defibrillation 2nd", "j_per_kg": 4}, {"label": "Defibrillation 3rd+", "j_per_kg": 4, "note": "≥4 J/kg，max 10 J/kg or 成人量"}], "high_quality_cpr": ["Push hard：≥1/3 AP diameter", "Push fast：100-120/min", "Allow complete chest recoil", "Minimize interruptions", "Change compressor q2 min（疲勞時提前）", "C:V ratio：15:2（2 救者，prepuberty）；30:2（2 救者 postpuberty 或 1 救者任何年齡）", "Advanced airway → continuous compression + 1 breath q2-3 sec", "Monitor ETCO2、invasive diastolic BP（若可）"], "reversible_causes": {"title": "Reversible Causes — 5H + 5T", "h": ["Hypovolemia", "Hypoxia", "Hydrogen ion (acidosis)", "Hypoglycemia", "Hypo-/Hyper-kalemia", "Hypothermia"], "t": ["Tension pneumothorax", "Tamponade (cardiac)", "Toxins", "Thrombosis (pulmonary)", "Thrombosis (coronary)"]}, "figure_url": "https://www.ahajournals.org/cms/10.1161/CIR.0000000000001368/asset/df5514f5-9e5b-413c-a019-30f7a782cb8b/assets/graphic/cir.0000000000001368.fig02.jpg", "figure_label": "查看原始 AHA 流程圖 →"}, {"id": "tachy_pulse", "title": "兒科心搏過速（有脈搏） Tachyarrhythmia With Pulse", "subtitle": "依 AHA/AAP 2025 PALS Figure 7", "icon": "💓", "steps_initial": ["Maintain patent airway；PPV + O2 PRN", "Cardiopulmonary monitor + IV/IO", "12-lead ECG if available"], "differentiation": {"title": "Sinus Tach vs SVT 鑑別", "sinus_tach": {"label": "Probable Sinus Tach", "criteria": ["P waves present / normal", "RR interval variable", "嬰兒 <220/min", "兒童 <180/min"], "action": "Search for and treat cause（脫水、發燒、疼痛、shock、貧血）"}, "svt": {"label": "Probable SVT", "criteria": ["P waves absent / abnormal", "RR interval not variable", "嬰兒 ≥220/min", "兒童 ≥180/min", "突然發作的病史"]}}, "decision_tree": {"question": "Cardiopulmonary compromise？（altered MS / shock / hypotension）", "yes": {"label": "有 compromise — 緊急處置", "branches": [{"qrs": "Narrow (≤0.09 sec)", "label": "Probable SVT", "action": "若有 IV/IO → Adenosine；無 IV/IO → Synchronized cardioversion"}, {"qrs": "Wide (>0.09 sec)", "label": "Possible VT", "action": "Synchronized cardioversion；後續藥物前先 expert consult"}]}, "no": {"label": "無 compromise — 可從容處理", "branches": [{"qrs": "Narrow (≤0.09 sec)", "label": "Probable SVT", "action": "Vagal maneuvers → IV/IO Adenosine"}, {"qrs": "Wide (>0.09 sec)", "label": "Possible VT 或 SVT with aberrancy", "action": "若 regular + monomorphic 可考慮 Adenosine；建議 expert consult"}]}}, "drugs": ["adenosine"], "energy_doses": [{"label": "Synchronized cardioversion 1st", "j_per_kg": 0.5, "high_j_per_kg": 1}, {"label": "Synchronized cardioversion 2nd+", "j_per_kg": 2, "note": "若 0.5-1 J/kg 無效升至 2 J/kg。需要時鎮靜，但不可延誤 cardioversion"}], "figure_url": "https://www.ahajournals.org/cms/10.1161/CIR.0000000000001368/asset/e18623c6-bd86-43c1-80dd-8ee90a859609/assets/graphic/cir.0000000000001368.fig07.jpg", "figure_label": "查看原始 AHA 流程圖 →"}, {"id": "brady_pulse", "title": "兒科心搏過慢（有脈搏） Bradycardia With Pulse", "subtitle": "依 AHA/AAP 2025 PALS Figure 6", "icon": "🐢", "steps_initial": ["評估 cardiopulmonary compromise（altered MS / shock / hypotension）"], "decision_tree": {"question": "Cardiopulmonary compromise？", "no": {"label": "無 compromise", "actions": ["Identify and treat underlying causes", "Support ABCs：考慮 O2、12-lead ECG", "Observe"]}, "yes": {"label": "有 compromise — 處置", "actions": ["Maintain airway + O2；PPV PRN", "Cardiopulmonary monitor；持續 monitor pulse", "Bradycardia 持續且仍有 compromise？", "↳ HR <60 → Start CPR；建立 IV/IO；Epinephrine；Atropine（若 vagal tone↑或 primary AV block）", "Identify and treat underlying causes；考慮 transthoracic / transvenous pacing", "每 2 min check pulse — 若無 pulse → 跳到 Cardiac Arrest Algorithm"]}}, "drugs": ["epinephrine_arrest", "atropine_brady"], "possible_causes": ["Hypothermia", "Hypoxia", "Toxins / medications", "Increased intracranial pressure (ICP)", "Increased vagal tone", "Heart block", "Physiologic / appropriate（如運動員）"], "figure_url": "https://www.ahajournals.org/cms/10.1161/CIR.0000000000001368/asset/6bb06b54-2784-4864-a75b-ea53b3bdcaf3/assets/graphic/cir.0000000000001368.fig06.jpg", "figure_label": "查看原始 AHA 流程圖 →"}]};
+
+// ============================================================================
+// STATE
+// ============================================================================
+const STORAGE_KEY = 'peds_dose_starred_v1';
+const STORAGE_LAST = 'peds_dose_last_v1';
+let state = {
+  weight: null,
+  age: null,
+  search: '',
+  view: 'all',
+  starred: new Set(JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]'))
+};
+
+// Restore last weight/age
+try {
+  const last = JSON.parse(localStorage.getItem(STORAGE_LAST) || '{}');
+  if (last.weight) document.getElementById('weight').value = last.weight;
+  if (last.age) document.getElementById('age').value = last.age;
+  state.weight = last.weight ? parseFloat(last.weight) : null;
+  state.age = last.age ? parseFloat(last.age) : null;
+} catch(e) {}
+
+// Add default starred (from drug data tag "starred_default") on first load
+if (!localStorage.getItem(STORAGE_KEY)) {
+  DRUG_DATA.drugs.forEach(d => {
+    if ((d.tags || []).includes('starred_default')) state.starred.add(d.id);
+  });
+  saveStarred();
+}
+
+function saveStarred() {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify([...state.starred]));
+}
+
+// ============================================================================
+// CALCULATION ENGINE
+// ============================================================================
+// All calc functions return { value, unit, range:[low,high]?, label, sub:[]? }
+function num(x, decimals = 2) {
+  if (x === null || x === undefined || isNaN(x)) return '—';
+  if (x === 0) return '0';
+  // Smart rounding
+  if (x >= 100) return Math.round(x).toString();
+  if (x >= 10) return x.toFixed(1).replace(/\.0$/, '');
+  if (x >= 1) return x.toFixed(2).replace(/\.?0+$/, '');
+  return x.toFixed(2).replace(/\.?0+$/, '');
+}
+
+function calcDose(drug, calc, weight, age) {
+  if (!calc) return null;
+  const t = calc.type;
+
+  if (t === 'mg_per_kg_per_dose') {
+    if (!weight) return { needs_weight: true };
+    let lowMg = calc.low * weight;
+    let highMg = calc.high * weight;
+    if (calc.max_dose_mg) {
+      lowMg = Math.min(lowMg, calc.max_dose_mg);
+      highMg = Math.min(highMg, calc.max_dose_mg);
+    }
+    const result = { type: 'dose', mgRange: [lowMg, highMg], display: [], rule: `${calc.low}${calc.high !== calc.low ? '-' + calc.high : ''} mg/kg/dose` };
+    if (calc.max_dose_mg) result.rule += ` (max ${calc.max_dose_mg} mg/dose)`;
+    // Convert to mL if syrup
+    if (drug.concentration_mg_per_ml) {
+      result.mlRange = [lowMg / drug.concentration_mg_per_ml, highMg / drug.concentration_mg_per_ml];
+    }
+    // Convert to tab/cap
+    if (drug.concentration_mg_per_unit) {
+      result.unitRange = [lowMg / drug.concentration_mg_per_unit, highMg / drug.concentration_mg_per_unit];
+    }
+    return result;
+  }
+
+  if (t === 'mg_per_kg_per_day') {
+    if (!weight) return { needs_weight: true };
+    const dosesDay = calc.doses_per_day || 1;
+    let lowMgDay = calc.low * weight;
+    let highMgDay = calc.high * weight;
+    if (calc.max_mg_per_day) {
+      lowMgDay = Math.min(lowMgDay, calc.max_mg_per_day);
+      highMgDay = Math.min(highMgDay, calc.max_mg_per_day);
+    }
+    const lowMg = lowMgDay / dosesDay;
+    const highMg = highMgDay / dosesDay;
+    const result = { type: 'dose', mgRange: [lowMg, highMg], rule: `${calc.low}${calc.high !== calc.low ? '-' + calc.high : ''} mg/kg/day ÷ ${dosesDay}` };
+    if (drug.concentration_mg_per_ml) {
+      result.mlRange = [lowMg / drug.concentration_mg_per_ml, highMg / drug.concentration_mg_per_ml];
+    }
+    if (drug.concentration_mg_per_unit) {
+      result.unitRange = [lowMg / drug.concentration_mg_per_unit, highMg / drug.concentration_mg_per_unit];
+    }
+    return result;
+  }
+
+  if (t === 'mcg_per_kg_per_dose') {
+    if (!weight) return { needs_weight: true };
+    let lowMcg = calc.low * weight;
+    let highMcg = calc.high * weight;
+    if (calc.max_dose_mcg) {
+      lowMcg = Math.min(lowMcg, calc.max_dose_mcg);
+      highMcg = Math.min(highMcg, calc.max_dose_mcg);
+    }
+    const result = { type: 'dose', mcgRange: [lowMcg, highMcg], rule: `${calc.low}${calc.high !== calc.low ? '-' + calc.high : ''} mcg/kg/dose` };
+    if (drug.concentration_mcg_per_ml) {
+      result.mlRange = [lowMcg / drug.concentration_mcg_per_ml, highMcg / drug.concentration_mcg_per_ml];
+    } else if (drug.concentration_mg_per_ml) {
+      result.mlRange = [lowMcg / (drug.concentration_mg_per_ml * 1000), highMcg / (drug.concentration_mg_per_ml * 1000)];
+    }
+    return result;
+  }
+
+  if (t === 'ml_per_kg_per_dose') {
+    if (!weight) return { needs_weight: true };
+    let lowMl = calc.low * weight;
+    let highMl = calc.high * weight;
+    if (calc.max_ml_per_dose) {
+      lowMl = Math.min(lowMl, calc.max_ml_per_dose);
+      highMl = Math.min(highMl, calc.max_ml_per_dose);
+    }
+    return { type: 'dose', mlRange: [lowMl, highMl], rule: `${calc.low}${calc.high !== calc.low ? '-' + calc.high : ''} mL/kg/dose` };
+  }
+
+  if (t === 'ml_per_kg_per_day') {
+    if (!weight) return { needs_weight: true };
+    const dosesDay = calc.doses_per_day || 1;
+    const lowMlDay = calc.low * weight;
+    const highMlDay = calc.high * weight;
+    return {
+      type: 'dose',
+      mlRange: [lowMlDay / dosesDay, highMlDay / dosesDay],
+      rule: `${calc.low}${calc.high !== calc.low ? '-' + calc.high : ''} mL/kg/day ÷ ${dosesDay}`
+    };
+  }
+
+  if (t === 'supp_by_weight') {
+    if (!weight) return { needs_weight: true };
+    return {
+      type: 'dose',
+      unitRange: [weight / calc.kg_per_supp_low, weight / calc.kg_per_supp_high],
+      rule: `BW÷${calc.kg_per_supp_low} ~ BW÷${calc.kg_per_supp_high} 顆`
+    };
+  }
+
+  if (t === 'pack_per_10kg_per_day') {
+    if (!weight) return { needs_weight: true };
+    const dosesDay = calc.doses_per_day || 3;
+    const totalPacks = (weight / 10) * (calc.packs_per_10kg_per_day || 1);
+    return {
+      type: 'dose',
+      packsPerDose: totalPacks / dosesDay,
+      rule: `${calc.packs_per_10kg_per_day} 包/10kg/day ÷ ${dosesDay}`
+    };
+  }
+
+  if (t === 'pack_per_30kg_per_dose') {
+    if (!weight) return { needs_weight: true };
+    return {
+      type: 'dose',
+      packsPerDose: weight / 30,
+      rule: 'BW÷30 包/dose TID'
+    };
+  }
+
+  if (t === 'weight_band') {
+    if (!weight) return { needs_weight: true };
+    const band = calc.bands.find(b => weight >= b.weight_low && weight < b.weight_high);
+    return { type: 'band', bandText: band ? band.dose : '無相符區間', rule: '依體重分組' };
+  }
+
+  if (t === 'age_band') {
+    if (!age) return { needs_age: true };
+    const band = calc.bands.find(b => age >= b.age_low && age < b.age_high);
+    return { type: 'band', bandText: band ? band.dose : '無相符區間', rule: '依年齡分組' };
+  }
+
+  if (t === 'fluid_421_rule') {
+    if (!weight) return { needs_weight: true };
+    let rate = 0;
+    if (weight <= 10) rate = weight * 4;
+    else if (weight <= 20) rate = 40 + (weight - 10) * 2;
+    else rate = 60 + (weight - 20);
+    return { type: 'rate', rate, rule: '4-2-1 rule', display: `${num(rate)} mL/hr` };
+  }
+
+  if (t === 'ml_by_weight_after_dilution') {
+    if (!weight) return { needs_weight: true };
+    return {
+      type: 'special',
+      text: `起始 ${num(weight/4)}-${num(weight/3)} mL，最多 ${num(weight)} mL（${calc.note || ''}）`
+    };
+  }
+
+  // fallback
+  return { type: 'special', text: JSON.stringify(calc) };
+}
+
+// ============================================================================
+// RENDERING
+// ============================================================================
+function renderDoseResult(drug, calc, freq) {
+  const r = calcDose(drug, calc, state.weight, state.age);
+  if (!r) return '';
+  if (r.needs_weight) return `<div class="dose-row"><div class="dose-label">輸入體重後計算</div><div class="dose-value" style="color:var(--muted);font-size:13px;">→ kg</div></div>`;
+  if (r.needs_age) return `<div class="dose-row"><div class="dose-label">輸入年齡後計算</div><div class="dose-value" style="color:var(--muted);font-size:13px;">→ yr</div></div>`;
+
+  let html = '';
+  if (r.type === 'dose') {
+    const rows = [];
+    if (r.mgRange) {
+      const [lo, hi] = r.mgRange;
+      rows.push({
+        label: `總量 <span style="color:var(--muted);font-weight:400;font-size:11px;">${r.rule}</span>`,
+        value: lo === hi ? `${num(lo)}<span class="unit"> mg</span>` : `${num(lo)}-${num(hi)}<span class="unit"> mg</span>`
+      });
+    }
+    if (r.mcgRange) {
+      const [lo, hi] = r.mcgRange;
+      rows.push({
+        label: `總量 <span style="color:var(--muted);font-weight:400;font-size:11px;">${r.rule}</span>`,
+        value: lo === hi ? `${num(lo)}<span class="unit"> mcg</span>` : `${num(lo)}-${num(hi)}<span class="unit"> mcg</span>`
+      });
+    }
+    if (r.mlRange) {
+      const [lo, hi] = r.mlRange;
+      rows.push({
+        label: `<strong>${drug.brand?.includes('Amp') || drug.form === 'amp' ? '抽藥量' : 'mL 數'}</strong>${freq ? freq : ''}`,
+        value: lo === hi ? `<strong>${num(lo)}</strong><span class="unit"> mL</span>` : `<strong>${num(lo)}-${num(hi)}</strong><span class="unit"> mL</span>`
+      });
+    }
+    if (r.unitRange) {
+      const u = drug.unit || '#';
+      const [lo, hi] = r.unitRange;
+      rows.push({
+        label: `<strong>${u} 數</strong>${freq ? freq : ''}`,
+        value: lo === hi ? `<strong>${num(lo)}</strong><span class="unit"> ${u}</span>` : `<strong>${num(lo)}-${num(hi)}</strong><span class="unit"> ${u}</span>`
+      });
+    }
+    if (r.packsPerDose !== undefined) {
+      rows.push({
+        label: `<strong>包數</strong>${freq ? freq : ''}`,
+        value: `<strong>${num(r.packsPerDose)}</strong><span class="unit"> 包/dose</span>`
+      });
+    }
+    rows.forEach(row => {
+      html += `<div class="dose-row"><div class="dose-label">${row.label}</div><div class="dose-value">${row.value}</div></div>`;
+    });
+  } else if (r.type === 'rate') {
+    html += `<div class="dose-row"><div class="dose-label">${r.rule}</div><div class="dose-value">${r.display}</div></div>`;
+  } else if (r.type === 'band') {
+    html += `<div class="dose-row"><div class="dose-label">${r.rule}</div><div class="dose-value" style="font-size:14px;">${r.bandText}</div></div>`;
+  } else if (r.type === 'special') {
+    html += `<div class="dose-row"><div class="dose-label">${r.text}</div><div class="dose-value">—</div></div>`;
+  }
+  return html;
+}
+
+function drugCard(drug) {
+  const isStarred = state.starred.has(drug.id);
+  const isEmergency = (drug.tags || []).includes('emergency') || (drug.tags || []).includes('rsi');
+  const cls = ['drug-card'];
+  if (isStarred) cls.push('starred');
+  else if (isEmergency) cls.push('emergency');
+
+  let metaParts = buildMetaParts(drug);
+
+  let tags = '';
+  if ((drug.tags || []).includes('emergency')) tags += '<span class="tag-pill" style="background:var(--warn-soft);color:var(--warn);">急救</span>';
+  if ((drug.tags || []).includes('rsi')) tags += '<span class="tag-pill" style="background:var(--warn-soft);color:var(--warn);">RSI</span>';
+  if ((drug.tags || []).includes('common')) tags += '<span class="tag-pill" style="background:#dcfce7;color:#059669;">常用</span>';
+
+  let body = '';
+  // Indications (multi) or single calc
+  if (drug.indications) {
+    body += '<div class="indications-list">';
+    drug.indications.forEach(ind => {
+      body += `<div class="ind-item">
+        <div class="ind-label">${ind.label}</div>
+        ${renderDoseResult(drug, ind.calc, ind.frequency ? ` <span style="color:var(--muted);font-weight:400;font-size:11px;">${ind.frequency}</span>` : '')}
+        ${ind.onset || ind.duration ? `<div class="ind-meta">${ind.onset ? 'Onset ' + ind.onset : ''}${ind.onset && ind.duration ? ' · ' : ''}${ind.duration ? 'Duration ' + ind.duration : ''}</div>` : ''}
+        ${ind.notes ? `<div class="ind-meta">${ind.notes}</div>` : ''}
+      </div>`;
+    });
+    body += '</div>';
+  } else if (drug.calc) {
+    body += renderDoseResult(drug, drug.calc, drug.frequency ? ` · ${drug.frequency}` : '');
+  }
+
+  let warnings = '';
+  if (drug.warnings && drug.warnings.length) {
+    warnings = '<div class="notes-warning">⚠️ ' + drug.warnings.join('<br>⚠️ ') + '</div>';
+  }
+  let notes = '';
+  if (drug.notes) notes = `<div class="notes">${drug.notes}</div>`;
+  let source = '';
+  if (drug.source) source = `<div class="notes" style="font-size:10px;">📚 ${drug.source}</div>`;
+
+  return `<div class="${cls.join(' ')}" data-id="${drug.id}">
+    <div class="drug-head">
+      <div class="drug-name">
+        <span class="gen">${drug.generic}</span>${tags}
+        <span class="brand">${drug.brand || ''}</span>
+      </div>
+      <button class="star-btn ${isStarred ? 'on' : ''}" data-id="${drug.id}" aria-label="釘選">${isStarred ? '★' : '☆'}</button>
+    </div>
+    <div class="drug-meta">${metaParts.join('')}</div>
+    ${body}
+    ${notes}
+    ${warnings}
+    ${source}
+  </div>`;
+}
+
+function categoryLabel(catId) {
+  const c = DRUG_DATA.categories.find(x => x.id === catId);
+  return c ? c.label : catId;
+}
+
+function getFiltered() {
+  let drugs = DRUG_DATA.drugs.slice();
+  // View filter
+  if (state.view === 'starred') {
+    drugs = drugs.filter(d => state.starred.has(d.id));
+  } else if (state.view === 'uri') {
+    drugs = drugs.filter(d => (d.tags || []).includes('uri'));
+  } else if (state.view === 'age') {
+    drugs = drugs.filter(d => (d.tags || []).includes('age'));
+  } else if (state.view === 'flu') {
+    drugs = drugs.filter(d => d.category === 'flu' || (d.tags || []).includes('flu'));
+  } else if (state.view === 'emergency') {
+    drugs = drugs.filter(d => (d.tags || []).some(t => t === 'emergency' || t === 'rsi' || t === 'seizure_first_line'));
+  } else if (state.view === 'sedation') {
+    drugs = drugs.filter(d => d.category === 'sedation');
+  } else if (state.view === 'seizure') {
+    drugs = drugs.filter(d => d.category === 'seizure');
+  } else if (state.view === 'antibiotic') {
+    drugs = drugs.filter(d => d.category === 'antibiotic');
+  } else if (state.view === 'antipyretic') {
+    drugs = drugs.filter(d => d.category === 'antipyretic');
+  } else if (state.view === 'ml_only') {
+    // Show only drugs that have mL output (syrup, solution, susp, amp)
+    drugs = drugs.filter(d => d.concentration_mg_per_ml || d.concentration_mcg_per_ml);
+  }
+  // Search filter
+  if (state.search.trim()) {
+    const q = state.search.toLowerCase().trim();
+    drugs = drugs.filter(d => {
+      const fields = [
+        d.generic, d.brand, d.kmuh_code, d.id,
+        categoryLabel(d.category),
+        ...(d.tags || []),
+        ...(d.indications || []).map(i => i.label).join(' ').split(' ')
+      ].join(' ').toLowerCase();
+      return fields.includes(q);
+    });
+  }
+  return drugs;
+}
+
+function findDrug(id) { return DRUG_DATA.drugs.find(d => d.id === id); }
+
+// 建構 meta 行：移除 HIS 代碼、智慧去重 brand 已有的濃度/包裝資訊
+function buildMetaParts(drug) {
+  const parts = [];
+  const brand = drug.brand || '';
+  if (drug.route) parts.push(`<span class="route">${drug.route}</span>`);
+  // 濃度：brand 沒有就補
+  let concStr = '';
+  if (drug.concentration_mg_per_ml) concStr = `${drug.concentration_mg_per_ml} mg/mL`;
+  else if (drug.concentration_mg_per_unit) concStr = `${drug.concentration_mg_per_unit} mg/${drug.unit || '#'}`;
+  else if (drug.concentration_mcg_per_ml) concStr = `${drug.concentration_mcg_per_ml} mcg/mL`;
+  else if (drug.concentration_mcg_per_unit) concStr = `${drug.concentration_mcg_per_unit} mcg/${drug.unit || '#'}`;
+  if (concStr && !brand.replace(/\s/g, '').toLowerCase().includes(concStr.replace(/\s/g, '').toLowerCase())) {
+    parts.push(`<span>${concStr}</span>`);
+  }
+  // 包裝：brand 沒有就補
+  if (drug.package && !brand.includes(drug.package)) parts.push(`<span>${drug.package}</span>`);
+  return parts;
+}
+
+function miniDoseLine(drug, calc) {
+  const r = calcDose(drug, calc, state.weight, state.age);
+  if (!r || r.needs_weight) return '<span style="color:var(--muted);font-size:11px;">需體重</span>';
+  if (r.mgRange) {
+    const [lo, hi] = r.mgRange;
+    const mgPart = lo === hi ? `${num(lo)} mg` : `${num(lo)}-${num(hi)} mg`;
+    if (r.mlRange) {
+      const [mlo, mhi] = r.mlRange;
+      const mlPart = mlo === mhi ? `${num(mlo)} mL` : `${num(mlo)}-${num(mhi)} mL`;
+      return `${mgPart} (${mlPart})`;
+    }
+    return mgPart;
+  }
+  return '';
+}
+
+function renderEnergy(e) {
+  if (!state.weight) {
+    const range = e.high_j_per_kg ? `${e.j_per_kg}-${e.high_j_per_kg} J/kg` : `${e.j_per_kg} J/kg`;
+    return `<div class="pals-energy"><span class="label">${e.label}</span><span class="val">${range}${e.note ? ' ⓘ' : ''}</span></div>`;
+  }
+  let val;
+  if (e.high_j_per_kg) {
+    val = `${num(e.j_per_kg * state.weight)}-${num(e.high_j_per_kg * state.weight)} J`;
+  } else {
+    val = `${num(e.j_per_kg * state.weight)} J`;
+  }
+  return `<div class="pals-energy"><span class="label">${e.label} <small style="font-weight:400;">(${e.j_per_kg}${e.high_j_per_kg ? '-' + e.high_j_per_kg : ''} J/kg)</small></span><span class="val">${val}</span></div>`
+    + (e.note ? `<div style="font-size:11px;color:var(--muted);padding:0 8px 4px;">${e.note}</div>` : '');
+}
+
+function renderDrugMini(drugId) {
+  const drug = findDrug(drugId);
+  if (!drug) return '';
+  let doseHtml = '';
+  if (drug.indications) {
+    doseHtml = drug.indications.map(ind => {
+      return `<div style="margin-bottom:4px;"><div style="font-size:11px;color:var(--accent);font-weight:600;">${ind.label}</div><div class="pals-drug-row"><div class="drug-name-mini">${drug.generic.split('—')[0].trim()}<div class="drug-route">${ind.route || drug.route}</div></div><div class="drug-dose">${miniDoseLine(drug, ind.calc)}</div></div></div>`;
+    }).join('');
+  } else {
+    doseHtml = `<div class="pals-drug-row"><div class="drug-name-mini">${drug.generic.split('—')[0].trim()}<div class="drug-route">${drug.route}</div></div><div class="drug-dose">${miniDoseLine(drug, drug.calc)}</div></div>`;
+  }
+  const ruleNote = drug.calc?.max_dose_mg ? `<div style="font-size:10px;color:var(--muted);padding:0 8px;">${drug.calc.low}${drug.calc.high !== drug.calc.low ? '-' + drug.calc.high : ''} mg/kg, max ${drug.calc.max_dose_mg} mg${drug.calc.min_dose_mg ? '；min ' + drug.calc.min_dose_mg + ' mg' : ''}${drug.frequency ? '；' + drug.frequency : ''}</div>` : '';
+  return doseHtml + ruleNote;
+}
+
+function renderDecisionTree(tree) {
+  let html = `<div class="pals-decision"><div class="question">❓ ${tree.question}</div>`;
+  for (const branchKey of ['yes', 'no']) {
+    const b = tree[branchKey];
+    if (!b) continue;
+    const cls = branchKey === 'yes' ? 'yes' : 'no';
+    const label = branchKey === 'yes' ? 'YES' : 'NO';
+    html += `<div class="pals-branch ${cls}"><div class="pals-branch-label">${label} → ${b.label}</div>`;
+    if (b.actions) {
+      html += '<ol class="pals-branch-actions">';
+      b.actions.forEach(a => html += `<li>${a}</li>`);
+      html += '</ol>';
+    }
+    if (b.branches) {
+      html += '<div class="pals-qrs-row">';
+      b.branches.forEach(qb => {
+        html += `<div class="pals-qrs-card"><span class="qrs-tag">${qb.qrs}</span><div style="font-weight:600;margin-bottom:2px;">${qb.label}</div><div>${qb.action}</div></div>`;
+      });
+      html += '</div>';
+    }
+    html += '</div>';
+  }
+  html += '</div>';
+  return html;
+}
+
+function renderPALSAlgorithm(algo) {
+  let html = `<div class="pals-card"><h2>${algo.icon || '🚨'} ${algo.title}</h2><div class="subtitle">${algo.subtitle || ''}</div>`;
+
+  // Initial steps
+  if (algo.steps_initial?.length) {
+    html += `<div class="pals-section"><div class="pals-section-title">初始處置</div><ol class="pals-steps">`;
+    algo.steps_initial.forEach(s => html += `<li>${s}</li>`);
+    html += `</ol></div>`;
+  }
+
+  // Sinus vs SVT differentiation (tachy)
+  if (algo.differentiation) {
+    const diff = algo.differentiation;
+    html += `<div class="pals-section"><div class="pals-section-title">${diff.title}</div><div class="pals-criteria-row">`;
+    [diff.sinus_tach, diff.svt].forEach(d => {
+      if (!d) return;
+      html += `<div class="pals-criteria-card"><div class="crit-label">${d.label}</div><ul style="padding-left:16px;margin:4px 0;">`;
+      d.criteria.forEach(c => html += `<li>${c}</li>`);
+      html += `</ul>`;
+      if (d.action) html += `<div style="margin-top:4px;font-size:12px;color:var(--accent);">→ ${d.action}</div>`;
+      html += `</div>`;
+    });
+    html += `</div></div>`;
+  }
+
+  // Decision tree
+  if (algo.decision_tree) {
+    html += `<div class="pals-section"><div class="pals-section-title">決策流程</div>${renderDecisionTree(algo.decision_tree)}</div>`;
+  }
+
+  // Drug doses
+  if (algo.drugs?.length) {
+    html += `<div class="pals-section"><div class="pals-section-title">藥物劑量${state.weight ? ' (已套用 ' + state.weight + ' kg)' : ''}</div>`;
+    algo.drugs.forEach(id => html += renderDrugMini(id));
+    html += `</div>`;
+  }
+
+  // Energy doses
+  if (algo.energy_doses?.length) {
+    html += `<div class="pals-section"><div class="pals-section-title">電擊能量${state.weight ? ' (已套用 ' + state.weight + ' kg)' : ''}</div>`;
+    algo.energy_doses.forEach(e => html += renderEnergy(e));
+    html += `</div>`;
+  }
+
+  // High-quality CPR
+  if (algo.high_quality_cpr?.length) {
+    html += `<div class="pals-section"><div class="pals-section-title">High-Quality CPR</div><ul class="pals-steps">`;
+    algo.high_quality_cpr.forEach(s => html += `<li>${s}</li>`);
+    html += `</ul></div>`;
+  }
+
+  // Reversible causes (5H 5T)
+  if (algo.reversible_causes) {
+    const rc = algo.reversible_causes;
+    html += `<div class="pals-section"><div class="pals-section-title">${rc.title}</div><div class="pals-causes">`;
+    html += `<div><strong>5H</strong><ul>`;
+    rc.h.forEach(x => html += `<li>${x}</li>`);
+    html += `</ul></div><div><strong>5T</strong><ul>`;
+    rc.t.forEach(x => html += `<li>${x}</li>`);
+    html += `</ul></div></div></div>`;
+  }
+
+  // Possible causes (brady)
+  if (algo.possible_causes?.length) {
+    html += `<div class="pals-section"><div class="pals-section-title">可能病因</div><ul class="pals-steps">`;
+    algo.possible_causes.forEach(x => html += `<li>${x}</li>`);
+    html += `</ul></div>`;
+  }
+
+  if (algo.figure_url) {
+    html += `<div style="text-align:center;margin-top:10px;"><a class="pals-figure-link" href="${algo.figure_url}" target="_blank" rel="noopener">${algo.figure_label || '查看原始 AHA 流程圖 →'}</a></div>`;
+  }
+  html += `<div class="pals-citation">📚 改編自 AHA/AAP 2025 PALS Guidelines (Lasa et al., Circulation 2025)<br>原文：DOI 10.1161/CIR.0000000000001368</div>`;
+  html += `</div>`;
+  return html;
+}
+
+function renderPALSView() {
+  const list = document.getElementById('drug-list');
+  if (!DRUG_DATA.pals_algorithms) {
+    list.innerHTML = '<div class="empty">PALS 資料尚未載入</div>';
+    return;
+  }
+  let html = '';
+  DRUG_DATA.pals_algorithms.forEach(a => html += renderPALSAlgorithm(a));
+  list.innerHTML = html;
+}
+
+function render() {
+  const summary = document.getElementById('weight-summary');
+  if (state.weight || state.age) {
+    summary.innerHTML = `<div class="weight-summary">📊 計算中：${state.weight ? state.weight + ' kg' : ''}${state.weight && state.age ? ' · ' : ''}${state.age ? state.age + ' 歲' : ''}</div>`;
+  } else {
+    summary.innerHTML = '';
+  }
+
+  // PALS view: dedicated renderer
+  if (state.view === 'pals') {
+    renderPALSView();
+    return;
+  }
+
+  const drugs = getFiltered();
+  const list = document.getElementById('drug-list');
+
+  if (!drugs.length) {
+    list.innerHTML = '<div class="empty">沒有找到符合條件的藥物</div>';
+    return;
+  }
+
+  // Group: starred first, then by category
+  const starred = drugs.filter(d => state.starred.has(d.id));
+  const others = drugs.filter(d => !state.starred.has(d.id));
+
+  // Group others by category, then within category by group_id
+  const byCat = {};
+  others.forEach(d => {
+    if (!byCat[d.category]) byCat[d.category] = [];
+    byCat[d.category].push(d);
+  });
+
+  let html = '';
+  if (starred.length) {
+    html += '<div class="cat-group"><div class="cat-title">⭐ 釘選</div>';
+    html += renderDrugList(starred);
+    html += '</div>';
+  }
+  // Sort categories by their `order` field
+  const catOrder = DRUG_DATA.categories.reduce((acc, c, i) => { acc[c.id] = c.order || i; return acc; }, {});
+  const catIds = Object.keys(byCat).sort((a, b) => (catOrder[a] || 999) - (catOrder[b] || 999));
+  for (const catId of catIds) {
+    html += `<div class="cat-group"><div class="cat-title">${categoryLabel(catId)} <span style="color:var(--muted);font-weight:400;">(${byCat[catId].length})</span></div>`;
+    html += renderDrugList(byCat[catId]);
+    html += '</div>';
+  }
+  list.innerHTML = html;
+}
+
+// 把一個 drug list 渲染：先把 group_id 相同的合併成 group card，其餘照舊
+function renderDrugList(drugs) {
+  // 保持順序，但同 group_id 連續合併
+  const blocks = [];
+  const seenGroups = new Set();
+  for (const d of drugs) {
+    if (d.group_id) {
+      if (seenGroups.has(d.group_id)) continue;
+      seenGroups.add(d.group_id);
+      const groupMembers = drugs.filter(x => x.group_id === d.group_id);
+      blocks.push(drugGroupCard(groupMembers));
+    } else {
+      blocks.push(drugCard(d));
+    }
+  }
+  return blocks.join('');
+}
+
+// 多個 form 共用 generic 名稱的合併卡
+function drugGroupCard(group) {
+  const first = group[0];
+  const isStarred = group.some(d => state.starred.has(d.id));
+  const cls = ['drug-group'];
+  if (isStarred) cls.push('starred');
+
+  let tags = '';
+  const allTags = new Set(group.flatMap(d => d.tags || []));
+  if (allTags.has('emergency')) tags += '<span class="tag-pill" style="background:var(--warn-soft);color:var(--warn);">急救</span>';
+  if (allTags.has('rsi')) tags += '<span class="tag-pill" style="background:var(--warn-soft);color:var(--warn);">RSI</span>';
+  if (allTags.has('common')) tags += '<span class="tag-pill" style="background:#dcfce7;color:#059669;">常用</span>';
+
+  let header = `<div class="drug-group-header">
+    <div class="drug-head">
+      <div class="drug-name"><span class="gen">${first.generic}</span>${tags}</div>
+      <div style="display:flex;gap:4px;">${group.map(d => `<button class="star-btn ${state.starred.has(d.id)?'on':''}" data-id="${d.id}" title="釘選 ${d.brand}" style="font-size:18px;">${state.starred.has(d.id)?'★':'☆'}</button>`).join('')}</div>
+    </div>
+  </div>`;
+
+  let forms = '';
+  for (const drug of group) {
+    let metaParts = buildMetaParts(drug);
+
+    let body = '';
+    if (drug.indications) {
+      drug.indications.forEach(ind => {
+        body += `<div class="ind-item"><div class="ind-label">${ind.label}</div>${renderDoseResult(drug, ind.calc, ind.frequency ? ` ${ind.frequency}` : '')}</div>`;
+      });
+    } else if (drug.calc) {
+      body += renderDoseResult(drug, drug.calc, drug.frequency ? ` · ${drug.frequency}` : '');
+    }
+
+    let notes = drug.notes ? `<div class="notes">${drug.notes}</div>` : '';
+    let warnings = (drug.warnings && drug.warnings.length) ? `<div class="notes-warning">⚠️ ${drug.warnings.join('<br>⚠️ ')}</div>` : '';
+
+    forms += `<div class="drug-group-form" data-id="${drug.id}">
+      <div class="form-head"><div class="form-brand">${drug.brand || ''}</div></div>
+      <div class="form-meta">${metaParts.join('')}</div>
+      ${body}
+      ${notes}
+      ${warnings}
+    </div>`;
+  }
+
+  // shared source line
+  const sources = [...new Set(group.map(d => d.source).filter(Boolean))];
+  let footer = sources.length ? `<div class="notes" style="font-size:10px;padding:6px 14px;border-top:1px solid var(--border);">📚 ${sources.join(' / ')}</div>` : '';
+
+  return `<div class="${cls.join(' ')}" data-group-id="${first.group_id}">${header}${forms}${footer}</div>`;
+}
+
+// ============================================================================
+// EVENT HANDLERS
+// ============================================================================
+document.getElementById('weight').addEventListener('input', e => {
+  const v = parseFloat(e.target.value);
+  state.weight = isNaN(v) ? null : v;
+  saveLast();
+  render();
+});
+document.getElementById('age').addEventListener('input', e => {
+  const v = parseFloat(e.target.value);
+  state.age = isNaN(v) ? null : v;
+  saveLast();
+  render();
+});
+document.getElementById('search').addEventListener('input', e => {
+  state.search = e.target.value;
+  render();
+});
+document.getElementById('tabs').addEventListener('click', e => {
+  if (!e.target.matches('.tab')) return;
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  e.target.classList.add('active');
+  state.view = e.target.dataset.view;
+  render();
+});
+document.getElementById('drug-list').addEventListener('click', e => {
+  const btn = e.target.closest('.star-btn');
+  if (!btn) return;
+  const id = btn.dataset.id;
+  if (state.starred.has(id)) state.starred.delete(id);
+  else state.starred.add(id);
+  saveStarred();
+  render();
+});
+
+function saveLast() {
+  localStorage.setItem(STORAGE_LAST, JSON.stringify({ weight: state.weight, age: state.age }));
+}
+
+// Initial render
+render();
+</script>
+</body>
+</html>
