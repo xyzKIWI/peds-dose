@@ -2561,6 +2561,7 @@
             "CPR 2 min + IV/IO access + Epi q3-5 min + 考慮 advanced airway + capnography",
             "Rhythm shockable？ YES → 接 shockable pathway (Shock ASAP)",
             "Rhythm 仍非 shockable → CPR 2 min + treat reversible causes",
+            "再次 Rhythm shockable？ YES → Shock ASAP；NO → 繼續 nonshockable cycle",
             "ROSC？ → Post-Cardiac Arrest Care；無 ROSC → 重複"
           ]
         }
@@ -2596,7 +2597,7 @@
         "Monitor ETCO2、invasive diastolic BP（若可）"
       ],
       "reversible_causes": {
-        "title": "Reversible Causes — 5H + 5T",
+        "title": "Reversible Causes — 6H + 5T",
         "h": [
           "Hypovolemia",
           "Hypoxia",
@@ -2677,7 +2678,7 @@
             {
               "qrs": "Wide (>0.09 sec)",
               "label": "Possible VT 或 SVT with aberrancy",
-              "action": "若 regular + monomorphic 可考慮 Adenosine；否則 expert consult"
+              "action": "Expert consultation 建議；若 regular + monomorphic 可考慮 Adenosine"
             }
           ]
         }
@@ -2697,7 +2698,7 @@
           "note": "若 0.5-1 J/kg 無效升至 2 J/kg；需要時鎮靜，不可延誤 cardioversion"
         }
       ],
-      "refractory_note": "Refractory SVT（vagal + adenosine + cardioversion 皆無效）：在 expert consult 後可考慮 IV procainamide、amiodarone 或 sotalol",
+      "refractory_note": "Refractory SVT（cardiopulmonary compromise + vagal / adenosine / synchronized cardioversion 皆無效）且 **expert consultation 不可用** 時，may consider IV procainamide、amiodarone 或 sotalol",
       "figure_url": "https://www.ahajournals.org/cms/10.1161/CIR.0000000000001368/asset/e18623c6-bd86-43c1-80dd-8ee90a859609/assets/graphic/cir.0000000000001368.fig07.jpg",
       "figure_label": "查看原始 AHA Figure 7 →"
     },
@@ -2725,11 +2726,12 @@
             "Maintain airway + O2；PPV PRN",
             "Cardiopulmonary monitor；持續 monitor pulse",
             "Bradycardia 持續且仍有 compromise？",
-            "↳ HR <60 → Start CPR",
-            "↳ IV/IO + Epinephrine",
-            "↳ Atropine（vagal tone↑或 primary AV block 才用）",
+            "↳ NO → Identify and treat underlying causes；support ABCs；consider O2 / 12-lead；observe",
+            "↳ YES：HR <60 → Start CPR；IV/IO + Epinephrine；Atropine（vagal tone↑或 primary AV block 才用）",
             "Identify and treat underlying causes；考慮 transthoracic / transvenous pacing",
-            "每 2 min check pulse — 無 pulse → 跳 Cardiac Arrest Algorithm"
+            "每 2 min check pulse",
+            "↳ Pulse present → 回「Bradycardia 持續且仍有 compromise？」",
+            "↳ No pulse → 跳 Cardiac Arrest Algorithm"
           ]
         }
       },
