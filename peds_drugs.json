@@ -294,7 +294,7 @@
     {
       "id": "cypromin_syrup",
       "generic": "Cyproheptadine",
-      "brand": "Cypromin syrup 0.4 mg/mL · 喜普液",
+      "brand": "Cypromin syrup 0.4 mg/mL · 希普利敏液",
       "concentration_mg_per_ml": 0.4,
       "package": "60 mL/bot",
       "kmuh_code": "1CYPRS",
@@ -322,6 +322,58 @@
         "警語": "First-gen 抗組織胺，鎮靜效果明顯",
         "懷孕分級": "AU TGA: B2",
         "授乳": "短期可（可能↓奶量）",
+        "管制性藥品": "—"
+      }
+    },
+    {
+      "id": "cetirizine_syrup",
+      "generic": "Cetirizine",
+      "brand": "Cetirizine syrup 1 mg/mL · 勝克敏液",
+      "concentration_mg_per_ml": 1,
+      "package": "60 mL/bot",
+      "kmuh_code": "1CET60",
+      "category": "rhinitis",
+      "form": "syrup",
+      "route": "PO",
+      "calc": {
+        "type": "age_band",
+        "bands": [
+          {
+            "age_low": 0,
+            "age_high": 3,
+            "mg_per_kg_per_dose": 0.25,
+            "max_mg_per_dose": 5,
+            "label": "<3y · 0.25 mg/kg QD-BID（依醫師指示）"
+          },
+          {
+            "age_low": 3,
+            "age_high": 6,
+            "mg_per_dose": 5,
+            "label": "3-6y · 5 mg QD（或 2.5 mg BID）"
+          },
+          {
+            "age_low": 6,
+            "age_high": 999,
+            "mg_per_dose": 10,
+            "label": "≥6y / 成人 · 10 mg QD"
+          }
+        ]
+      },
+      "frequency": "QD（晚餐時服用）",
+      "notes": "依仿單分齡：<3y 由醫師指示（一般 0.25 mg/kg/dose）；3–6y 5 mg QD 或 2.5 mg BID；≥6y 10 mg QD。腎功能不全劑量減半。",
+      "source": "勝克敏液仿單 + KMUH 藥點",
+      "tags": [
+        "common",
+        "uri"
+      ],
+      "group_id": "cetirizine",
+      "kmuh_detail": {
+        "臨床用途": "過敏性鼻炎、蕁麻疹、皮膚癢",
+        "禁忌": "對 cetirizine / hydroxyzine 過敏；嚴重腎功能不全（CrCl <10）需調整",
+        "副作用": "嗜睡（較第一代輕）、口乾、頭痛",
+        "警語": "腎功能不全需調整劑量；2 歲以下使用前先評估",
+        "懷孕分級": "AU TGA: B2",
+        "授乳": "可進入乳汁，建議避免長期使用",
         "管制性藥品": "—"
       }
     },
