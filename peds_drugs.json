@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "version": "0.1.0",
+    "version": "1.0.0",
     "last_updated": "2026-05-09",
     "scope": "Pediatric ED — common drugs for KMUH",
     "primary_source": "Lexicomp / Nelson / UpToDate, cross-referenced with 高醫速算表 (初版) and 小兒常用藥丹",
@@ -266,18 +266,19 @@
       "form": "tab",
       "route": "PO",
       "calc": {
-        "type": "ml_per_kg_per_day_then_convert",
-        "low": 0.6,
-        "high": 0.6,
+        "type": "mg_per_kg_per_day",
+        "low": 0.24,
+        "high": 0.24,
         "doses_per_day": 3,
-        "note": "等效換算"
+        "max_mg_per_day": 16
       },
       "frequency": "TID PC",
       "source": "高醫速算表",
       "tags": [
         "uri"
       ],
-      "group_id": "cyproheptadine"
+      "group_id": "cyproheptadine",
+      "notes": "由 syrup 0.4 mg/mL × 0.6 mL/kg/day 換算為 0.24 mg/kg/day；max 16 mg/day"
     },
     {
       "id": "secorine_syrup",
@@ -508,30 +509,6 @@
       "group_id": "amoxicillin"
     },
     {
-      "id": "soonmelt",
-      "generic": "Amoxicillin/Clavulanate (low-dose clav)",
-      "brand": "Soonmelt (Amo 25mg + Clav 6.25mg)",
-      "concentration_note": "搭配 Amoxicillin！通常半 Amox + 半 Soonmelt，避免拉肚子",
-      "kmuh_code": "AUGO04",
-      "category": "antibiotic",
-      "form": "susp",
-      "route": "PO",
-      "calc": {
-        "type": "mg_per_kg_per_day",
-        "low": 80,
-        "high": 90,
-        "doses_per_day": 2,
-        "max_mg_per_day": 3000,
-        "calc_basis": "Amoxicillin component"
-      },
-      "frequency": "Q12H PC",
-      "notes": "用一半 Amoxicillin + 一半 Soonmelt，總 amox 量 80-90 mg/kg/day，clav < 10 mg/kg/day",
-      "source": "高醫速算表",
-      "tags": [
-        "uri"
-      ]
-    },
-    {
       "id": "curam_susp",
       "generic": "Amoxicillin/Clavulanate",
       "brand": "Curam Powder for Oral Susp · 諾快寧口服懸液",
@@ -588,7 +565,7 @@
     {
       "id": "tamiflu",
       "generic": "Oseltamivir",
-      "brand": "Tamiflu / Eraflu · 克流感 / 易剋冒",
+      "brand": "Tamiflu / Eraflu (Oseltamivir 30/45/75 mg cap) · 克流感 / 易剋冒",
       "concentration_note": "依年齡/體重不同 cap 規格 (30/45/75 mg)",
       "kmuh_code": "1TAM75",
       "category": "flu",
@@ -628,7 +605,7 @@
         "starred_default",
         "uri"
       ],
-      "group_id": "flu_oseltamivir"
+      "package": "cap 30/45/75 mg / 60 mg/mL susp"
     },
     {
       "id": "rapiacta_iv",
@@ -1468,6 +1445,54 @@
       "package": "2.5 mL/管"
     },
     {
+      "id": "keppra_syrup",
+      "generic": "Levetiracetam",
+      "brand": "Keppra Oral Solution · 優閒內服液劑",
+      "concentration_mg_per_ml": 100,
+      "package": "300 mL/Bot",
+      "kmuh_code": "1KEPPS",
+      "category": "seizure",
+      "form": "syrup",
+      "route": "PO",
+      "calc": {
+        "type": "mg_per_kg_per_day",
+        "low": 20,
+        "high": 40,
+        "doses_per_day": 2,
+        "max_mg_per_day": 3000
+      },
+      "frequency": "BID（口服維持劑量）",
+      "notes": "小孩或無法吞錠者用",
+      "source": "Lexicomp",
+      "group_id": "levetiracetam",
+      "urgency": "maintenance",
+      "urgency_label": "💊 口服維持"
+    },
+    {
+      "id": "keppra_tab",
+      "generic": "Levetiracetam",
+      "brand": "Keppra 500 mg tab · 優閒膜衣錠",
+      "concentration_mg_per_unit": 500,
+      "unit": "粒",
+      "kmuh_code": "1KE500",
+      "category": "seizure",
+      "form": "tab",
+      "route": "PO",
+      "calc": {
+        "type": "mg_per_kg_per_day",
+        "low": 20,
+        "high": 40,
+        "doses_per_day": 2,
+        "max_mg_per_day": 3000
+      },
+      "frequency": "BID（口服維持劑量）",
+      "notes": "急性 status 用 IV loading；ROSC 後或門診維持改口服。Initial 20 mg/kg/day → 視 seizure 控制 titrate 至 40-60 mg/kg/day",
+      "source": "Lexicomp",
+      "group_id": "levetiracetam",
+      "urgency": "maintenance",
+      "urgency_label": "💊 口服維持"
+    },
+    {
       "id": "keppra_iv",
       "generic": "Levetiracetam",
       "brand": "Keppra 500 mg/Vial",
@@ -1489,7 +1514,65 @@
       "tags": [
         "emergency",
         "seizure_second_line"
-      ]
+      ],
+      "group_id": "levetiracetam",
+      "urgency": "acute",
+      "urgency_label": "🚨 急性 loading"
+    },
+    {
+      "id": "depakine_syrup",
+      "generic": "Valproate Sodium",
+      "brand": "Depakine syrup 200 mg/mL · 帝拔癲液",
+      "concentration_mg_per_ml": 200,
+      "package": "40 mL/Bot",
+      "kmuh_code": "1DEP40",
+      "category": "seizure",
+      "form": "syrup",
+      "route": "PO",
+      "calc": {
+        "type": "mg_per_kg_per_day",
+        "low": 15,
+        "high": 30,
+        "doses_per_day": 2,
+        "max_mg_per_day": 3000
+      },
+      "frequency": "BID（維持劑量；可 titrate 至 60 mg/kg/day）",
+      "notes": "Initial 10-15 mg/kg/day → 視 seizure 控制 titrate；目標血清 50-100 µg/mL",
+      "warnings": [
+        "肝病、線粒體疾病禁用",
+        "POMC encephalopathy"
+      ],
+      "source": "Lexicomp",
+      "group_id": "valproate",
+      "urgency": "maintenance",
+      "urgency_label": "💊 口服維持"
+    },
+    {
+      "id": "depakine_tab",
+      "generic": "Valproate Sodium",
+      "brand": "Depakine 200 mg tab · 帝拔癲",
+      "concentration_mg_per_unit": 200,
+      "unit": "粒",
+      "kmuh_code": "1DE200",
+      "category": "seizure",
+      "form": "tab",
+      "route": "PO",
+      "calc": {
+        "type": "mg_per_kg_per_day",
+        "low": 15,
+        "high": 30,
+        "doses_per_day": 2,
+        "max_mg_per_day": 3000
+      },
+      "frequency": "BID（維持劑量）",
+      "notes": "≥ 30 kg 適合錠劑；< 30 kg 用 syrup",
+      "warnings": [
+        "肝病、線粒體疾病禁用"
+      ],
+      "source": "Lexicomp",
+      "group_id": "valproate",
+      "urgency": "maintenance",
+      "urgency_label": "💊 口服維持"
     },
     {
       "id": "depakine_iv",
@@ -1516,7 +1599,10 @@
       "source": "Lexicomp / ESETT trial 2019",
       "tags": [
         "seizure_second_line"
-      ]
+      ],
+      "group_id": "valproate",
+      "urgency": "acute",
+      "urgency_label": "🚨 急性 loading"
     },
     {
       "id": "ketamine",
@@ -1534,53 +1620,62 @@
           "calc": {
             "type": "mg_per_kg_per_dose",
             "low": 4,
-            "high": 5,
-            "max_dose_mg": 100
+            "high": 6
           },
           "route": "IM",
           "onset": "3-5 min",
           "duration": "12-25 min（recovery 90-150 min）",
-          "frequency": "ST × 1（induction）；procedural sedation 必要時 q5-15 min repeat 2-5 mg/kg",
-          "notes": "適用無 IV 路且需要快速鎮靜（暴躁躁動病人、困難氣道、長骨骨折 reduction）"
+          "frequency": "ST × 1（induction）；procedural sedation 必要時 5-10 min 後 repeat 2-5 mg/kg",
+          "notes": "Anesthesia induction 4-6 mg/kg；procedural sedation 4-5 mg/kg"
         },
         {
           "label": "IV (induction / procedural sedation)",
           "calc": {
             "type": "mg_per_kg_per_dose",
-            "low": 1,
-            "high": 2,
-            "max_dose_mg": 50
+            "low": 0.5,
+            "high": 2
           },
           "route": "IV",
           "onset": "30-60 sec",
           "duration": "5-10 min",
-          "frequency": "Slow IV push over 30-60 sec；procedural sedation 必要時 q5-15 min repeat 0.5-1 mg/kg",
-          "notes": "Hemodynamic-stable induction agent，適合 hypotension/shock 病人"
+          "frequency": "Slow push 30-60 sec；procedural sedation 必要時 q5-10 min repeat 0.5-1 mg/kg",
+          "notes": "Induction 0.5-2 mg/kg；procedural sedation 1-2 mg/kg。Hemodynamic-stable，適合 hypotension/shock"
+        },
+        {
+          "label": "IV maintenance (anesthesia)",
+          "calc": {
+            "type": "mg_per_kg_per_dose",
+            "low": 0.25,
+            "high": 0.35
+          },
+          "route": "IV",
+          "frequency": "Bolus 後接 continuous infusion up to 1 mg/kg/hr",
+          "notes": "全身麻醉 maintenance（OR 用，ED 較少）"
         },
         {
           "label": "IV sub-dissociative analgesia",
           "calc": {
             "type": "mg_per_kg_per_dose",
             "low": 0.1,
-            "high": 0.3,
-            "max_dose_mg": 20
+            "high": 0.3
           },
           "route": "IV",
           "onset": "1-2 min",
           "duration": "5-15 min",
-          "frequency": "Slow IV over 10 min（避免 emergence reaction）；可 q15-30 min repeat",
+          "frequency": "Slow IV over 10 min；可 q15-30 min repeat",
           "notes": "急性疼痛，opioid-sparing；可 IV drip 0.1-0.3 mg/kg/hr"
         }
       ],
       "warnings": [
-        "傳統認為 ICP elevation — 近年文獻挑戰此說法（多數 TBI 病人安全）；嚴重 ICP 仍應謹慎",
-        "Hypersalivation — atropine 0.01 mg/kg 預給藥常規不再必須（per ACEP 2011 guideline）",
-        "Emergence reactions — 預先給 midazolam 0.05 mg/kg 或 emergence 後處理；學齡兒童風險較高",
-        "喉痙攣 ~0.4%（年紀 <3 月或上呼吸道感染 active 風險高）",
-        "禁忌：年齡 <3 月（喉痙攣風險高）、active psychosis、未控制 HTN、thyrotoxicosis、global eyeball injury"
+        "副作用：BP↑、ICP↑、IOP↑、arrhythmias、apnea、laryngospasm、delirium、N/V、nystagmus",
+        "Barbiturates 與 ketamine 不可同 syringe（會 precipitate）",
+        "ICP 升高傳統說法 — 近年文獻挑戰（多數 TBI 病人安全）",
+        "Hypersalivation — atropine 0.01 mg/kg 預給藥不再常規（ACEP 2011）",
+        "Emergence reactions — 預先給 midazolam 0.05 mg/kg；學齡兒童風險高",
+        "禁忌：<3 月（喉痙攣風險）、active psychosis、未控制 HTN、thyrotoxicosis、global eyeball injury"
       ],
       "monitoring": "SpO2、ETCO2、HR、BP；備好 O2、Ambu、suction、atropine、midazolam",
-      "source": "Lexicomp + ACEP Clinical Policy 2011 + 高醫速算表",
+      "source": "KMUH 藥點 + Lexicomp + ACEP 2011",
       "tags": [
         "emergency",
         "rsi",
@@ -1641,6 +1736,34 @@
       ]
     },
     {
+      "id": "vena_tab",
+      "generic": "Diphenhydramine",
+      "brand": "Vena 10 mg tab · 柏那",
+      "concentration_mg_per_unit": 10,
+      "unit": "粒",
+      "kmuh_code": "1VENA",
+      "category": "allergy_eps",
+      "form": "tab",
+      "route": "PO",
+      "calc": {
+        "type": "mg_per_kg_per_dose",
+        "low": 1.25,
+        "high": 1.25,
+        "max_dose_mg": 50
+      },
+      "frequency": "Q6H PRN",
+      "notes": "口服過敏 / 鎮靜；max 5 mg/kg/day 或 300 mg/day",
+      "warnings": [
+        "3 歲以下慎用"
+      ],
+      "source": "Lexicomp + 高醫藥品庫",
+      "tags": [
+        "common",
+        "allergy"
+      ],
+      "group_id": "diphenhydramine"
+    },
+    {
       "id": "vena_inj",
       "generic": "Diphenhydramine",
       "brand": "Vena 30 mg/mL/Amp",
@@ -1663,7 +1786,8 @@
         "common",
         "allergy",
         "age"
-      ]
+      ],
+      "group_id": "diphenhydramine"
     },
     {
       "id": "epinephrine_arrest",
@@ -1826,10 +1950,10 @@
     {
       "id": "cardiac_arrest",
       "title": "兒科心臟停止 Cardiac Arrest",
-      "subtitle": "依 AHA/AAP 2025 PALS Figure 2",
+      "subtitle": "AHA/AAP 2025 PALS Figure 2",
       "icon": "💔",
       "steps_initial": [
-        "Start CPR：bag-mask ventilation + O2",
+        "Start CPR + BMV + O2",
         "Attach monitor / defibrillator"
       ],
       "decision_tree": {
@@ -1837,23 +1961,23 @@
         "yes": {
           "label": "VF / pulseless VT",
           "actions": [
-            "Shock ASAP（1st: 2 J/kg）",
-            "CPR × 2 min，建立 IV/IO",
-            "Rhythm 仍 shockable → Shock（2nd: 4 J/kg）",
-            "CPR × 2 min；Epinephrine q3-5 min；考慮 advanced airway + capnography",
-            "Rhythm 仍 shockable → Shock（≥4 J/kg, max 10 J/kg or 成人量）",
-            "CPR × 2 min；Amiodarone OR Lidocaine；treat reversible causes",
-            "重複 shock → CPR → drug 循環直到 ROSC 或停止"
+            "Shock (1st 2 J/kg)",
+            "CPR 2 min + IV/IO access",
+            "Rhythm shockable？ YES → Shock (2nd 4 J/kg)",
+            "CPR 2 min + Epinephrine q3-5 min + 考慮 advanced airway + capnography",
+            "Rhythm shockable？ YES → Shock (≥4 J/kg, max 10 J/kg or adult)",
+            "CPR 2 min + Amiodarone OR Lidocaine + treat reversible causes",
+            "ROSC？ → Post-Cardiac Arrest Care；無 ROSC → 重複 shock-CPR-drug cycle"
           ]
         },
         "no": {
           "label": "Asystole / PEA",
           "actions": [
             "Epinephrine ASAP",
-            "CPR × 2 min；建立 IV/IO；Epi q3-5 min；考慮 advanced airway + capnography",
-            "Rhythm 變 shockable → 跳到 Shock pathway（步驟 5）",
-            "Rhythm 仍非 shockable → CPR × 2 min；treat reversible causes",
-            "ROSC？→ Post-Cardiac Arrest Care；無 ROSC → 重複"
+            "CPR 2 min + IV/IO access + Epi q3-5 min + 考慮 advanced airway + capnography",
+            "Rhythm shockable？ YES → 接 shockable pathway (Shock ASAP)",
+            "Rhythm 仍非 shockable → CPR 2 min + treat reversible causes",
+            "ROSC？ → Post-Cardiac Arrest Care；無 ROSC → 重複"
           ]
         }
       },
@@ -1874,7 +1998,7 @@
         {
           "label": "Defibrillation 3rd+",
           "j_per_kg": 4,
-          "note": "≥4 J/kg，max 10 J/kg or 成人量"
+          "note": "≥4 J/kg, max 10 J/kg or adult dose"
         }
       ],
       "high_quality_cpr": [
@@ -1882,9 +2006,9 @@
         "Push fast：100-120/min",
         "Allow complete chest recoil",
         "Minimize interruptions",
-        "Change compressor q2 min（疲勞時提前）",
-        "C:V ratio：15:2（2 救者，prepuberty）；30:2（2 救者 postpuberty 或 1 救者任何年齡）",
-        "Advanced airway → continuous compression + 1 breath q2-3 sec",
+        "Change compressor q2 min",
+        "C:V ratio：15:2（2 救者 prepuberty）；30:2（2 救者 postpuberty 或 1 救者任何年齡）",
+        "Advanced airway → continuous compressions + 1 breath q2-3 sec",
         "Monitor ETCO2、invasive diastolic BP（若可）"
       ],
       "reversible_causes": {
@@ -1906,60 +2030,60 @@
         ]
       },
       "figure_url": "https://www.ahajournals.org/cms/10.1161/CIR.0000000000001368/asset/df5514f5-9e5b-413c-a019-30f7a782cb8b/assets/graphic/cir.0000000000001368.fig02.jpg",
-      "figure_label": "查看原始 AHA 流程圖 →"
+      "figure_label": "查看原始 AHA Figure 2 →"
     },
     {
       "id": "tachy_pulse",
       "title": "兒科心搏過速（有脈搏） Tachyarrhythmia With Pulse",
-      "subtitle": "依 AHA/AAP 2025 PALS Figure 7",
+      "subtitle": "AHA/AAP 2025 PALS Figure 7",
       "icon": "💓",
       "steps_initial": [
-        "Maintain patent airway；PPV + O2 PRN",
+        "Maintain airway；PPV + O2 PRN",
         "Cardiopulmonary monitor + IV/IO",
         "12-lead ECG if available"
       ],
       "differentiation": {
-        "title": "Sinus Tach vs SVT 鑑別",
+        "title": "Sinus Tach vs SVT",
         "sinus_tach": {
           "label": "Probable Sinus Tach",
           "criteria": [
             "P waves present / normal",
-            "RR interval variable",
-            "嬰兒 <220/min",
-            "兒童 <180/min"
+            "RR variable",
+            "Infant <220/min",
+            "Child <180/min"
           ],
-          "action": "Search for and treat cause（脫水、發燒、疼痛、shock、貧血）"
+          "action": "Search for and treat cause"
         },
         "svt": {
           "label": "Probable SVT",
           "criteria": [
             "P waves absent / abnormal",
-            "RR interval not variable",
-            "嬰兒 ≥220/min",
-            "兒童 ≥180/min",
-            "突然發作的病史"
+            "RR not variable",
+            "Infant ≥220/min",
+            "Child ≥180/min",
+            "Abrupt onset"
           ]
         }
       },
       "decision_tree": {
         "question": "Cardiopulmonary compromise？（altered MS / shock / hypotension）",
         "yes": {
-          "label": "有 compromise — 緊急處置",
+          "label": "YES — 緊急處置",
           "branches": [
             {
               "qrs": "Narrow (≤0.09 sec)",
               "label": "Probable SVT",
-              "action": "若有 IV/IO → Adenosine；無 IV/IO → Synchronized cardioversion"
+              "action": "IV/IO Adenosine（若 access 已建立）OR Synchronized cardioversion"
             },
             {
               "qrs": "Wide (>0.09 sec)",
               "label": "Possible VT",
-              "action": "Synchronized cardioversion；後續藥物前先 expert consult"
+              "action": "Synchronized cardioversion；後續藥物前 expert consult"
             }
           ]
         },
         "no": {
-          "label": "無 compromise — 可從容處理",
+          "label": "NO — 從容處理",
           "branches": [
             {
               "qrs": "Narrow (≤0.09 sec)",
@@ -1969,7 +2093,7 @@
             {
               "qrs": "Wide (>0.09 sec)",
               "label": "Possible VT 或 SVT with aberrancy",
-              "action": "若 regular + monomorphic 可考慮 Adenosine；建議 expert consult"
+              "action": "若 regular + monomorphic 可考慮 Adenosine；否則 expert consult"
             }
           ]
         }
@@ -1984,18 +2108,19 @@
           "high_j_per_kg": 1
         },
         {
-          "label": "Synchronized cardioversion 2nd+",
+          "label": "Synchronized cardioversion 2nd",
           "j_per_kg": 2,
-          "note": "若 0.5-1 J/kg 無效升至 2 J/kg。需要時鎮靜，但不可延誤 cardioversion"
+          "note": "若 0.5-1 J/kg 無效升至 2 J/kg；需要時鎮靜，不可延誤 cardioversion"
         }
       ],
+      "refractory_note": "Refractory SVT（vagal + adenosine + cardioversion 皆無效）：在 expert consult 後可考慮 IV procainamide、amiodarone 或 sotalol",
       "figure_url": "https://www.ahajournals.org/cms/10.1161/CIR.0000000000001368/asset/e18623c6-bd86-43c1-80dd-8ee90a859609/assets/graphic/cir.0000000000001368.fig07.jpg",
-      "figure_label": "查看原始 AHA 流程圖 →"
+      "figure_label": "查看原始 AHA Figure 7 →"
     },
     {
       "id": "brady_pulse",
       "title": "兒科心搏過慢（有脈搏） Bradycardia With Pulse",
-      "subtitle": "依 AHA/AAP 2025 PALS Figure 6",
+      "subtitle": "AHA/AAP 2025 PALS Figure 6",
       "icon": "🐢",
       "steps_initial": [
         "評估 cardiopulmonary compromise（altered MS / shock / hypotension）"
@@ -2003,22 +2128,24 @@
       "decision_tree": {
         "question": "Cardiopulmonary compromise？",
         "no": {
-          "label": "無 compromise",
+          "label": "NO",
           "actions": [
             "Identify and treat underlying causes",
-            "Support ABCs：考慮 O2、12-lead ECG",
+            "Support ABCs；考慮 O2、12-lead ECG",
             "Observe"
           ]
         },
         "yes": {
-          "label": "有 compromise — 處置",
+          "label": "YES",
           "actions": [
             "Maintain airway + O2；PPV PRN",
             "Cardiopulmonary monitor；持續 monitor pulse",
             "Bradycardia 持續且仍有 compromise？",
-            "↳ HR <60 → Start CPR；建立 IV/IO；Epinephrine；Atropine（若 vagal tone↑或 primary AV block）",
+            "↳ HR <60 → Start CPR",
+            "↳ IV/IO + Epinephrine",
+            "↳ Atropine（vagal tone↑或 primary AV block 才用）",
             "Identify and treat underlying causes；考慮 transthoracic / transvenous pacing",
-            "每 2 min check pulse — 若無 pulse → 跳到 Cardiac Arrest Algorithm"
+            "每 2 min check pulse — 無 pulse → 跳 Cardiac Arrest Algorithm"
           ]
         }
       },
@@ -2030,13 +2157,13 @@
         "Hypothermia",
         "Hypoxia",
         "Toxins / medications",
-        "Increased intracranial pressure (ICP)",
+        "Increased ICP",
         "Increased vagal tone",
         "Heart block",
-        "Physiologic / appropriate（如運動員）"
+        "Physiologic / appropriate"
       ],
       "figure_url": "https://www.ahajournals.org/cms/10.1161/CIR.0000000000001368/asset/6bb06b54-2784-4864-a75b-ea53b3bdcaf3/assets/graphic/cir.0000000000001368.fig06.jpg",
-      "figure_label": "查看原始 AHA 流程圖 →"
+      "figure_label": "查看原始 AHA Figure 6 →"
     }
   ]
 }
