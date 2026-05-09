@@ -615,7 +615,7 @@ button.export-btn {
 </head>
 <body>
 <header>
-  <h1>兒科藥物劑量速算 <span style="font-size:12px;color:var(--muted);font-weight:400;">v1.0</span></h1>
+  <h1>兒科藥物劑量速算 <span style="font-size:12px;color:var(--muted);font-weight:400;">v2.0</span></h1>
   <div class="controls">
     <label>體重 (kg)
       <input type="number" id="weight" step="0.1" min="0" max="100" placeholder="例 17.5" inputmode="decimal">
@@ -624,20 +624,20 @@ button.export-btn {
       <input type="number" id="age" step="0.1" min="0" max="18" placeholder="例 5" inputmode="decimal">
     </label>
   </div>
-  <input type="search" class="search-bar" id="search" placeholder="搜尋：藥名 / 商品名 / HIS 代碼 / 情境（如 seizure）">
+  <input type="search" class="search-bar" id="search" placeholder="搜尋：藥名 / 商品名 / 情境（如 seizure）">
   <div class="tabs" id="tabs">
     <button class="tab active" data-view="all">全部</button>
     <button class="tab" data-view="starred">⭐ 釘選</button>
     <button class="tab" data-view="uri">🤧 URI</button>
     <button class="tab" data-view="age">🤢 AGE</button>
-    <button class="tab" data-view="flu">🤒 流感</button>
-    <button class="tab" data-view="pals">🫀 PALS</button>
-    <button class="tab" data-view="emergency">🚨 急救</button>
-    <button class="tab" data-view="sedation">鎮靜</button>
-    <button class="tab" data-view="seizure">抽搐</button>
-    <button class="tab" data-view="antibiotic">抗生素</button>
     <button class="tab" data-view="antipyretic">退燒</button>
     <button class="tab" data-view="ml_only">水劑換算</button>
+    <button class="tab" data-view="antibiotic">抗生素</button>
+    <button class="tab" data-view="flu">🤒 流感</button>
+    <button class="tab" data-view="sedation">鎮靜</button>
+    <button class="tab" data-view="seizure">抽搐</button>
+    <button class="tab" data-view="emergency">🚨 急救</button>
+    <button class="tab" data-view="pals">🫀 PALS</button>
   </div>
 </header>
 <main>
