@@ -128,11 +128,8 @@
       ],
       "group_id": "acetaminophen",
       "kmuh_detail": {
-        "防錯商品名": "Anti-Phen Syrup (24mg/1ml)",
-        "ATC碼": "N02BE01 \n藥物安定性\n開封後室溫保存28天 安定性天數：28",
         "臨床用途": "Pain, fever",
-        "副作用": "Initial signs of overdose may include nausea, vomiting, anorexia, diaphoresis, malaise.",
-        "外觀": "辨識\n藥性查詢\n藥品資訊\n操作手冊\n常備藥品清單\n高醫體系\n清除\n中文: 安佳熱(晟德)\n代碼: 1ANT60"
+        "副作用": "Initial signs of overdose may include nausea, vomiting, anorexia, diaphoresis, malaise."
       }
     },
     {
@@ -163,12 +160,9 @@
       ],
       "group_id": "acetaminophen",
       "kmuh_detail": {
-        "防錯商品名": "Acetaminophen止痛退熱*華琳",
-        "ATC碼": "N02BE01",
         "臨床用途": "Pain, fever.",
         "副作用": "Initial signs of overdose may include nausea, vomiting, anorexia, diaphoresis, malaise.",
-        "授乳": "可授乳",
-        "外觀": "辨識\n藥性查詢\n藥品資訊\n操作手冊\n常備藥品清單\n高醫體系\n清除\n中文: 對位乙醯氨基酚錠(華琳)\n代碼: 1ACECS"
+        "授乳": "可授乳"
       }
     },
     {
@@ -199,13 +193,10 @@
         "uri"
       ],
       "kmuh_detail": {
-        "防錯商品名": "Idofen 口服懸液",
-        "ATC碼": "M01AE01",
         "臨床用途": "Pain, fever, inflammation",
         "副作用": "Gastric disturbance, allergy, prolonged bleeding time, edema\n禁忌\nCoronary artery bypass graft surgery, active GI bleeding/ulcer disease, severe renal/hepatic impairment\n警語\nCardiovascular disease or risk factors for cardiovascular diseas(may increase risk of serious cardiovascular thrombotic events,especially with prolonged use or use of higher doses), bleeding tendency or concurrent anticoagulant therapy",
         "懷孕分級": "＜說明:AU TGA:C＞",
-        "授乳": "＜說明:Maternal use of NSAIDs should be avoided if the breastfeeding infant has platelet dysfunction, thrombocytopenia, or a ductal-dependent cardiac lesion＞",
-        "外觀": "辨識\n藥性查詢\n藥品資訊\n操作手冊\n常備藥品清單\n高醫體系\n清除\n中文: 舒抑痛口服懸液(生達)\n代碼: 1IDO60"
+        "授乳": "＜說明:Maternal use of NSAIDs should be avoided if the breastfeeding infant has platelet dysfunction, thrombocytopenia, or a ductal-dependent cardiac lesion＞"
       },
       "contraindications": [
         {
@@ -240,14 +231,10 @@
         "uri"
       ],
       "kmuh_detail": {
-        "防錯商品名": "Voren 栓劑",
-        "ATC碼": "M01AB05",
         "臨床用途": "Management of inflammatory disorders, relief of mild to moderate pain",
         "副作用": "GI upset, dizziness, edema, ↑ ALT, skin rash, prolonged bleeding time, headache\n禁忌\nactive GI bleeding/ulcer disease, Coronary artery bypass graft surgery, severe renal/hepatic impairment\n警語\nCardiovascular disease or risk factors for cardiovascular diseas(may increase risk of serious cardiovascular thrombotic events,especially with prolonged use or use of higher doses), bleeding tendency or concurrent anticoagulant therapy\n護理給藥警語\n限肛門使用。\n藥品狀態\n庫存量不足，只有新慢箋不可開立",
         "懷孕分級": "＜說明:AU TGA:C＞",
-        "授乳": "＜說明:Maternal use of NSAIDs should be avoided if the breastfeeding infant has platelet dysfunction, thrombocytopenia, or a ductal-dependent cardiac lesion＞",
-        "藥品給藥": "一用即棄",
-        "外觀": "辨識\n藥性查詢\n藥品資訊\n操作手冊\n常備藥品清單\n高醫體系\n清除\n中文: 非炎栓劑(永信)(用量管控)\n代碼: 3VOREN"
+        "授乳": "＜說明:Maternal use of NSAIDs should be avoided if the breastfeeding infant has platelet dysfunction, thrombocytopenia, or a ductal-dependent cardiac lesion＞"
       },
       "contraindications": [
         {
@@ -305,12 +292,9 @@
       ],
       "group_id": "cyproheptadine",
       "kmuh_detail": {
-        "防錯商品名": "Cypromin 液*DC",
-        "ATC碼": "R06AX02",
         "臨床用途": "Rhinitis, allergic disorders, migraine prophylaxis\n, appetite stimulation",
         "副作用": "Sedation, thickening nose/throat mucus, dry mouth/throat/nose, ↑ appetite\n藥品狀態\n【缺藥】--＞理由：院方因素-停止採購 替代藥：Cyproh 0.4mg/mL, 120mL/Bot\n缺藥理由\n院方因素-停止採購\n另有同成份同劑量之Cyproh 0.4mg/mL, 120mL/Bot (藥碼：1CYPRO)供替代使用。",
-        "懷孕分級": "B\n藥物安定性\n開封後室溫保存28天 安定性天數：28",
-        "外觀": "辨識\n藥性查詢\n藥品資訊\n操作手冊\n常備藥品清單\n高醫體系\n清除\n中文: 希普利敏液(晟德製藥)(缺藥)\n代碼: 1CYPRS"
+        "懷孕分級": "B\n藥物安定性\n開封後室溫保存28天 安定性天數：28"
       }
     },
     {
@@ -338,12 +322,9 @@
       "group_id": "cyproheptadine",
       "notes": "由 syrup 0.4 mg/mL × 0.6 mL/kg/day 換算為 0.24 mg/kg/day；max 16 mg/day",
       "kmuh_detail": {
-        "防錯商品名": "Cypromin 液*DC",
-        "ATC碼": "R06AX02",
         "臨床用途": "Rhinitis, allergic disorders, migraine prophylaxis\n, appetite stimulation",
         "副作用": "Sedation, thickening nose/throat mucus, dry mouth/throat/nose, ↑ appetite\n藥品狀態\n【缺藥】--＞理由：院方因素-停止採購 替代藥：Cyproh 0.4mg/mL, 120mL/Bot\n缺藥理由\n院方因素-停止採購\n另有同成份同劑量之Cyproh 0.4mg/mL, 120mL/Bot (藥碼：1CYPRO)供替代使用。",
-        "懷孕分級": "B\n藥物安定性\n開封後室溫保存28天 安定性天數：28",
-        "外觀": "辨識\n藥性查詢\n藥品資訊\n操作手冊\n常備藥品清單\n高醫體系\n清除\n中文: 希普利敏液(晟德製藥)(缺藥)\n代碼: 1CYPRS"
+        "懷孕分級": "B\n藥物安定性\n開封後室溫保存28天 安定性天數：28"
       }
     },
     {
@@ -366,10 +347,7 @@
         "uri"
       ],
       "kmuh_detail": {
-        "防錯商品名": "SECORINE\"感冒\" Syrup",
-        "ATC碼": "R05CA10",
-        "臨床用途": "Common cold",
-        "外觀": "辨識\n藥性查詢\n藥品資訊\n操作手冊\n常備藥品清單\n高醫體系\n清除\n中文: 息咳寧糖漿(晟德)\n代碼: 1SE120"
+        "臨床用途": "Common cold"
       }
     },
     {
@@ -426,13 +404,9 @@
       ],
       "group_id": "nac",
       "kmuh_detail": {
-        "防錯商品名": "Actein 顆粒劑",
-        "ATC碼": "R05CB01",
         "臨床用途": "Mucolysis",
         "副作用": "GI upset\n醫師處方警語\n顆粒劑的鋁箔包裝開封後藥品易潮解，不建議分包\n護理給藥警語\n顆粒劑的鋁箔包裝開封後藥品易潮解，使用前以適量的水溶解後飲用",
-        "懷孕分級": "＜說明:AU TGA:B2＞",
-        "藥品給藥": "一用即棄，不建議磨粉，顆粒劑的鋁箔包裝開封後藥品易潮解，不建議分包",
-        "外觀": "辨識\n藥性查詢\n藥品資訊\n操作手冊\n常備藥品清單\n高醫體系\n清除\n中文: 愛克痰(優良)\n代碼: 1AC200"
+        "懷孕分級": "＜說明:AU TGA:B2＞"
       }
     },
     {
@@ -473,13 +447,9 @@
       ],
       "group_id": "nac",
       "kmuh_detail": {
-        "防錯商品名": "ACC600*發泡錠*",
-        "ATC碼": "R05CB01",
         "臨床用途": "Mucolysis",
         "副作用": "GI upset\n警語\nNo more effective than placebo at preventing CA-AKI.\n     .........2021 American College of Radiology\n醫師處方警語\n不需磨粉：發泡錠，泡水即可溶且容易吸濕\n護理給藥警語\n1.本品為發泡錠,必須加少量水溶解,配製後立即使用2.最好不要將其他藥品與本品溶液混在一起\n藥師調劑警語\n1.本品為發泡錠,必須加少量水溶解,配製後立即使用2.最好不要將其他藥品與本品溶液混在一起",
-        "授乳": "可授乳",
-        "藥品給藥": "一用即棄，不建議磨粉",
-        "外觀": "辨識\n藥性查詢\n藥品資訊\n操作手冊\n常備藥品清單\n高醫體系\n清除\n中文: 袪痰寧發泡錠(諾華)\n代碼: 1ACCEF"
+        "授乳": "可授乳"
       }
     },
     {
@@ -531,12 +501,9 @@
       ],
       "group_id": "azithromycin",
       "kmuh_detail": {
-        "防錯商品名": "Zithromax Susp. 600mg/15mL",
-        "ATC碼": "J01FA10",
         "臨床用途": "Staphylococci, Streptococci, N. gonorrhea, H. influenzae,\nM. catarrhalis, Chlamydia, Mycoplasma, Legionella,\nM. avium complex, Scrub typhus",
         "副作用": "Headache, dizziness, N/V, diarrhea, abdominal pain, mild ↑ ALT, ↑ QT\n警語\n1. Use with caution in patients with myasthenia gravis; exacerbation and new onset of symptoms have occurred.\n2. Use of azithromycin in neonates and infants ＜6 weeks of age has been associated with infantile hypertrophic pyloric stenosis (IHPS); the strongest association occurred with exposure during the first 2 weeks of life\n護理給藥警語\n此藥有二種劑型，本品為＜水劑＞\n藥師調劑警語\n此藥有二種劑型，本品為＜水劑＞，請注意\n藥品狀態\n庫存量不足，只有新慢箋不可開立",
-        "懷孕分級": "＜說明:AU TGA:B1＞",
-        "外觀": "辨識\n藥性查詢\n藥品資訊\n操作手冊\n常備藥品清單\n高醫體系\n清除\n中文: 日舒懸液用粉(輝瑞製藥)(用量管控)\n代碼: 1ZITHS"
+        "懷孕分級": "＜說明:AU TGA:B1＞"
       }
     },
     {
@@ -563,12 +530,9 @@
       ],
       "group_id": "azithromycin",
       "kmuh_detail": {
-        "防錯商品名": "Zithromax 錠",
-        "ATC碼": "J01FA10",
         "臨床用途": "Staphylococci, Streptococci, N. gonorrhea, H. influenzae,\nM. catarrhalis, Chlamydia, Mycoplasma, Legionella,\nM. avium complex, Scrub typhus",
         "副作用": "Headache, dizziness, N/V, diarrhea, abdominal pain, mild ↑ ALT, ↑ QT\n警語\n1. Use with caution in patients with myasthenia gravis; exacerbation and new onset of symptoms have occurred.\n2. Use of azithromycin in neonates and infants ＜6 weeks of age has been associated with infantile hypertrophic pyloric stenosis (IHPS); the strongest association occurred with exposure during the first 2 weeks of life\n護理給藥警語\n此藥有二種劑型，本品為＜錠劑＞\n藥師調劑警語\n此藥有二種劑型，本品為＜錠劑＞，請注意\n藥品狀態\n庫存量不足，只有新慢箋不可開立",
-        "懷孕分級": "＜說明:AU TGA:B1＞",
-        "外觀": "辨識\n藥性查詢\n藥品資訊\n操作手冊\n常備藥品清單\n高醫體系\n清除\n中文: 日舒(輝瑞)(用量管控)\n代碼: 1ZITHR"
+        "懷孕分級": "＜說明:AU TGA:B1＞"
       }
     },
     {
@@ -598,11 +562,8 @@
       ],
       "group_id": "amoxicillin",
       "kmuh_detail": {
-        "防錯商品名": "Amoxicillin",
-        "ATC碼": "J01CA04",
         "臨床用途": "G(+): Streptococci, enterococcus faecalis\nG(-): P. mirabilis, H. pylori",
-        "授乳": "可授乳",
-        "外觀": "辨識\n藥性查詢\n藥品資訊\n操作手冊\n常備藥品清單\n高醫體系\n清除\n中文: 愛默士黴素膠囊(榮民)(用量管控)\n代碼: 1AMKIN"
+        "授乳": "可授乳"
       },
       "contraindications": [
         {
@@ -637,11 +598,8 @@
       ],
       "group_id": "amoxicillin",
       "kmuh_detail": {
-        "防錯商品名": "Amoxicillin",
-        "ATC碼": "J01CA04",
         "臨床用途": "G(+): Streptococci, enterococcus faecalis\nG(-): P. mirabilis, H. pylori",
-        "授乳": "可授乳",
-        "外觀": "辨識\n藥性查詢\n藥品資訊\n操作手冊\n常備藥品清單\n高醫體系\n清除\n中文: 愛默士黴素膠囊(榮民)(用量管控)\n代碼: 1AMKIN"
+        "授乳": "可授乳"
       }
     },
     {
@@ -672,12 +630,9 @@
       ],
       "group_id": "amox_clav_curam",
       "kmuh_detail": {
-        "防錯商品名": "Curam口服懸液",
-        "ATC碼": "J01CR02",
         "臨床用途": "G(+): S.aureus, streptococci, enterococcus faecalis\nG(-): E. coli, Enterobacter, Proteus, H. influenzae\n   ,M. catarrhalis \nAnaerobes: including B. fragilis",
         "副作用": "Diarrhea, nausea, vomiting, abdominal distress, flatulence, hypersensitivity\n警語\n1.Amoxicillin rash in infectious mononucleosis\n2.Contains aspartame, avoid used in patients with phenylketonurics\n3.Although rarely fatal, drug-induced liver injury has been reported.\n護理給藥警語\n此藥有3種劑型，本品為【水劑】\n藥品狀態\n庫存量不足，只有新慢箋不可開立",
-        "懷孕分級": "＜說明:AU TGA:B1＞",
-        "外觀": "辨識\n藥性查詢\n藥品資訊\n操作手冊\n常備藥品清單\n高醫體系\n清除\n中文: 諾快寧口服懸液用粉劑(Sandoz)(用量管控)\n代碼: 1CUR60"
+        "懷孕分級": "＜說明:AU TGA:B1＞"
       },
       "contraindications": [
         {
@@ -714,14 +669,10 @@
       ],
       "group_id": "amox_clav_curam",
       "kmuh_detail": {
-        "防錯商品名": "Curam膜衣錠",
-        "ATC碼": "J01CR02",
         "臨床用途": "G(+): S.aureus, streptococci, enterococcus faecalis\nG(-): E. coli, Enterobacter, Proteus, H. influenzae\n   ,M. catarrhalis \nAnaerobes: including B. fragilis",
         "副作用": "diarrhea, gastrointestinal upset\n警語\nAmoxicillin rash in infectious mononucleosis\n醫師處方警語\n不建議磨粉:易潮解，使用前才磨粉或剝半\n護理給藥警語\n此藥有3種劑型，本品為【錠劑】，易潮解，使用前才磨粉或剝半\n藥品狀態\n庫存量不足，只有新慢箋不可開立\n缺藥理由\n廠商因素-供貨不及暫缺，有同成分同劑量不同劑型之Curam Dispersible 複方/Tab*口溶錠(藥碼：1CURAD)供替代使用。",
         "懷孕分級": "＜說明:AU TGA:B1＞",
-        "授乳": "可授乳 ＜說明:仿單:在授乳的期間仍可使用本品，本藥用於母體時，對於餵哺母乳的嬰兒尚無任何已知的有害影響，唯一的例外是當微量的藥物隨著母乳進入嬰兒體內時，可能會有造成過敏的危險＞",
-        "藥品給藥": "不建議磨粉",
-        "外觀": "辨識\n藥性查詢\n藥品資訊\n操作手冊\n常備藥品清單\n高醫體系\n清除\n中文: 諾快寧(SANDOZ)(用量管控)\n代碼: 1CURA1"
+        "授乳": "可授乳 ＜說明:仿單:在授乳的期間仍可使用本品，本藥用於母體時，對於餵哺母乳的嬰兒尚無任何已知的有害影響，唯一的例外是當微量的藥物隨著母乳進入嬰兒體內時，可能會有造成過敏的危險＞"
       }
     },
     {
@@ -769,13 +720,10 @@
       ],
       "package": "cap 30/45/75 mg / 60 mg/mL susp",
       "kmuh_detail": {
-        "防錯商品名": "Tamiflu**自**費 克流感",
-        "ATC碼": "J05AH02",
         "臨床用途": "Influenza A or B",
         "副作用": "N/V, vertigo, insomnia\n*Influenza can be associated with neurologic/behavioral symptoms.",
         "懷孕分級": "＜說明:AU TGA:B1＞",
-        "授乳": "可授乳",
-        "外觀": "辨識\n藥性查詢\n藥品資訊\n操作手冊\n常備藥品清單\n高醫體系\n清除\n中文: 克流感(羅氏)\n代碼: 1TAM75"
+        "授乳": "可授乳"
       },
       "contraindications": [
         {
@@ -812,13 +760,9 @@
         "flu"
       ],
       "kmuh_detail": {
-        "防錯商品名": "Rapiacta自費300mg/60mL/Bag",
-        "ATC碼": "J05AH03",
         "臨床用途": "Acute influenza A or B infection",
         "副作用": "Diarrhea, ↑ LFT(rare)\n護理給藥警語\n施打前才可拆外盒，限IVD途徑使用，開封後冷藏保存24小時",
-        "懷孕分級": "＜說明:AU TGA:B3＞",
-        "藥品給藥": "一用即棄",
-        "外觀": "辨識\n藥性查詢\n藥品資訊\n操作手冊\n常備藥品清單\n高醫體系\n清除\n中文: 瑞貝塔點滴靜脈注射液(鹽野義)\n代碼: 2RAPI3"
+        "懷孕分級": "＜說明:AU TGA:B3＞"
       },
       "contraindications": [
         {
@@ -869,12 +813,9 @@
         "flu"
       ],
       "kmuh_detail": {
-        "防錯商品名": "Xofluza*自費*流感",
-        "ATC碼": "J05AX25",
         "臨床用途": "≧5yr(≧20kg)-adult Influenza A or B",
         "副作用": "Diarrhea, nausea, headache",
-        "懷孕分級": "＜說明:AU TGA:B3＞",
-        "外觀": "辨識\n藥性查詢\n藥品資訊\n操作手冊\n常備藥品清單\n高醫體系\n清除\n中文: 紓伏效膜衣錠(鹽野義)\n代碼: 1XOFLU"
+        "懷孕分級": "＜說明:AU TGA:B3＞"
       },
       "contraindications": [
         {
@@ -920,12 +861,9 @@
         "flu"
       ],
       "kmuh_detail": {
-        "防錯商品名": "Relenza*疾管署*瑞樂沙#",
-        "ATC碼": "J05AH01",
         "臨床用途": "Influenza A or B",
         "副作用": "Very rare: Rash, bronchospasm\n警語\nUK: Recommended in Pregnancy & breastfeeding by NHS\n護理給藥警語\n一般用法：2 puff Q12H 5day,限吸入使用，首日需憑「流感抗病毒藥劑使用申請單」與「處方箋」一同領藥\n藥師調劑警語\n首日需憑「流感抗病毒藥劑使用申請單」與「處方箋」一同領藥",
-        "懷孕分級": "C\n健保藥品規範\n(0):1.瑞樂沙使用於5(含)歲以上兒童及成人，不需依兒童體重或病患身體狀況調整劑量。( 103.1.27高市衛疾管字第10330835700號)\n2.符合公費流感抗病毒藥劑使用條件之5歲以上無瑞樂沙使用禁忌之患者，優先使用瑞樂沙。",
-        "外觀": "辨識\n藥性查詢\n藥品資訊\n操作手冊\n常備藥品清單\n高醫體系\n清除\n中文: 瑞樂沙旋達碟(葛蘭素史克)\n代碼: 3RELEN"
+        "懷孕分級": "C\n健保藥品規範\n(0):1.瑞樂沙使用於5(含)歲以上兒童及成人，不需依兒童體重或病患身體狀況調整劑量。( 103.1.27高市衛疾管字第10330835700號)\n2.符合公費流感抗病毒藥劑使用條件之5歲以上無瑞樂沙使用禁忌之患者，優先使用瑞樂沙。"
       },
       "contraindications": [
         {
@@ -960,10 +898,7 @@
         "uri"
       ],
       "kmuh_detail": {
-        "防錯商品名": "Bosmin外用0.1%500mL*DC",
-        "ATC碼": "B02BC09",
-        "臨床用途": "Topical use",
-        "外觀": "辨識\n藥性查詢\n藥品資訊\n操作手冊\n常備藥品清單\n高醫體系\n清除\n中文: 保斯民液(第一三共)(缺藥)\n代碼: 3BO500"
+        "臨床用途": "Topical use"
       }
     },
     {
@@ -997,13 +932,9 @@
         "uri"
       ],
       "kmuh_detail": {
-        "防錯商品名": "Bricanyl 六角形 5mg/2mL*DC",
-        "ATC碼": "R03AC03",
         "臨床用途": "β2-agonist for bronchospasm.",
         "副作用": "Headache, tremor, palpitations\n護理給藥警語\n限吸入使用，本品外觀與 Pulmicort 相似\n藥師調劑警語\n本品外觀與 Pulmicort 相似，請注意\n藥品狀態\n【缺藥】--＞理由：廠商因素-停產(111-2藥委決議淘汰) 替代藥：Butanyl 5mg/2mL/UDV\n缺藥理由\n廠商因素-停產(111-2藥委決議淘汰)，有同成份同劑量之Butanyl 5mg/2mL/UDV (藥碼：3BUTAN)供替代使用。",
-        "授乳": "可授乳\n健保藥品規範\n(1):成人使用規定:\n1. 阻塞性肺疾病急性發作時，每20分鐘至1小時使用1次。2.急性症狀消失後恢復為每日4- 6 次。3. 視情況繼續居家使用，每次處方以1週為限。4.每月最大劑量為 60小瓶(vial)。\n(2):兒童使用規定:\n1.急性症狀緩解後治療，有需要才使用，每日最 多 6 次，每月最高用量 30 次。 2. 氣喘病人可合併使用吸入性類固醇，可減少長期使用。3. 視情況居家使用，以 2 天為限。",
-        "藥品給藥": "一用即棄",
-        "外觀": "辨識\n藥性查詢\n藥品資訊\n操作手冊\n常備藥品清單\n高醫體系\n清除\n中文: 撲咳喘吸入液(阿斯特捷利康)(缺藥)\n代碼: 3BRICA"
+        "授乳": "可授乳\n健保藥品規範\n(1):成人使用規定:\n1. 阻塞性肺疾病急性發作時，每20分鐘至1小時使用1次。2.急性症狀消失後恢復為每日4- 6 次。3. 視情況繼續居家使用，每次處方以1週為限。4.每月最大劑量為 60小瓶(vial)。\n(2):兒童使用規定:\n1.急性症狀緩解後治療，有需要才使用，每日最 多 6 次，每月最高用量 30 次。 2. 氣喘病人可合併使用吸入性類固醇，可減少長期使用。3. 視情況居家使用，以 2 天為限。"
       }
     },
     {
@@ -1066,11 +997,8 @@
       ],
       "group_id": "procaterol",
       "kmuh_detail": {
-        "防錯商品名": "Meptin 藥水 (Procaterol)",
-        "ATC碼": "R03CC08 \n藥物安定性\n開封後室溫保存28天 安定性天數：28",
         "臨床用途": "Asthma, chronic bronchitis, emphysema.",
-        "副作用": "Palpitations, headache, dry mouth, tremor, angioedema (rare)\n護理給藥警語\n此藥有二種劑型，本品為＜水劑＞\n藥師調劑警語\n此藥有二種劑型，本品為＜水劑＞，請注意",
-        "外觀": "辨識\n藥性查詢\n藥品資訊\n操作手冊\n常備藥品清單\n高醫體系\n清除\n中文: 滅喘淨液(大塚)\n代碼: 1MEP60"
+        "副作用": "Palpitations, headache, dry mouth, tremor, angioedema (rare)\n護理給藥警語\n此藥有二種劑型，本品為＜水劑＞\n藥師調劑警語\n此藥有二種劑型，本品為＜水劑＞，請注意"
       }
     },
     {
@@ -1108,11 +1036,8 @@
       "source": "Lexicomp + 高醫藥品庫",
       "group_id": "procaterol",
       "kmuh_detail": {
-        "防錯商品名": "Meptin 錠 25mcg",
-        "ATC碼": "R03CC08",
         "臨床用途": "Asthma, chronic bronchitis, emphysema.",
-        "副作用": "Palpitations, headache, dry mouth, tremor, angioedema (rare)\n護理給藥警語\n此藥有二種劑型，本品為＜錠劑＞。裸錠外觀與 Sigmart 相似\n藥師調劑警語\n此藥有二種劑型，本品為＜錠劑＞。外觀與 Sigmart 相似，請注意。",
-        "外觀": "辨識\n藥性查詢\n藥品資訊\n操作手冊\n常備藥品清單\n高醫體系\n清除\n中文: 滅喘淨微(大塚)\n代碼: 1MEPTI"
+        "副作用": "Palpitations, headache, dry mouth, tremor, angioedema (rare)\n護理給藥警語\n此藥有二種劑型，本品為＜錠劑＞。裸錠外觀與 Sigmart 相似\n藥師調劑警語\n此藥有二種劑型，本品為＜錠劑＞。外觀與 Sigmart 相似，請注意。"
       }
     },
     {
@@ -1153,11 +1078,8 @@
         "uri"
       ],
       "kmuh_detail": {
-        "防錯商品名": "PREDNISOLONE (DoNison)",
-        "ATC碼": "H02AB06",
         "懷孕分級": "B ＜說明:EULAR, GINA＞",
-        "授乳": "可授乳",
-        "外觀": "辨識\n藥性查詢\n藥品資訊\n操作手冊\n常備藥品清單\n高醫體系\n清除\n中文: 樂爾爽(中化)\n代碼: 1PREDN"
+        "授乳": "可授乳"
       }
     },
     {
@@ -1198,12 +1120,8 @@
         "uri"
       ],
       "kmuh_detail": {
-        "防錯商品名": "Solu-Medrol*低*40mg*DC",
-        "ATC碼": "H02AB04 \n一般藥品稀釋液\n2AQ(Aq dest 20mL/Amp)\n2G55(Gitose(Dextrose)5% 500mL/Bag)\n2NS(Normal saline 0.9% 500mL/Bag)\n2NS1(Normal saline 0.9% 1000mL/Bag)\n2NS20(Normal saline 0.9% 20mL/Amp)\n2NS250(Normal saline 0.9% 250mL/Bag)\n2SC250(Sodium Chloride 0.9% 250mL/Bag)\n2SC500(Sodium Chloride 0.9% 500mL/Bag*大塚*)\n2SC505(Sodium Chloride 0.9% 500mL/Bot柏朗專案*印尼)",
         "臨床用途": "Inflammatory, allergic, hematologic, autoimmune disorder； replacement therapy in adrenal insufficiency",
-        "副作用": "Adrenal suppression, hyperglycemia, increased intraocular pressure, peptic ulcer\n禁忌\nHypersensitivity to cow’s milk or its components or other dairy products which may contain trace amounts of milk ingredients； intrathecal/epidural administration；systemic fungal infection\n護理給藥警語\n室溫下開瓶 48 小時用畢，此藥有二種劑量，本品為＜低劑量＞ 40mg\n藥師調劑警語\n此藥有二種劑量，本品為＜低劑量＞ 40mg，請再次確認\n藥品狀態\n【缺藥】--＞理由： 替代藥：Medason 40mg/Vial\n缺藥理由\n院方因素-停止採購，有同成分同劑量之Medason 40mg/Vial(藥碼:2MEDAS)供替代使用。",
-        "藥品給藥": "一用即棄",
-        "外觀": "辨識\n藥性查詢\n藥品資訊\n操作手冊\n常備藥品清單\n高醫體系\n清除\n中文: 舒汝美卓佑(輝瑞)(缺藥)\n代碼: 2SOL40"
+        "副作用": "Adrenal suppression, hyperglycemia, increased intraocular pressure, peptic ulcer\n禁忌\nHypersensitivity to cow’s milk or its components or other dairy products which may contain trace amounts of milk ingredients； intrathecal/epidural administration；systemic fungal infection\n護理給藥警語\n室溫下開瓶 48 小時用畢，此藥有二種劑量，本品為＜低劑量＞ 40mg\n藥師調劑警語\n此藥有二種劑量，本品為＜低劑量＞ 40mg，請再次確認\n藥品狀態\n【缺藥】--＞理由： 替代藥：Medason 40mg/Vial\n缺藥理由\n院方因素-停止採購，有同成分同劑量之Medason 40mg/Vial(藥碼:2MEDAS)供替代使用。"
       }
     },
     {
@@ -1233,11 +1151,8 @@
       ],
       "group_id": "metoclopramide",
       "kmuh_detail": {
-        "防錯商品名": "Aswell (1mg/mL)",
-        "ATC碼": "A03FA01",
         "臨床用途": "antiemesis, gastroesophageal reflux, diabetic gastroparesis",
-        "副作用": "↑ BP in pheochromocytoma, drowsiness, ↑ prolactin, EPS\n, tardive dyskinesia\n禁忌\nsituations where stimulation of gastrointestinal motility may be dangerous(mechanical GI obstruction, perforation, or hemorrhage), pheochromocytoma, seizure disorder, history of tardive dyskinesia/dystonic reaction to metoclopramide\n警語\n1.投予新生兒時應特別小心，因新生兒的清除時間較長，可能會造成血中濃度過高。且成人安全性資料不能外推至新生兒/兒童族群，使用metoclopramide藥品相關的不良反應如肌張力失調(dystonias)及錐體外路徑反應(extrapyramidal reactions)，於小兒族群比起成人更容易發生。\n2.含阿斯巴甜(Aspartame)賦形劑，苯酮尿症患者不宜使用\n護理給藥警語\n請勿冷藏",
-        "外觀": "辨識\n藥性查詢\n藥品資訊\n操作手冊\n常備藥品清單\n高醫體系\n清除\n中文: 安適胃寧液(晟德)\n代碼: 1ASWEL"
+        "副作用": "↑ BP in pheochromocytoma, drowsiness, ↑ prolactin, EPS\n, tardive dyskinesia\n禁忌\nsituations where stimulation of gastrointestinal motility may be dangerous(mechanical GI obstruction, perforation, or hemorrhage), pheochromocytoma, seizure disorder, history of tardive dyskinesia/dystonic reaction to metoclopramide\n警語\n1.投予新生兒時應特別小心，因新生兒的清除時間較長，可能會造成血中濃度過高。且成人安全性資料不能外推至新生兒/兒童族群，使用metoclopramide藥品相關的不良反應如肌張力失調(dystonias)及錐體外路徑反應(extrapyramidal reactions)，於小兒族群比起成人更容易發生。\n2.含阿斯巴甜(Aspartame)賦形劑，苯酮尿症患者不宜使用\n護理給藥警語\n請勿冷藏"
       },
       "contraindications": [
         {
@@ -1271,12 +1186,9 @@
       "source": "Lexicomp + 高醫藥品庫",
       "group_id": "metoclopramide",
       "kmuh_detail": {
-        "防錯商品名": "Promeran胃明朗",
-        "ATC碼": "A03FA01",
         "臨床用途": "Diabetic gastroparesis, prevention of nausea/vomiting, gastroesophageal reflux",
         "副作用": "CNS depression(drowsiness, dizziness), extrapyramidal reaction, Tardive dyskinesia, hyperprolactinemia, changes in blood pressure\n禁忌\npheochromocytoma or other catecholamine-releasing paragangliomas\n警語\n1.Metoclopramide can cause tardive dyskinesia.\n2.Discontinue metoclopramide in patients who develop signs or symptoms of tardive dyskinesia.\n3.Avoid treatment with metoclopramide for longer than 12 weeks because of the increased risk of developing tardive dyskinesia with longer-term use.\n醫師處方警語\nMetoclopramide base 3.84mg equal to previous Primperan 5mg/Tab",
-        "懷孕分級": "＜說明:AU TGA:A FDA:B＞",
-        "外觀": "辨識\n藥性查詢\n藥品資訊\n操作手冊\n常備藥品清單\n高醫體系\n清除\n中文: 胃明朗膜衣錠(生達)\n代碼: 1PROME"
+        "懷孕分級": "＜說明:AU TGA:A FDA:B＞"
       }
     },
     {
@@ -1305,13 +1217,9 @@
       ],
       "group_id": "metoclopramide",
       "kmuh_detail": {
-        "防錯商品名": "Primperan注射劑",
-        "ATC碼": "A03FA01",
         "臨床用途": "Gastroparesis, gastroesophageal reflux, prevention of chemotherapy-induced nausea and vomiting, hiccup(off-label)",
         "副作用": "CNS depression(dizziness, fatigue, drowsiness), extrapyramidal symptoms(EPS), ↑ prolactin, diarrhea, blood pressure change\n警語\nIf extrapyramidal symptoms occur, administer IM,\n IV 25-50mg diphenhydramine.\n藥師調劑警語\n此藥有二種劑型，本品為＜針劑＞，請注意",
-        "懷孕分級": "＜說明:AU TGA:A  FDA:B＞",
-        "藥品給藥": "一用即棄",
-        "外觀": "辨識\n藥性查詢\n藥品資訊\n操作手冊\n常備藥品清單\n高醫體系\n清除\n中文: 腹寧朗注射液(賽諾菲)\n代碼: 2PRIMP"
+        "懷孕分級": "＜說明:AU TGA:A  FDA:B＞"
       },
       "contraindications": [
         {
@@ -1345,13 +1253,9 @@
         "age"
       ],
       "kmuh_detail": {
-        "防錯商品名": "Novamin*針*",
-        "ATC碼": "N05AB04",
         "臨床用途": "Nausea/vomiting, headache, psychosis",
         "副作用": "EPS, dyspnea, headache, drowsiness, orthostatic hypotension\n護理給藥警語\n建議肌肉注射，本品外觀與 Anxicam 相似\n藥師調劑警語\n本品外觀與 Anxicam 相似，請注意",
-        "授乳": "可授乳 ＜說明:compatible for short-term use .......AUS, LactMed＞",
-        "藥品給藥": "一用即棄",
-        "外觀": "辨識\n藥性查詢\n藥品資訊\n操作手冊\n常備藥品清單\n高醫體系\n清除\n中文: 諾安命注射液(鹽野義)\n代碼: 2NOVAM"
+        "授乳": "可授乳 ＜說明:compatible for short-term use .......AUS, LactMed＞"
       },
       "contraindications": [
         {
@@ -1398,11 +1302,8 @@
         "age"
       ],
       "kmuh_detail": {
-        "防錯商品名": "Kascoal",
-        "ATC碼": "A03AX13",
         "臨床用途": "Antifoamer for flatulence",
-        "授乳": "可授乳",
-        "外觀": "辨識\n藥性查詢\n藥品資訊\n操作手冊\n常備藥品清單\n高醫體系\n清除\n中文: 加斯克兒錠(永信)\n代碼: 1KASCO"
+        "授乳": "可授乳"
       }
     },
     {
@@ -1478,12 +1379,9 @@
       "source": "高醫速算表",
       "tags": [],
       "kmuh_detail": {
-        "防錯商品名": "Magnesium Oxide(MgO)氧化鎂榮民",
-        "ATC碼": "A02AA02",
         "臨床用途": "Constipation, hypomagnesemia, migraine prevention",
         "副作用": "Diarrhea, hypermagnesemia",
-        "授乳": "可授乳\n特性\n1.Green vegetables such as spinach are good sources\n of magnesium ( cooked 1 cup= 157mg )\n2.Beans/peas, nuts/seeds, and whole, unrefined\n grains are good sources of magnesium.",
-        "外觀": "辨識\n藥性查詢\n藥品資訊\n操作手冊\n常備藥品清單\n高醫體系\n清除\n中文: 氧化鎂(榮民)\n代碼: 1MGOVP"
+        "授乳": "可授乳\n特性\n1.Green vegetables such as spinach are good sources\n of magnesium ( cooked 1 cup= 157mg )\n2.Beans/peas, nuts/seeds, and whole, unrefined\n grains are good sources of magnesium."
       }
     },
     {
@@ -1503,10 +1401,7 @@
       "source": "高醫速算表",
       "tags": [],
       "kmuh_detail": {
-        "防錯商品名": "Gou Men Enema浣腸 20mL自費",
-        "ATC碼": "A06AG",
-        "臨床用途": "Constipation",
-        "外觀": "辨識\n藥性查詢\n藥品資訊\n操作手冊\n常備藥品清單\n高醫體系\n清除\n中文: 久明浣腸液(久仁)\n代碼: 3GOUME"
+        "臨床用途": "Constipation"
       }
     },
     {
@@ -1529,14 +1424,10 @@
         "age"
       ],
       "kmuh_detail": {
-        "防錯商品名": "Smecta",
-        "ATC碼": "A07BC05",
         "臨床用途": "Diarrhea",
         "副作用": "Constipation (rare)\n醫師處方警語\n不需磨粉：粉劑，每包以30-50cc的水稀釋\n護理給藥警語\n成人：每包以30-50cc的水稀釋。兒童：請將一日量泡製好的藥液平分3-4次服用",
         "懷孕分級": "＜說明:As a precautionary measure, due to trace Lead presents as an impurity & minimal risk levels of lead have not been determined.＞",
-        "授乳": "＜說明:As a precautionary measure＞\n藥物安定性\n安定性天數：1",
-        "藥品給藥": "不建議磨粉",
-        "外觀": "辨識\n藥性查詢\n藥品資訊\n操作手冊\n常備藥品清單\n高醫體系\n清除\n中文: 舒腹達(海喬)\n代碼: 1SMECT"
+        "授乳": "＜說明:As a precautionary measure＞\n藥物安定性\n安定性天數：1"
       }
     },
     {
@@ -1555,10 +1446,7 @@
       "source": "高醫藥品庫",
       "group_id": "taita",
       "kmuh_detail": {
-        "防錯商品名": "Taita So’ln No. 1",
-        "ATC碼": "B05BB02 \n藥物安定性\n安定性天數：1",
-        "臨床用途": "T1: Supplement of water, electrolytes & nutrition;\n  neonatal support.",
-        "外觀": "辨識\n藥性查詢\n藥品資訊\n操作手冊\n常備藥品清單\n高醫體系\n清除\n中文: 台大1號注射液(大塚製藥)\n代碼: 2T1"
+        "臨床用途": "T1: Supplement of water, electrolytes & nutrition;\n  neonatal support."
       }
     },
     {
@@ -1579,10 +1467,7 @@
       ],
       "group_id": "taita",
       "kmuh_detail": {
-        "防錯商品名": "Taita So’ln No. 2",
-        "ATC碼": "B05BB02 \n藥物安定性\n安定性天數：1",
-        "臨床用途": "T2: Supplement of water, electrolytes & nutrition\n  in hypertonic dehydration and diarrhea of\n  infants or children.",
-        "外觀": "辨識\n藥性查詢\n藥品資訊\n操作手冊\n常備藥品清單\n高醫體系\n清除\n中文: 台大二號注射液(大塚製藥)\n代碼: 2T2"
+        "臨床用途": "T2: Supplement of water, electrolytes & nutrition\n  in hypertonic dehydration and diarrhea of\n  infants or children."
       }
     },
     {
@@ -1603,10 +1488,7 @@
       ],
       "group_id": "taita",
       "kmuh_detail": {
-        "防錯商品名": "Taita So’ln 【No. 5】400mL",
-        "ATC碼": "B05BB02 \n藥物安定性\n安定性天數：1",
-        "臨床用途": "T5: Supplement of water, electrolytes & nutrition\n  in perioperative or NPO patients.",
-        "外觀": "辨識\n藥性查詢\n藥品資訊\n操作手冊\n常備藥品清單\n高醫體系\n清除\n中文: 台大5號注射液(大塚製藥)\n代碼: 2T5"
+        "臨床用途": "T5: Supplement of water, electrolytes & nutrition\n  in perioperative or NPO patients."
       }
     },
     {
@@ -1635,14 +1517,10 @@
       "source": "高醫速算表 + Lexicomp",
       "tags": [],
       "kmuh_detail": {
-        "防錯商品名": "Morphine 針*低*10mg/1mL管1麻",
-        "ATC碼": "N02AA01",
         "臨床用途": "Pain management",
         "副作用": "CNS/respiratory depression, nausea, vomiting, constipation, pruritus, ↑ICP, hypotension, bradycardia\n禁忌\nsignificant respiratory depression;acute alcoholism; convulsive disorders; severe hepatic impairment\n醫師處方警語\n途徑IVP請醫護共同監測5分鐘。\n護理給藥警語\n【警】高警訊  此藥有二種劑量，本品為＜低劑量＞途徑IVP請醫護共同監測5分鐘。",
         "懷孕分級": "＜說明:AU TGA:C＞",
-        "管制性藥品": "管1",
-        "藥品給藥": "一用即棄",
-        "外觀": "辨識\n藥性查詢\n藥品資訊\n操作手冊\n常備藥品清單\n高醫體系\n清除\n中文: 鹽酸嗎啡注射液(管制藥品管理局)\n代碼: 2MORPH"
+        "管制性藥品": "管1"
       },
       "contraindications": [
         {
@@ -1680,14 +1558,10 @@
       "source": "Lexicomp + 高醫速算表",
       "tags": [],
       "kmuh_detail": {
-        "防錯商品名": "FENTANYL*新*高0.5mg/10mL管2麻",
-        "ATC碼": "N01AH01",
         "臨床用途": "Adjunct to general anesthesia, pain",
         "副作用": "Nausea, vomiting, constipation, dry mouth, CNS depression, flushing, hypotension, chest wall rigidity, respiratory depression\n警語\nDelayed respiratory depression may occur within 6 h ( rare case ＞ 6 h) after epidural fentanyl administration.\n醫師處方警語\n途徑IVP 須醫護共同監測5分鐘\n護理給藥警語\n1.【警】高警訊2. 途徑IVP請醫護共同監測5分鐘。",
         "懷孕分級": "＜說明:AU TGA:C＞",
-        "管制性藥品": "管2",
-        "藥品給藥": "一用即棄",
-        "外觀": "辨識\n藥性查詢\n藥品資訊\n操作手冊\n常備藥品清單\n高醫體系\n清除\n中文: 吩坦尼注射液10mL(管制藥品廠)\n代碼: 2FEN05"
+        "管制性藥品": "管2"
       }
     },
     {
@@ -1727,11 +1601,8 @@
       "source": "Lexicomp + 高醫速算表",
       "tags": [],
       "kmuh_detail": {
-        "防錯商品名": "Relaxin 500mg(SCC)*院核*限科",
-        "ATC碼": "M03AB01",
         "臨床用途": "Tracheal Intubation",
-        "副作用": "HR ↑ or ↓, BP ↑ or ↓, respiratory depression, ↑ IOP, myalgia, ↑ K, malignant hyperthemia\n禁忌\n↑ K (burns/trauma), malignant hyperthermia, acute narrow-angle glaucoma, penetrating eye injuries\n警語\n1.It’s not favored for long procedure/prolonged muscular\n relaxation as it will develop Phase II block and should\n be replaced by non-depolarizing blockade.\n2.It must wear off on its own and time is the only truly \n safe reversal agent.\n3.Aminoglycoside rapid IV bolus may ↑ neuromuscular\n blocking action of succinylcholine.\n護理給藥警語\n【警】高警訊:Check vital sign/On Monitor",
-        "外觀": "辨識\n藥性查詢\n藥品資訊\n操作手冊\n常備藥品清單\n高醫體系\n清除\n中文: 能弛聖注射液(杏林新生)【簽呈】\n代碼: 2RELAX"
+        "副作用": "HR ↑ or ↓, BP ↑ or ↓, respiratory depression, ↑ IOP, myalgia, ↑ K, malignant hyperthemia\n禁忌\n↑ K (burns/trauma), malignant hyperthermia, acute narrow-angle glaucoma, penetrating eye injuries\n警語\n1.It’s not favored for long procedure/prolonged muscular\n relaxation as it will develop Phase II block and should\n be replaced by non-depolarizing blockade.\n2.It must wear off on its own and time is the only truly \n safe reversal agent.\n3.Aminoglycoside rapid IV bolus may ↑ neuromuscular\n blocking action of succinylcholine.\n護理給藥警語\n【警】高警訊:Check vital sign/On Monitor"
       }
     },
     {
@@ -1793,14 +1664,10 @@
         "starred_default"
       ],
       "kmuh_detail": {
-        "防錯商品名": "Dormicum*低*5mg/1ml管四",
-        "ATC碼": "N05CD08",
         "臨床用途": "Sedation (premedication, during regional or local anesthesia, postoperative), status epilepticus",
         "副作用": "Hypotension, respiratory depression, prolonged postoperative sedation\n警語\n1.ICU sedation: after ＞ 48h infusion, it often\n accumulates and produces excessive sedation. \n2.↓ dose for elderly or debilitated p’t and when\n CNS depressants are used concomitantly.\n醫師處方警語\n途徑IVP請醫護共同監測5分鐘。\n護理給藥警語\n1.【警】建議使用N/S。高警訊:Check vital sign/On Monitor2.途徑IVP請醫護共同監測5分鐘。",
         "懷孕分級": "C ＜說明:AU TGA:C＞\n特性\nRecovery time:\nShort term: 0.5-2h, Prolonged use: 1-2d",
-        "管制性藥品": "管4",
-        "藥品給藥": "一用即棄",
-        "外觀": "辨識\n藥性查詢\n藥品資訊\n操作手冊\n常備藥品清單\n高醫體系\n清除\n中文: 導眠靜(羅氏藥廠)\n代碼: 2DORM1"
+        "管制性藥品": "管4"
       }
     },
     {
@@ -1828,13 +1695,9 @@
         "starred_default"
       ],
       "kmuh_detail": {
-        "防錯商品名": "Anxicam 針*管四",
-        "ATC碼": "N05BA06",
         "臨床用途": "Alcohol withdrawal, status epilepticus, anticipatory emesis",
         "副作用": "Drowsiness, dizziness, hypotension, injection site reaction\n警語\nUnstable -COPD, -sleep apnoea, -myasthenia gravis\n藥師調劑警語\n本品外觀與 Novamin 相似，請注意",
-        "管制性藥品": "管4",
-        "藥品給藥": "避光，一用即棄",
-        "外觀": "辨識\n藥性查詢\n藥品資訊\n操作手冊\n常備藥品清單\n高醫體系\n清除\n中文: 安心平(瑞士藥廠)\n代碼: 2ANXIC"
+        "管制性藥品": "管4"
       }
     },
     {
@@ -1887,12 +1750,9 @@
       "group_id": "diazepam",
       "package": "2.5 mL/管",
       "kmuh_detail": {
-        "防錯商品名": "Diazepam 錠 2mg 管四",
-        "ATC碼": "N05BA01",
         "臨床用途": "Anxiety, muscle spasms, alcohol withdrawal, insomnia",
         "副作用": "Drowsiness, amnesia, ↓RR, confusion, slurred speech, ataxia, dependence.\n警語\nUnstable -COPD, -sleep apnoea, -myasthenia gravis\n護理給藥警語\n本品裸錠外觀與 Colchicine 相似\n藥師調劑警語\n本品外觀與 Colchicine 相似，請注意",
-        "管制性藥品": "管4",
-        "外觀": "辨識\n藥性查詢\n藥品資訊\n操作手冊\n常備藥品清單\n高醫體系\n清除\n中文: 煩靜(永信製藥)\n代碼: 1DIAZ2"
+        "管制性藥品": "管4"
       }
     },
     {
@@ -1919,12 +1779,9 @@
       "urgency": "maintenance",
       "urgency_label": "💊 口服維持",
       "kmuh_detail": {
-        "防錯商品名": "Keppra液 100mg/mL",
-        "ATC碼": "N03AX14",
         "臨床用途": "Broad spectrum antiepileptic",
         "副作用": "CNS depression(fatigue, dizziness, somnolence), headache, ,agitation, psychiatric and behavioral abnormalities, myelosuppresion, hypersensitivity reactions(Stevens-Johnson syndrome, toxic epidermal necrolysis, drug reaction with eosinophilia and systemic symptoms (DRESS), and acute generalized exanthematous pustulosis)\n警語\nCCr mL/min Dosage mg Frequency\n ＞=80      500-1500   q12h\n 50-79      500-1000  q12h\n 30-49      250-750  q12h\n ＜30      250-500  q12h\nDialysis 500-1000  q24h\n護理給藥警語\n此藥有三種劑型，本品為＜水劑＞\n藥師調劑警語\n此藥有三種劑型，本品為＜水劑＞，請注意",
-        "懷孕分級": "＜說明:AU TGA:B3\nNo evidence of ↑ risk of malformations........ UKTIS＞",
-        "外觀": "辨識\n藥性查詢\n藥品資訊\n操作手冊\n常備藥品清單\n高醫體系\n清除\n中文: 優閒內服液劑(葛蘭素史克)\n代碼: 1KEPPS"
+        "懷孕分級": "＜說明:AU TGA:B3\nNo evidence of ↑ risk of malformations........ UKTIS＞"
       }
     },
     {
@@ -1951,12 +1808,9 @@
       "urgency": "maintenance",
       "urgency_label": "💊 口服維持",
       "kmuh_detail": {
-        "防錯商品名": "Keppra膜衣錠",
-        "ATC碼": "N03AX14",
         "臨床用途": "Broad spectrum antiepileptic",
         "副作用": "CNS depression(fatigue, dizziness, somnolence), headache, ,agitation, psychiatric and behavioral abnormalities, myelosuppresion, hypersensitivity reactions(Stevens-Johnson syndrome, toxic epidermal necrolysis, drug reaction with eosinophilia and systemic symptoms (DRESS), and acute generalized exanthematous pustulosis)\n警語\nCCr mL/min Dosage mg Frequency\n ＞=80      500-1500    q12h\n 50-79      500-1000    q12h\n 30-49      250-750     q12h\n ＜30      250-500     q12h\nDialysis    500-1000    q24h\n護理給藥警語\n此藥有三種劑型，本品為＜錠劑＞\n藥師調劑警語\n此藥有三種劑型，本品為＜錠劑＞，請注意",
-        "懷孕分級": "＜說明:AU TGA:B3\nNo evidence of ↑ risk of malformations........ UKTIS＞",
-        "外觀": "辨識\n藥性查詢\n藥品資訊\n操作手冊\n常備藥品清單\n高醫體系\n清除\n中文: 優閒膜衣錠(優喜碧)\n代碼: 1KE500"
+        "懷孕分級": "＜說明:AU TGA:B3\nNo evidence of ↑ risk of malformations........ UKTIS＞"
       }
     },
     {
@@ -1986,13 +1840,9 @@
       "urgency": "acute",
       "urgency_label": "🚨 急性 loading",
       "kmuh_detail": {
-        "防錯商品名": "Keppra*針*優閒",
-        "ATC碼": "N03AX14",
         "臨床用途": "Broad spectrum antiepileptic",
         "副作用": "CNS depression(fatigue, dizziness, somnolence), headache, ,agitation, psychiatric and behavioral abnormalities, myelosuppresion, hypersensitivity reactions(Stevens-Johnson syndrome, toxic epidermal necrolysis, drug reaction with eosinophilia and systemic symptoms (DRESS), and acute generalized exanthematous pustulosis)\n警語\nCCr mL/min Dosage mg Frequency\n ＞=80      500-1500     q12h\n 50-79      500-1000     q12h\n 30-49      250-750     q12h\n ＜30      250-500     q12h\nDialysis    500-1000     q24h\n護理給藥警語\n此藥有三種劑型，本品為＜針劑＞\n藥師調劑警語\n此藥有三種劑型，本品為＜針劑＞，請注意",
-        "懷孕分級": "＜說明:AU TGA:B3\nNo evidence of ↑ risk of malformations........ UKTIS＞",
-        "藥品給藥": "一用即棄",
-        "外觀": "辨識\n藥性查詢\n藥品資訊\n操作手冊\n常備藥品清單\n高醫體系\n清除\n中文: 優閒注射液(葛蘭素)\n代碼: 2KEPPR"
+        "懷孕分級": "＜說明:AU TGA:B3\nNo evidence of ↑ risk of malformations........ UKTIS＞"
       }
     },
     {
@@ -2023,12 +1873,9 @@
       "urgency": "maintenance",
       "urgency_label": "💊 口服維持",
       "kmuh_detail": {
-        "防錯商品名": "Valproate 液 Depakine(200mg/mL",
-        "ATC碼": "N03AG01",
         "臨床用途": "Broad spectrum antiepileptic, bipolar disorder(Off-label TFDA), migraine prophylaxis(Off-label TFDA)",
         "副作用": "GI upset, alopecia, tremor, drowsiness, hepatotoxicity, pancreatitis, ↑ NH3, ↑ BW, myelosuppression\n禁忌\nmigraine prophylaxis/bipolar disorder in pregnant women, hepatic disease or significant impairment, known mitochondrial disorders caused by mutations in mitochondrial DNA polymerase gamma (POLG; eg, Alpers-Huttenlocher syndrome [AHS]), urea cycle disorders, known systemic primary carnitine deficiency with uncorrected hypocarnitinemia, known porphyria\n警語\n相較於接受lamotrigine或levetiracetam治療的男性，受孕前3個月內接受valproate治療的男性所生之子女罹患神經發育缺陷 (Neurodevelopmental Disorder, NDD)的風險增加，廠商建議在valproate治療期間及停止治療後3個月內採取有效避孕\n藥師調劑警語\n此藥有三種劑型，本品為＜水劑＞，請注意",
-        "懷孕分級": "D ＜說明:AU TGA(D):A broad range of congenital malformations can occur in babies born to women who take sodium valproate during pregnancy, and the risk of malformations increases with increasing dose of valproate.＞",
-        "外觀": "辨識\n藥性查詢\n藥品資訊\n操作手冊\n常備藥品清單\n高醫體系\n清除\n中文: 帝拔癲液(賽諾菲)\n代碼: 1DEP40"
+        "懷孕分級": "D ＜說明:AU TGA(D):A broad range of congenital malformations can occur in babies born to women who take sodium valproate during pregnancy, and the risk of malformations increases with increasing dose of valproate.＞"
       }
     },
     {
@@ -2058,13 +1905,9 @@
       "urgency": "maintenance",
       "urgency_label": "💊 口服維持",
       "kmuh_detail": {
-        "防錯商品名": "Valproate 200mg(Depakine錠)",
-        "ATC碼": "N03AG01",
         "臨床用途": "Broad spectrum antiepileptic, bipolar disorder(Off-label TFDA),migraine prophylaxis(Off-label TFDA)",
         "副作用": "GI upset, alopecia, tremor, drowsiness, hepatotoxicity, pancreatitis, ↑ NH3, ↑ BW, myelosuppression\n禁忌\nmigraine prophylaxis/bipolar disorder in pregnant women, hepatic disease or significant impairment, known mitochondrial disorders caused by mutations in mitochondrial DNA polymerase gamma (POLG; eg, Alpers-Huttenlocher syndrome [AHS]), urea cycle disorders, known systemic primary carnitine deficiency with uncorrected hypocarnitinemia, known porphyria\n警語\n相較於接受lamotrigine或levetiracetam治療的男性，受孕前3個月內接受valproate治療的男性所生之子女罹患神經發育缺陷 (Neurodevelopmental Disorder, NDD)的風險增加，廠商建議在valproate治療期間及停止治療後3個月內採取有效避孕\n醫師處方警語\n不建議磨粉：易潮解，請使用前再磨粉。磨粉容易造成胃刺激，如需磨粉請服多量開水，或可使用同成分之水劑\n護理給藥警語\n易潮解，使用前才磨粉。磨粉容易造成胃刺激，如需磨粉請服多量開水。\n藥師調劑警語\n此藥有三種劑型，本品為＜錠劑＞，易潮解，請注意",
-        "懷孕分級": "D ＜說明:AU TGA(D):A broad range of congenital malformations can occur in babies born to women who take sodium valproate during pregnancy, and the risk of malformations increases with increasing dose of valproate.＞",
-        "藥品給藥": "不建議磨粉",
-        "外觀": "辨識\n藥性查詢\n藥品資訊\n操作手冊\n常備藥品清單\n高醫體系\n清除\n中文: 帝拔癲(賽諾菲)\n代碼: 1DE200"
+        "懷孕分級": "D ＜說明:AU TGA(D):A broad range of congenital malformations can occur in babies born to women who take sodium valproate during pregnancy, and the risk of malformations increases with increasing dose of valproate.＞"
       }
     },
     {
@@ -2097,13 +1940,9 @@
       "urgency": "acute",
       "urgency_label": "🚨 急性 loading",
       "kmuh_detail": {
-        "防錯商品名": "Valproate*針400mg*Depakine防滲",
-        "ATC碼": "N03AG01",
         "臨床用途": "Broad spectrum antiepileptic",
         "副作用": "GI upset, alopecia, tremor, drowsiness, hepatotoxicity, pancreatitis, ↑ NH3, ↑ BW, myelosuppression\n禁忌\nmigraine prophylaxis/bipolar disorder in pregnant women, hepatic disease or significant impairment, known mitochondrial disorders caused by mutations in mitochondrial DNA polymerase gamma (POLG; eg, Alpers-Huttenlocher syndrome [AHS]), urea cycle disorders, known systemic primary carnitine deficiency with uncorrected hypocarnitinemia, known porphyria\n警語\n相較於接受lamotrigine或levetiracetam治療的男性，受孕前3個月內接受valproate治療的男性所生之子女罹患神經發育缺陷 (Neurodevelopmental Disorder, NDD)的風險增加，廠商建議在valproate治療期間及停止治療後3個月內採取有效避孕\n醫師處方警語\n【防滲】\n護理給藥警語\n【滲漏易損傷】此藥有三種劑型，本品為＜針劑＞配製後2-8℃ 24小時\n藥師調劑警語\n此藥有三種劑型，本品為＜針劑＞，請注意",
-        "懷孕分級": "D ＜說明:AU TGA(D):A broad range of congenital malformations can occur in babies born to women who take sodium valproate during pregnancy, and the risk of malformations increases with increasing dose of valproate.＞",
-        "藥品給藥": "一用即棄\n乾粉還原劑\nAq dest 注射用 4 mL",
-        "外觀": "辨識\n藥性查詢\n藥品資訊\n操作手冊\n常備藥品清單\n高醫體系\n清除\n中文: 帝拔癲(賽諾菲安萬特)\n代碼: 2DE400"
+        "懷孕分級": "D ＜說明:AU TGA(D):A broad range of congenital malformations can occur in babies born to women who take sodium valproate during pregnancy, and the risk of malformations increases with increasing dose of valproate.＞"
       }
     },
     {
@@ -2215,11 +2054,8 @@
       "source": "藥丹",
       "tags": [],
       "kmuh_detail": {
-        "防錯商品名": "Pentothal麻醉劑Thiopental*DC**",
-        "ATC碼": "N01AF03",
         "臨床用途": "Induction of anesthesia, ↓ intracranial pressure, status seizure.",
-        "副作用": "Marked respiratory depression, laryngospasm, bronchospasm, coughing, ↓BP, ↓CO.\n禁忌\nRespiratory obstruction, severe asthma, severe shock.\n警語\n1.Extravasation may cause tissue necrosis.\n2.Discard unused portions after 24h.\n3.Should not mix with acid solution(eg. Taita\n solution)\n藥品狀態\n【缺藥】\n缺藥理由\n藥證已註銷\n院方因素-停止採購(106-1藥委會決議)",
-        "外觀": "辨識\n藥性查詢\n藥品資訊\n操作手冊\n常備藥品清單\n高醫體系\n清除\n中文: 必托生(赫士睿)(缺藥)\n代碼: 2PENTO"
+        "副作用": "Marked respiratory depression, laryngospasm, bronchospasm, coughing, ↓BP, ↓CO.\n禁忌\nRespiratory obstruction, severe asthma, severe shock.\n警語\n1.Extravasation may cause tissue necrosis.\n2.Discard unused portions after 24h.\n3.Should not mix with acid solution(eg. Taita\n solution)\n藥品狀態\n【缺藥】\n缺藥理由\n藥證已註銷\n院方因素-停止採購(106-1藥委會決議)"
       }
     },
     {
@@ -2252,12 +2088,8 @@
         "sedation"
       ],
       "kmuh_detail": {
-        "防錯商品名": "Clodrin*自費 10%不得讓病人帶回",
-        "ATC碼": "N05CC01",
         "臨床用途": "Sedation before diagnostic procedures",
-        "副作用": "Somnolence, paradoxical excitation, gastric irritation, nausea, vomiting\n警語\n1.Not use in severe hepatic dysfunction\n2.Not use repeatedly in patients with moderate to\n severe renal impairment.\n ...........Children’s Medical Center, Virginia University",
-        "藥品給藥": "一用即棄",
-        "外觀": "辨識\n藥性查詢\n藥品資訊\n操作手冊\n常備藥品清單\n高醫體系\n清除\n中文: 可律靜內服液(晟德)\n代碼: 1CLO30"
+        "副作用": "Somnolence, paradoxical excitation, gastric irritation, nausea, vomiting\n警語\n1.Not use in severe hepatic dysfunction\n2.Not use repeatedly in patients with moderate to\n severe renal impairment.\n ...........Children’s Medical Center, Virginia University"
       }
     },
     {
@@ -2288,12 +2120,9 @@
       ],
       "group_id": "diphenhydramine",
       "kmuh_detail": {
-        "防錯商品名": "Vena 錠",
-        "ATC碼": "R06AA02",
         "臨床用途": "Drug-induced EPS, nausea/vomiting",
         "副作用": "Sedation, dry mouth, dizziness.\n警語\nUrinary tract obstruction, paradoxical excitation in some people",
-        "授乳": "可授乳 ＜說明:Small, occasional doses＞",
-        "外觀": "辨識\n藥性查詢\n藥品資訊\n操作手冊\n常備藥品清單\n高醫體系\n清除\n中文: 柏那(田邊)\n代碼: 1VENA"
+        "授乳": "可授乳 ＜說明:Small, occasional doses＞"
       }
     },
     {
@@ -2322,12 +2151,8 @@
       ],
       "group_id": "diphenhydramine",
       "kmuh_detail": {
-        "防錯商品名": "Venacalo B6 針#停止採購",
-        "ATC碼": "R06AA52",
         "臨床用途": "Allergy",
-        "副作用": "Sedation, dizziness\n護理給藥警語\n建議應緩慢靜脈注射(Diphenhydramine速率不超過25mg/min)\n藥品狀態\n【缺藥】\n缺藥理由\n院方因素-停止採購。",
-        "藥品給藥": "一用即棄",
-        "外觀": "辨識\n藥性查詢\n藥品資訊\n操作手冊\n常備藥品清單\n高醫體系\n清除\n中文: 美納鈣樂－B6注射液(信東)(缺藥)\n代碼: 2VENB6"
+        "副作用": "Sedation, dizziness\n護理給藥警語\n建議應緩慢靜脈注射(Diphenhydramine速率不超過25mg/min)\n藥品狀態\n【缺藥】\n缺藥理由\n院方因素-停止採購。"
       }
     },
     {
@@ -2359,10 +2184,7 @@
         "starred_default"
       ],
       "kmuh_detail": {
-        "防錯商品名": "Bosmin外用0.1%500mL*DC",
-        "ATC碼": "B02BC09",
-        "臨床用途": "Topical use",
-        "外觀": "辨識\n藥性查詢\n藥品資訊\n操作手冊\n常備藥品清單\n高醫體系\n清除\n中文: 保斯民液(第一三共)(缺藥)\n代碼: 3BO500"
+        "臨床用途": "Topical use"
       }
     },
     {
@@ -2392,13 +2214,9 @@
         "pals"
       ],
       "kmuh_detail": {
-        "防錯商品名": "Cordarone*針*150mg*防滲",
-        "ATC碼": "C01BD01",
         "臨床用途": "AF or VT especially in LV dysfunction or CHF",
         "副作用": "↓ or ↑ thyroid function, hypotension, headache, ↑ LFT\n, Pulmonary infiltrate(rapid or slow onset), corneal\ndeposits (usually benign), optic neuropathy (rare)\n禁忌\nMarked sinus bradycardia, 2°-3° AV block unless pacemaker is available, QT↑ , Torsades de pointes\n警語\nIV amiodarone in WPW with AF is potentially harmful.\n醫師處方警語\n途徑IVP請醫護共同監測5分鐘。\n護理給藥警語\n1.【滲漏易損傷】限用 D5W， 禁用 PVC2. 途徑IVP請醫護共同監測5分鐘。\n藥師調劑警語\n建議標準稀釋液為D5W ( 稀釋濃度＞600mg/L )",
-        "懷孕分級": "C ＜說明:AUS＞\n一般藥品稀釋液\n2G525(Vitagen 5%, 250mL/Bot)\n2G525P(Gitose 5%\"N.K.250mL/Bag)\n2G55(Gitose(Dextrose)5% 500mL/Bag)",
-        "藥品給藥": "一用即棄",
-        "外觀": "辨識\n藥性查詢\n藥品資訊\n操作手冊\n常備藥品清單\n高醫體系\n清除\n中文: 臟得樂(賽諾菲)\n代碼: 2CORDA"
+        "懷孕分級": "C ＜說明:AUS＞\n一般藥品稀釋液\n2G525(Vitagen 5%, 250mL/Bot)\n2G525P(Gitose 5%\"N.K.250mL/Bag)\n2G55(Gitose(Dextrose)5% 500mL/Bag)"
       }
     },
     {
@@ -2425,13 +2243,9 @@
         "pals"
       ],
       "kmuh_detail": {
-        "防錯商品名": "Xylocaine 2% IV 5mL",
-        "ATC碼": "C01BB01",
         "臨床用途": "Ventricular arrhythmias",
         "副作用": "Seizures, loss of consciousness, respiratory depression or arrest, sensory changes, anxiety, euphoria.\n禁忌\nStokes-Adams attacks; WPW; SA, AV or intraventricular blocks.\n醫師處方警語\n途徑IVP請醫護共同監測5分鐘。\n護理給藥警語\n途徑IVP請醫護共同監測5分鐘。",
-        "授乳": "可授乳",
-        "藥品給藥": "一用即棄",
-        "外觀": "辨識\n藥性查詢\n藥品資訊\n操作手冊\n常備藥品清單\n高醫體系\n清除\n中文: 靜注用苦息樂卡因注射液2%(阿斯特捷利康)\n代碼: 2X5"
+        "授乳": "可授乳"
       }
     },
     {
@@ -2463,14 +2277,10 @@
         "starred_default"
       ],
       "kmuh_detail": {
-        "防錯商品名": "Atropine Sulfate 針 1mg",
-        "ATC碼": "A03BA01",
         "臨床用途": "Preoperative medication to inhibit salivation and secretions, symptomatic bradycardia",
         "副作用": "Dry mouth, mydriasis, blurred vision, tachycardia, delirium, tremor.\n禁忌\nNarrow-angle glaucoma, GI tract obstruction, obstructive uropathy.\n醫師處方警語\n途徑IVP請醫護共同監測5分鐘。\n護理給藥警語\n途徑IVP請醫護共同監測5分鐘。",
         "懷孕分級": "＜說明:AU TGA:A＞",
-        "授乳": "＜說明:Long-term use of atropine might reduce milk production, but a single systemic or ophthalmic dose is not likely to interfere with breastfeeding.＞",
-        "藥品給藥": "一用即棄",
-        "外觀": "辨識\n藥性查詢\n藥品資訊\n操作手冊\n常備藥品清單\n高醫體系\n清除\n中文: 硫酸阿托品注射液(臺裕化學)\n代碼: 2ATROP"
+        "授乳": "＜說明:Long-term use of atropine might reduce milk production, but a single systemic or ophthalmic dose is not likely to interfere with breastfeeding.＞"
       }
     },
     {
@@ -2520,13 +2330,9 @@
         "starred_default"
       ],
       "kmuh_detail": {
-        "防錯商品名": "Adenocor 6mg/2mL",
-        "ATC碼": "C01EB10",
         "臨床用途": "Paroxysmal supraventricular tachycardia(PSVT)",
         "副作用": "Cardiac arrhythmia, facial flushing, dyspnea, dizziness, headache , chest pressure, nausea\n禁忌\n2°-3°AV block, sick sinus syndrome, symptomatic bradycardia(except with a functioning artificial pacemaker), known or suspected bronchoconstrictive or bronchospastic lung disease, asthma, severe hypotension, Long QT syndrome\n警語\nContinuous ECG during administration help diagnostically and can distinguish drug failure to terminate arrhythmias vs successful termination with immediate arrhythmia reinitiation.\n醫師處方警語\n途徑IVP請醫護共同監測5分鐘。\n護理給藥警語\n1.未經稀釋即可以快速靜脈注射(超過２秒)給藥2.途徑IVP請醫護共同監測5分鐘。",
-        "懷孕分級": "＜說明:AU TGA:B2＞",
-        "藥品給藥": "一用即棄",
-        "外觀": "辨識\n藥性查詢\n藥品資訊\n操作手冊\n常備藥品清單\n高醫體系\n清除\n中文: 安室律注射劑(賽諾菲)\n代碼: 2ADENO"
+        "懷孕分級": "＜說明:AU TGA:B2＞"
       }
     }
   ],
