@@ -15,7 +15,7 @@
   - 20–40 min 第二線 ASM（IV Phenytoin / Valproate / Levetiracetam，最後備援 IV Phenobarbital）
   - 40–60 min 難治性 SE（麻醉劑量 + EEG monitor + 插管）
   - 自動套體重算每階段藥物 mg / mL
-  - 連結 [AES 流程圖](https://aesnet.org/images/default-source/default-album/cse-treatment-chart-final_rerelease.jpg?sfvrsn=f9e6cfd5_2)
+  - 連結 [AES 流程圖]
 
 ## 資料來源
 
@@ -23,6 +23,10 @@
 - AHA/AAP 2025 PALS Guidelines (DOI 10.1161/CIR.0000000000001368)
 - AES 2016 Convulsive Status Epilepticus Guideline (Glauser et al, Epilepsy Currents 16:1)
 - 高醫小兒藥物速算表 (初版) + 小兒常用藥丹
+
+## 待修
+- 4-2-1 rule
+- 確認流程
 
 ## ⚠️ Disclaimer
 
