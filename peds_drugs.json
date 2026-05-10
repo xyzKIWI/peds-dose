@@ -2247,6 +2247,74 @@
       }
     },
     {
+      "id": "phenobarbital_iv",
+      "generic": "Phenobarbital",
+      "brand": "Phenobital 100 mg/mL/Amp · 惠腦必達（大豐）",
+      "concentration_mg_per_ml": 100,
+      "package": "1 mL/Amp",
+      "kmuh_code": "2PHENO",
+      "category": "seizure",
+      "form": "amp",
+      "route": "IV",
+      "calc": {
+        "type": "mg_per_kg_per_dose",
+        "low": 15,
+        "high": 15,
+        "max_dose_mg": 1000
+      },
+      "frequency": "Single dose（SE loading）",
+      "notes": "SE loading dose；IV rate ≤ 30 mg/min（兒童 ≤ 1 mg/kg/min）；BZD 後給易呼吸抑制",
+      "source": "AES 2016 + KMUH 藥點",
+      "tags": [
+        "seizure",
+        "se_protocol"
+      ],
+      "group_id": "phenobarbital",
+      "kmuh_detail": {
+        "臨床用途": "Status Epilepticus 第一線替代（無 BZD 時）/ 第二線（其他 ASM 不可得時）；新生兒 seizure 首選",
+        "禁忌": "嚴重肝功能不全、急性間歇性 porphyria、對 barbiturate 過敏",
+        "副作用": "呼吸抑制（與 BZD 合用尤甚）、低血壓、過度鎮靜、行為改變",
+        "警語": "緩慢 IV ≤ 30 mg/min；ready 插管 / 升壓藥；新生兒劑量 20 mg/kg",
+        "懷孕分級": "AU TGA: D",
+        "授乳": "可能進入乳汁、嗜睡 — 短期可，長期評估",
+        "管制性藥品": "第 4 級"
+      }
+    },
+    {
+      "id": "phenytoin_iv",
+      "generic": "Phenytoin",
+      "brand": "Aleviatin 250 mg/5mL/Amp · 阿雷彼阿慶（瑞士）",
+      "concentration_mg_per_ml": 50,
+      "package": "5 mL/Amp",
+      "kmuh_code": "2DPH",
+      "category": "seizure",
+      "form": "amp",
+      "route": "IV",
+      "calc": {
+        "type": "mg_per_kg_per_dose",
+        "low": 20,
+        "high": 20,
+        "max_dose_mg": 1500
+      },
+      "frequency": "Single dose（SE loading）",
+      "notes": "SE loading（替代 Fosphenytoin，KMUH 無 fosphenytoin）；IV rate ≤ 1 mg/kg/min（兒童 max 50 mg/min）；NS 稀釋（D5W 會沉澱），filter 給藥",
+      "source": "AES 2016 + KMUH 藥點",
+      "tags": [
+        "seizure",
+        "se_protocol"
+      ],
+      "group_id": "phenytoin",
+      "kmuh_detail": {
+        "臨床用途": "Status Epilepticus 第二線；癲癇 long-term control",
+        "禁忌": "Sinus bradycardia、SA block、AV block、Adams-Stokes、對 hydantoin 過敏",
+        "副作用": "心律不整、低血壓、purple glove syndrome（外滲）、Stevens-Johnson、齒齦增生（長期）",
+        "警語": "心電圖 + BP 監測；NS 稀釋勿用 D5W（會沉澱）；in-line filter；外滲 → 紫手套症候群可致組織壞死",
+        "懷孕分級": "AU TGA: D（teratogenic — fetal hydantoin syndrome）",
+        "授乳": "進入乳汁少量，多數可授乳",
+        "管制性藥品": "—"
+      }
+    },
+    {
       "id": "ketamine",
       "generic": "Ketamine",
       "brand": "Ketalar 50 mg/mL",
@@ -2935,13 +3003,14 @@
           "IM Midazolam（無 IV 時首選）：13–40 kg → 5 mg；>40 kg → 10 mg（single dose）",
           "IV Lorazepam：0.1 mg/kg/dose（max 4 mg/dose；可重複 1 次）",
           "IV Diazepam：0.15–0.2 mg/kg/dose（max 10 mg/dose；可重複 1 次）",
-          "若以上皆不可用：IV Phenobarbital 15 mg/kg（Level A）／ Rectal Diazepam 0.2–0.5 mg/kg, max 20 mg（Level B）／ IN 或 buccal Midazolam（Level B）"
+          "若以上皆不可用：IV Phenobarbital 15 mg/kg（Level A，KMUH 2PHENO）／ Rectal Diazepam 0.2–0.5 mg/kg, max 20 mg（Level B）／ IN 或 buccal Midazolam（Level B）"
         ],
         "drugs": [
           "midazolam_dormicum",
           "lorazepam_inj",
           "diazepam_iv",
-          "diazepam_pr"
+          "diazepam_pr",
+          "phenobarbital_iv"
         ]
       },
       {
@@ -2950,14 +3019,16 @@
         "level": "Level U（三藥等效）",
         "subtitle": "三選一，single dose",
         "actions": [
-          "IV Fosphenytoin 20 mg PE/kg（max 1500 mg PE/dose）",
+          "IV Fosphenytoin 20 mg PE/kg（max 1500 mg PE）— KMUH 無 fosphenytoin，以 IV Phenytoin 20 mg/kg 替代（Aleviatin 2DPH，rate ≤ 1 mg/kg/min）",
           "IV Valproic acid 40 mg/kg（max 3000 mg/dose）",
           "IV Levetiracetam 60 mg/kg（max 4500 mg/dose）",
           "若以上皆不可用且未給過：IV Phenobarbital 15 mg/kg（Level B）"
         ],
         "drugs": [
+          "phenytoin_iv",
+          "depakine_iv",
           "keppra_iv",
-          "depakine_iv"
+          "phenobarbital_iv"
         ]
       },
       {
