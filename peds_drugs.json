@@ -2907,5 +2907,73 @@
       "figure_url": "https://www.ahajournals.org/cms/10.1161/CIR.0000000000001368/asset/6bb06b54-2784-4864-a75b-ea53b3bdcaf3/assets/graphic/cir.0000000000001368.fig06.jpg",
       "figure_label": "查看原始 AHA Figure 6 →"
     }
-  ]
+  ],
+  "se_algorithm": {
+    "id": "convulsive_se",
+    "title": "兒科癲癇重積 Convulsive Status Epilepticus",
+    "subtitle": "AES 2016 · Glauser et al · Epilepsy Currents 16(1):48-61",
+    "icon": "⚡",
+    "time_stages": [
+      {
+        "minutes": "0–5",
+        "phase": "Stabilization 穩定期",
+        "actions": [
+          "ABCD：airway / breathing / circulation / disability（含 neurologic exam）",
+          "計時 seizure onset + 監測 vital signs",
+          "氧氣 NC / mask；呼吸不穩考慮插管",
+          "Initiate ECG monitoring",
+          "Fingerstick glucose；< 60 mg/dL → ≥2 yr：2 mL/kg D25W IV｜<2 yr：4 mL/kg D12.5W IV",
+          "IV access + electrolytes / CBC / tox screen / ASM levels"
+        ]
+      },
+      {
+        "minutes": "5–20",
+        "phase": "Initial Therapy 第一線 BZD",
+        "level": "Level A",
+        "subtitle": "三選一（IM midazolam / IV lorazepam / IV diazepam）",
+        "actions": [
+          "IM Midazolam（無 IV 時首選）：13–40 kg → 5 mg；>40 kg → 10 mg（single dose）",
+          "IV Lorazepam：0.1 mg/kg/dose（max 4 mg/dose；可重複 1 次）",
+          "IV Diazepam：0.15–0.2 mg/kg/dose（max 10 mg/dose；可重複 1 次）",
+          "若以上皆不可用：IV Phenobarbital 15 mg/kg（Level A）／ Rectal Diazepam 0.2–0.5 mg/kg, max 20 mg（Level B）／ IN 或 buccal Midazolam（Level B）"
+        ],
+        "drugs": [
+          "midazolam_dormicum",
+          "lorazepam_inj",
+          "diazepam_iv",
+          "diazepam_pr"
+        ]
+      },
+      {
+        "minutes": "20–40",
+        "phase": "Second Therapy 第二線 ASM",
+        "level": "Level U（三藥等效）",
+        "subtitle": "三選一，single dose",
+        "actions": [
+          "IV Fosphenytoin 20 mg PE/kg（max 1500 mg PE/dose）",
+          "IV Valproic acid 40 mg/kg（max 3000 mg/dose）",
+          "IV Levetiracetam 60 mg/kg（max 4500 mg/dose）",
+          "若以上皆不可用且未給過：IV Phenobarbital 15 mg/kg（Level B）"
+        ],
+        "drugs": [
+          "keppra_iv",
+          "depakine_iv"
+        ]
+      },
+      {
+        "minutes": "40–60",
+        "phase": "Third Therapy 難治性 SE",
+        "level": "Level U（無明確證據）",
+        "actions": [
+          "重複 second line therapy；或",
+          "麻醉劑量：thiopental / midazolam / pentobarbital / propofol",
+          "皆需 continuous EEG monitoring + 插管 + ICU"
+        ]
+      }
+    ],
+    "decision_label": "Does Seizure Continue? — 若仍持續 → 進下一階段；若已停 → symptomatic care",
+    "citation": "Glauser T, Shinnar S, Gloss D, et al. Evidence-Based Guideline: Treatment of Convulsive Status Epilepticus in Children and Adults. Epilepsy Currents 2016;16(1):48-61.",
+    "figure_url": "https://aesnet.org/clinical-care/clinical-guidance/guideline-prolonged-seizures",
+    "figure_label": "AES 原文 / 流程圖 →"
+  }
 }
