@@ -2004,9 +2004,9 @@
     {
       "id": "diazepam_pr",
       "generic": "Diazepam",
-      "brand": "Stesolid rectal tube",
+      "brand": "Stesolid 直腸用 10 mg/2.5 mL/Tube · 疏痙",
       "concentration_note": "5 mg/2.5 mL/管 或 10 mg/2.5 mL/管（依年齡選用）",
-      "kmuh_code": "1DIAZ2",
+      "kmuh_code": "3STESO",
       "category": "seizure",
       "form": "rectal_tube",
       "route": "PR",
@@ -2017,11 +2017,11 @@
         "max_dose_mg": 20
       },
       "frequency": "ST，可在 5-10 min 後 repeat 一次",
-      "notes": "院前/居家熱痙攣常用；無 IV 路時方便",
+      "notes": "院前/居家熱痙攣常用；無 IV 路時方便。臨床多按管數給藥（一管 10 mg），mL 換算供參考",
       "source": "Lexicomp + 藥丹",
       "tags": [],
       "group_id": "diazepam",
-      "package": "2.5 mL/管",
+      "package": "10 mg / 2.5 mL/Tube",
       "kmuh_detail": {
         "臨床用途": "院前 / 居家熱痙攣、status epilepticus（無 IV access）",
         "禁忌": "重症肌無力、肛門撕裂",
@@ -2030,7 +2030,8 @@
         "懷孕分級": "AU TGA: C",
         "授乳": "短期可",
         "管制性藥品": "管 4"
-      }
+      },
+      "concentration_mg_per_ml": 4
     },
     {
       "id": "keppra_syrup",
@@ -2101,7 +2102,7 @@
     {
       "id": "keppra_iv",
       "generic": "Levetiracetam",
-      "brand": "Keppra 500 mg/Vial",
+      "brand": "Keppra 500 mg/5 mL/Vial · 優閒注射液",
       "concentration_mg_per_unit": 500,
       "unit": "Vial",
       "kmuh_code": "2KEPPR",
@@ -2132,7 +2133,9 @@
         "懷孕分級": "AU TGA: B3",
         "授乳": "短期可",
         "管制性藥品": "—"
-      }
+      },
+      "package": "500 mg / 5 mL/Vial",
+      "concentration_mg_per_ml": 100
     },
     {
       "id": "depakine_syrup",
@@ -2210,7 +2213,7 @@
     {
       "id": "depakine_iv",
       "generic": "Valproate Sodium",
-      "brand": "Depakine 400 mg/vial",
+      "brand": "Depakine 400 mg/Vial · 帝拔癲注射劑（復溶 100 mg/mL）",
       "concentration_mg_per_unit": 400,
       "unit": "vial",
       "kmuh_code": "2DE400",
@@ -2244,7 +2247,9 @@
         "懷孕分級": "AU TGA: D",
         "授乳": "短期可",
         "管制性藥品": "—"
-      }
+      },
+      "package": "400 mg/Vial（復溶後 100 mg/mL）",
+      "concentration_mg_per_ml": 100
     },
     {
       "id": "phenobarbital_iv",
