@@ -6,11 +6,9 @@
 
 ## 內容
 
-- 50+ 個急診常用兒科藥物
-- 多模式：⭐釘選 / 🤧URI / 🤢AGE / 🫀PALS / 🚨急救 / 鎮靜 / 抽搐 / 抗生素 / 退燒 / 水劑換算
-- PALS 互動演算法（Cardiac Arrest / Tachy / Brady）+ 連結 AHA/AAP 2025 原圖
-- Ketamine 完整 IV/IM × induction/sedation/analgesia
-- 抗生素、止吐、Procaterol、Taita 點滴等多 form 合併卡
+- 急診常用兒科藥物
+- 多模式情境切換：⭐釘選 / 🤧URI / 🤢AGE / 鎮靜 / 抽搐 / 抗生素 / 退燒 / 水劑 / 🚨急救 / 🫀PALS
+- PALS 流程（Cardiac Arrest / Tachy / Brady）+ 連結 AHA/AAP 2025 原圖
 
 ## 資料來源
 
