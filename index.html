@@ -1589,5 +1589,60 @@ function saveLast() {
 // Initial render
 render();
 </script>
+
+<!-- ===== 臨床回饋記錄（與 icd10-ed-quickref 共用 Google 表單 → 同一張 Sheet 集中彙整；localStorage 離線備援） ===== -->
+<style>
+  #fbBtn{position:fixed; right:14px; bottom:14px; z-index:99; width:46px; height:46px; border-radius:50%;
+    border:none; background:#0e7490; color:#fff; font-size:20px; cursor:pointer; box-shadow:0 2px 8px rgba(0,0,0,.25);}
+  #fbPanel{display:none; position:fixed; right:14px; bottom:68px; z-index:99; width:min(320px, calc(100vw - 28px));
+    background:var(--card, #fff); color:var(--text, #1f2937); border:1px solid var(--border, #e2e8f0);
+    border-radius:12px; padding:12px; box-shadow:0 4px 16px rgba(0,0,0,.25); font-size:13px;}
+  #fbPanel.open{display:block;}
+  #fbPanel textarea{width:100%; height:64px; box-sizing:border-box; font:inherit; font-size:13px;
+    border:1px solid var(--border, #cbd5e1); border-radius:8px; padding:6px 8px; resize:vertical;
+    background:var(--bg, #fff); color:inherit;}
+  #fbPanel .row{display:flex; gap:6px; margin-top:8px; align-items:center; flex-wrap:wrap;}
+  #fbPanel button{font:inherit; font-size:12px; padding:6px 10px; border-radius:7px; border:1px solid var(--border, #cbd5e1);
+    background:var(--bg, #f8fafc); color:inherit; cursor:pointer;}
+  #fbPanel .primary{background:#0e7490; border-color:#0e7490; color:#fff;}
+  #fbPanel .hint{color:var(--muted, #64748b); font-size:11px; margin-top:6px;}
+  #fbCount{color:var(--muted, #64748b); font-size:11px; margin-left:auto;}
+</style>
+<button id="fbBtn" title="回饋盲點">💬</button>
+<div id="fbPanel">
+  <b>值班盲點回饋</b>
+  <textarea id="fbText" placeholder="例：缺 acyclovir 劑量／URI 情境想加 xxx／某藥 mg/kg 跟 HIS 不合…"></textarea>
+  <div class="row">
+    <button class="primary" id="fbSave">記下這筆</button>
+    <button id="fbCopy">複製全部</button>
+    <button id="fbClear">清空</button>
+    <span id="fbCount"></span>
+  </div>
+  <div class="hint">背景送到共用回饋表單（同 ICD-10 工具那張 Sheet）＋存本機備援，離線也能記。</div>
+</div>
+<script>
+(function(){
+  const FB_FORM="https://docs.google.com/forms/d/e/1FAIpQLSeGbSAsVojnBw67MvWjOcpyZcQUzcfNURqGohQ8uUuboh8fgg/formResponse";
+  const FB_ENTRY="entry.248204705";
+  const KEY="pd_feedback";
+  const load=()=>{try{return JSON.parse(localStorage.getItem(KEY))||[]}catch(e){return[]}};
+  const save=a=>localStorage.setItem(KEY, JSON.stringify(a));
+  const count=()=>{const n=load().length; document.getElementById('fbCount').textContent=n?("本機 "+n+" 筆"):"";};
+  document.getElementById('fbBtn').onclick=()=>document.getElementById('fbPanel').classList.toggle('open');
+  document.getElementById('fbSave').onclick=()=>{
+    const t=document.getElementById('fbText').value.trim();
+    if(!t) return;
+    const entry="[peds-dose] "+new Date().toISOString().slice(0,16).replace('T',' ')+" | "+t;
+    const a=load(); a.push(entry); save(a); count();
+    try{fetch(FB_FORM,{method:"POST",mode:"no-cors",headers:{"Content-Type":"application/x-www-form-urlencoded"},body:FB_ENTRY+"="+encodeURIComponent(entry)});}catch(e){}
+    document.getElementById('fbText').value="";
+    document.getElementById('fbSave').textContent="已記下 ✓";
+    setTimeout(()=>{document.getElementById('fbSave').textContent="記下這筆";},1200);
+  };
+  document.getElementById('fbCopy').onclick=()=>{navigator.clipboard.writeText(load().join("\n"));};
+  document.getElementById('fbClear').onclick=()=>{if(confirm("清空本機回饋？（已送表單的不受影響）")){save([]);count();}};
+  count();
+})();
+</script>
 </body>
 </html>
