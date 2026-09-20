@@ -51,6 +51,12 @@ const ketamine = data.drugs.find(drug => drug.id === 'ketamine');
 if (ketamine?.kmuh_code !== '2KET10' || ketamine?.concentration_mg_per_ml !== 50 || ketamine?.order_unit_volume_ml !== 10 || ketamine?.order_unit !== 'Vial') {
   errors.push('ketamine ordering conversion must use HIS code 2KET10, 50 mg/mL original solution and 10 mL/Vial');
 }
+const ketamineSedationRoutes = ketamine?.protocols
+  ?.filter(protocol => protocol.use === '處置鎮靜')
+  .map(protocol => protocol.route);
+if (JSON.stringify(ketamineSedationRoutes) !== JSON.stringify(['IM', 'IV'])) {
+  errors.push('ketamine procedural sedation routes must default to IM with IV as the second option');
+}
 
 if (errors.length) {
   console.error(errors.join('\n'));

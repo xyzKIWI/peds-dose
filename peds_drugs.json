@@ -2374,6 +2374,21 @@
       "route": "IV/IM",
       "protocols": [
         {
+          "id": "procedural_sedation_im",
+          "use": "處置鎮靜",
+          "route": "IM",
+          "shortcut": true,
+          "initial_options_mg_per_kg": [4],
+          "default_initial_mg_per_kg": 4,
+          "supplemental_options_mg_per_kg": [2],
+          "default_supplemental_mg_per_kg": 2,
+          "administration": "IM",
+          "reassessment": "10 分鐘後再評估是否追加",
+          "concentration_options_mg_per_ml": [50],
+          "default_concentration_mg_per_ml": 50,
+          "source": "Royal Children's Hospital Melbourne, Ketamine use for procedural sedation (updated 2021-12)"
+        },
+        {
           "id": "procedural_sedation_iv",
           "use": "處置鎮靜",
           "route": "IV",
@@ -2388,21 +2403,6 @@
           "default_concentration_mg_per_ml": 50,
           "dilution_note": "10 mg/mL 僅在已確認配製完成時手動選擇；不預設已稀釋。",
           "source": "RCEM Best Practice Guideline: Ketamine Procedural Sedation for Children in the ED (2020-02)"
-        },
-        {
-          "id": "procedural_sedation_im",
-          "use": "處置鎮靜",
-          "route": "IM",
-          "shortcut": true,
-          "initial_options_mg_per_kg": [4],
-          "default_initial_mg_per_kg": 4,
-          "supplemental_options_mg_per_kg": [2],
-          "default_supplemental_mg_per_kg": 2,
-          "administration": "IM",
-          "reassessment": "10 分鐘後再評估是否追加",
-          "concentration_options_mg_per_ml": [50],
-          "default_concentration_mg_per_ml": 50,
-          "source": "Royal Children's Hospital Melbourne, Ketamine use for procedural sedation (updated 2021-12)"
         },
         {
           "id": "induction_iv",
