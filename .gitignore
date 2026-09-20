@@ -30,3 +30,4 @@ integrate_kmuh_detail.py
 
 # Playwright local snapshots (測試副產物)
 .playwright-mcp/
+tmp/

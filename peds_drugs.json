@@ -1,13 +1,15 @@
 {
   "_meta": {
-    "version": "2.5",
-    "last_updated": "2026-05-09",
+    "version": "3.0",
+    "last_updated": "2026-09-21",
     "scope": "Pediatric ED — common drugs for 院內",
     "primary_source": "Lexicomp / Nelson / UpToDate, cross-referenced with 高醫速算表 (初版) and 小兒常用藥丹",
     "disclaimer": "個人速算工具。僅供臨床醫師快速參考，最終劑量以主治醫師臨床判斷為準。藥碼以高醫 HIS 為準，請於開藥前再次核對。",
     "schema_notes": {
       "calc.type": "mg_per_kg_per_dose | mg_per_kg_per_day | ml_per_kg_per_dose | ml_per_kg_per_day | tab_per_kg_per_day | fixed_age_band | dilution",
-      "indications": "陣列，支援同藥多適應症（如 ketamine IM induction vs IV sedation vs IV analgesia）"
+      "indications": "陣列，支援同藥多適應症",
+      "protocols": "用途與途徑分離；只有 shortcut=true 的已查核方案可顯示快捷結果",
+      "availability": "available | shortage | unavailable | verification_required；供應狀態不等於禁忌"
     }
   },
   "categories": [
@@ -114,10 +116,11 @@
         "high": 15,
         "max_dose_mg": 1000,
         "max_doses_per_day": 5,
-        "max_mg_per_day": 4000
+        "max_mg_per_day": 4000,
+        "max_mg_per_kg_per_day": 75
       },
       "frequency": "Q4-6H PRN",
-      "notes": "速算: BW÷4 ~ BW÷2 mL/dose；間隔 ≥4 小時；可與 Ibuprofen 半小時錯開使用",
+      "notes": "10-15 mg/kg/dose = BW÷2.4 ~ BW÷1.6 mL/dose；BW÷2 mL = 12 mg/kg/dose。間隔 ≥4 小時；未記錄當日已用量時，須另行核對累計劑量。",
       "source": "Lexicomp + 高醫速算表",
       "tags": [
         "fever",
@@ -190,7 +193,8 @@
         "high": 10,
         "max_dose_mg": 400,
         "max_mg_per_day": 1200,
-        "max_ml_per_day": 60
+        "max_ml_per_day": 60,
+        "max_mg_per_kg_per_day": 40
       },
       "frequency": "Q6-8H PRN",
       "notes": "速算: BW÷4 ~ BW÷2 mL/dose；< 6 月禁用；≥ 6 月-12 歲適用",
@@ -1871,68 +1875,105 @@
     {
       "id": "midazolam_dormicum",
       "generic": "Midazolam",
-      "brand": "Dormicum 5 mg/mL",
-      "concentration_mg_per_ml": 5,
-      "package": "3 mL/Amp = 15 mg/Amp",
-      "kmuh_code": "2DORM1",
+      "brand": "Midatin 美得定 50 mg/50 mL/Bag（南光）",
+      "concentration_mg_per_ml": 1,
+      "package": "50 mL/Bag = 50 mg/Bag",
+      "kmuh_code": "2MID50",
       "category": "sedation",
-      "form": "amp",
-      "route": "IV/IM/IN/PO",
-      "indications": [
+      "form": "bag",
+      "route": "IV（院內 50 mL/Bag）",
+      "group_id": "midazolam",
+      "protocols": [
         {
-          "label": "IM (status epilepticus)",
-          "calc": {
-            "type": "mg_per_kg_per_dose",
-            "low": 0.2,
-            "high": 0.2,
-            "max_dose_mg": 10
-          },
-          "route": "IM",
-          "onset": "5-10 min",
-          "notes": "RAMPART trial: IM midaz ≥ IV lorazepam in efficacy"
-        },
-        {
-          "label": "Procedural sedation (IV)",
-          "calc": {
-            "type": "mg_per_kg_per_dose",
-            "low": 0.05,
-            "high": 0.1,
-            "max_dose_mg": 5
-          },
+          "use": "知覺鎮靜（6個月至5歲）",
           "route": "IV",
-          "onset": "1-3 min",
-          "duration": "30-60 min",
-          "frequency": "Slow IV push，可 2-3 min 後 repeat"
+          "shortcut": false,
+          "default_concentration_mg_per_ml": 1,
+          "reference_range": "仿單起始 0.05-0.1 mg/kg IV，至少 2-3 分鐘緩慢滴定；總量可能至 0.6 mg/kg，但不超過 6 mg。"
         },
         {
-          "label": "Intranasal (anxiolysis/seizure)",
-          "calc": {
-            "type": "mg_per_kg_per_dose",
-            "low": 0.2,
-            "high": 0.3,
-            "max_dose_mg": 10
-          },
-          "route": "IN",
-          "onset": "5-10 min",
-          "notes": "用 5 mg/mL 濃度，分兩鼻孔；癲癇現場可用"
+          "use": "知覺鎮靜（6至12歲）",
+          "route": "IV",
+          "shortcut": false,
+          "default_concentration_mg_per_ml": 1,
+          "reference_range": "仿單起始 0.025-0.05 mg/kg IV，至少 2-3 分鐘緩慢滴定；總量可至 0.4 mg/kg，最大 10 mg。"
+        },
+        {
+          "use": "ICU 鎮靜（兒童）",
+          "route": "IV bolus / infusion",
+          "shortcut": false,
+          "default_concentration_mg_per_ml": 1,
+          "reference_range": "仿單 loading 0.05-0.2 mg/kg，至少 2-3 分鐘給予；之後持續輸注 0.06-0.12 mg/kg/hr（1-2 mcg/kg/min），依效果滴定。"
+        },
+        {
+          "use": "ICU 鎮靜（新生兒）",
+          "route": "IV infusion",
+          "shortcut": false,
+          "default_concentration_mg_per_ml": 1,
+          "reference_range": "仿單不給 loading dose；胎齡 ≤32 週由 0.03 mg/kg/hr 開始，>32 週由 0.06 mg/kg/hr 開始並密切再評估。"
         }
       ],
       "warnings": [
         "呼吸抑制（與 opioid 共用尤其）",
-        "稀有 paradoxical agitation"
+        "不可快速靜脈注射；需緩慢滴定並持續監測",
+        "仿單注射劑整體包含 IM／直腸用法，但院內新供應品為 50 mL 軟袋；非 IV 途徑需先核對院內 protocol"
       ],
-      "source": "Lexicomp + 高醫速算表 + 藥丹",
+      "availability": {
+        "status": "available",
+        "label": "院內目前列有 2MID50，頁面未標示缺藥",
+        "checked_on": "2026-09-21",
+        "source_url": "https://www.kmugh.org.tw/web/drugsearch/drugsearch.aspx?Search=midatin#Link"
+      },
+      "notes": "新供應品濃度為 1 mg/mL，不可沿用舊 5 mg/mL 安瓿的 mL 速算。兒科劑量需依年齡、適應症與反應逐步滴定，因此暫不顯示快捷給藥結果。",
+      "monitoring": "連續 SpO₂、呼吸、心率與血壓監測；備妥年齡／體型適當的氧氣、抽吸、甦醒與氣道設備。",
+      "source": "高醫岡山藥品頁（2MID50，2026-09-21） + 高醫官方仿單 B2MID50（版本 2024-03-29）",
       "tags": [
-        "emergency",
-        "starred_default"
+        "emergency"
       ],
       "kmuh_detail": {
-        "臨床用途": "Procedural sedation、anxiolysis、status epilepticus",
-        "禁忌": "重症肌無力、acute angle-closure glaucoma、呼吸衰竭",
-        "副作用": "呼吸抑制（與 opioid 共用尤其）、嗜睡、罕見 paradoxical agitation",
-        "警語": "備 flumazenil；新生兒癲癇現場 IM/IN 是好選擇（RAMPART）",
+        "臨床用途": "知覺鎮靜、急救加護病房鎮靜、手術前給藥、麻醉誘導及維持",
+        "院內規格": "2MID50；Midatin 50 mg/50 mL/Bag；1 mg/mL",
+        "禁忌": "對 benzodiazepines 或配方賦形劑過敏",
+        "副作用": "鎮靜、低血壓、呼吸變慢；可能呼吸抑制、窒息或心肺停止",
+        "警語": "本藥限醫師使用；不可快速或單次 IV bolus；與 opioid 併用可能重度鎮靜、呼吸抑制、昏迷或死亡",
         "懷孕分級": "AU TGA: C",
-        "授乳": "短期可",
+        "授乳": "仿單建議用藥後 24 小時內停止授乳",
+        "管制性藥品": "管 4"
+      }
+    },
+    {
+      "id": "midazolam_midatin_5mg_shortage",
+      "generic": "Midazolam",
+      "brand": "Midatin 美得定 15 mg/3 mL/Amp（南光，舊品項）",
+      "concentration_mg_per_ml": 5,
+      "package": "3 mL/Amp = 15 mg/Amp",
+      "kmuh_code": "2MIDAT",
+      "category": "sedation",
+      "form": "amp",
+      "route": "IV/IM/IN（舊 5 mg/mL 品項）",
+      "group_id": "midazolam",
+      "notes": "院內頁面仍列出此舊規格，但明確標示缺藥；保留供供應狀態及舊流程核對，不提供快捷劑量。",
+      "warnings": [
+        "不得以新 1 mg/mL 軟袋直接套用舊 5 mg/mL 安瓿的 mL 速算"
+      ],
+      "availability": {
+        "status": "shortage",
+        "label": "舊 2MIDAT 15 mg/3 mL/Amp 院內頁面標示缺藥",
+        "checked_on": "2026-09-21",
+        "source_url": "https://www.kmugh.org.tw/web/drugsearch/drugsearch.aspx?Search=midatin#Link"
+      },
+      "source": "高醫岡山藥品頁（2MIDAT，2026-09-21）",
+      "tags": [
+        "emergency",
+        "supply_issue"
+      ],
+      "kmuh_detail": {
+        "臨床用途": "舊 5 mg/mL 品項資料，供既有流程與癲癇處置參考",
+        "禁忌": "對 benzodiazepines 或配方賦形劑過敏",
+        "副作用": "呼吸抑制、嗜睡、低血壓、罕見 paradoxical agitation",
+        "警語": "此規格目前缺藥；不得以 1 mg/mL 新品未經換算替代",
+        "懷孕分級": "AU TGA: C",
+        "授乳": "依現行仿單及藥師指示",
         "管制性藥品": "管 4"
       }
     },
@@ -2324,61 +2365,65 @@
       "generic": "Ketamine",
       "brand": "Ketalar 50 mg/mL",
       "concentration_mg_per_ml": 50,
-      "package": "10 mL/vial = 500 mg/Vial",
-      "kmuh_code": "2KETA1",
+      "package": "10 mL/Vial = 500 mg/Vial",
+      "order_unit": "Vial",
+      "order_unit_volume_ml": 10,
+      "kmuh_code": "2KET10",
       "category": "sedation",
       "form": "vial",
       "route": "IV/IM",
-      "indications": [
+      "protocols": [
         {
-          "label": "IM (induction / procedural sedation)",
-          "calc": {
-            "type": "mg_per_kg_per_dose",
-            "low": 4,
-            "high": 6
-          },
+          "id": "procedural_sedation_iv",
+          "use": "處置鎮靜",
+          "route": "IV",
+          "shortcut": true,
+          "initial_options_mg_per_kg": [1],
+          "default_initial_mg_per_kg": 1,
+          "supplemental_options_mg_per_kg": [0.5],
+          "default_supplemental_mg_per_kg": 0.5,
+          "administration": "至少 1 分鐘緩慢 IV",
+          "reassessment": "5-10 分鐘後再評估是否追加",
+          "concentration_options_mg_per_ml": [50, 10],
+          "default_concentration_mg_per_ml": 50,
+          "dilution_note": "10 mg/mL 僅在已確認配製完成時手動選擇；不預設已稀釋。",
+          "source": "RCEM Best Practice Guideline: Ketamine Procedural Sedation for Children in the ED (2020-02)"
+        },
+        {
+          "id": "procedural_sedation_im",
+          "use": "處置鎮靜",
           "route": "IM",
-          "onset": "3-5 min",
-          "duration": "12-25 min（recovery 90-150 min）",
-          "frequency": "ST × 1（induction）；procedural sedation 必要時 5-10 min 後 repeat 2-5 mg/kg",
-          "notes": "Anesthesia induction 4-6 mg/kg；procedural sedation 4-5 mg/kg"
+          "shortcut": true,
+          "initial_options_mg_per_kg": [4],
+          "default_initial_mg_per_kg": 4,
+          "supplemental_options_mg_per_kg": [2],
+          "default_supplemental_mg_per_kg": 2,
+          "administration": "IM",
+          "reassessment": "10 分鐘後再評估是否追加",
+          "concentration_options_mg_per_ml": [50],
+          "default_concentration_mg_per_ml": 50,
+          "source": "Royal Children's Hospital Melbourne, Ketamine use for procedural sedation (updated 2021-12)"
         },
         {
-          "label": "IV (induction / procedural sedation)",
-          "calc": {
-            "type": "mg_per_kg_per_dose",
-            "low": 0.5,
-            "high": 2
-          },
+          "id": "induction_iv",
+          "use": "麻醉誘導／RSI",
           "route": "IV",
-          "onset": "30-60 sec",
-          "duration": "5-10 min",
-          "frequency": "Slow push 30-60 sec；procedural sedation 必要時 q5-10 min repeat 0.5-1 mg/kg",
-          "notes": "Induction 0.5-2 mg/kg；procedural sedation 1-2 mg/kg。Hemodynamic-stable，適合 hypotension/shock"
+          "shortcut": false,
+          "reference_range": "0.5-2 mg/kg IV；個案狀況與院內流程差異大，尚未設為一鍵預設。"
         },
         {
-          "label": "IV maintenance (anesthesia)",
-          "calc": {
-            "type": "mg_per_kg_per_dose",
-            "low": 0.25,
-            "high": 0.35
-          },
+          "id": "analgesia_iv",
+          "use": "低劑量止痛",
           "route": "IV",
-          "frequency": "Bolus 後接 continuous infusion up to 1 mg/kg/hr",
-          "notes": "全身麻醉 maintenance（OR 用，ED 較少）"
+          "shortcut": false,
+          "reference_range": "0.1-0.3 mg/kg IV；須依院內 protocol 確認給藥速度與追加間隔。"
         },
         {
-          "label": "IV sub-dissociative analgesia",
-          "calc": {
-            "type": "mg_per_kg_per_dose",
-            "low": 0.1,
-            "high": 0.3
-          },
+          "id": "maintenance_iv",
+          "use": "麻醉維持",
           "route": "IV",
-          "onset": "1-2 min",
-          "duration": "5-15 min",
-          "frequency": "Slow IV over 10 min；可 q15-30 min repeat",
-          "notes": "急性疼痛，opioid-sparing；可 IV drip 0.1-0.3 mg/kg/hr"
+          "shortcut": false,
+          "reference_range": "參考資料可查閱；不提供 ED 一鍵預設。"
         }
       ],
       "warnings": [
@@ -2386,11 +2431,11 @@
         "Barbiturates 與 ketamine 不可同 syringe（會 precipitate）",
         "ICP 升高傳統說法 — 近年文獻挑戰（多數 TBI 病人安全）",
         "Hypersalivation — atropine 0.01 mg/kg 預給藥不再常規（ACEP 2011）",
-        "Emergence reactions — 預先給 midazolam 0.05 mg/kg；學齡兒童風險高",
+        "Emergence reaction 不常規預給 midazolam；發生反應後再由醫師評估處理",
         "禁忌：<3 月（喉痙攣風險）、active psychosis、未控制 HTN、thyrotoxicosis、global eyeball injury"
       ],
-      "monitoring": "SpO2、ETCO2、HR、BP；備好 O2、Ambu、suction、atropine、midazolam",
-      "source": "院內 藥典 + Lexicomp + ACEP 2011",
+      "monitoring": "連續 SpO2，並監測 ETCO2、HR、BP；備妥氣道、氧氣、Ambu 與 suction；需具備兒童鎮靜人力與復原後觀察條件。",
+      "source": "RCEM 2020 Ketamine Kids + RCEM 2022 Procedural Sedation + RCH Ketamine guideline + 院內 HIS 截圖（2KET10，2026-09-21）",
       "tags": [
         "emergency",
         "rsi",
@@ -2404,11 +2449,17 @@
           "reason": "< 3 月喉痙攣風險高"
         }
       ],
+      "availability": {
+        "status": "available",
+        "label": "院內 HIS：2KET10，Ketalar 500 mg/10 mL，開藥單位 Vial，管3，高警訊",
+        "checked_on": "2026-09-21"
+      },
       "kmuh_detail": {
         "臨床用途": "Procedural sedation、RSI induction、急性疼痛 sub-dissociative",
+        "院內規格": "2KET10；Ketalar 500 mg/10 mL；開藥單位 Vial；HIS 截圖途徑 IM",
         "禁忌": "<3 月、active psychosis、未控制 HTN、global eyeball injury、thyrotoxicosis",
         "副作用": "BP↑、ICP↑、IOP↑、laryngospasm（罕見 ~0.4%）、emergence reaction、N/V、nystagmus、hypersalivation",
-        "警語": "Barbiturates 不可同 syringe（precipitate）；備 atropine + midaz 處理 emergence；hemodynamic-stable，適合 hypotension/shock",
+        "警語": "Barbiturates 不可同 syringe（precipitate）；emergence reaction 不常規預給 midazolam，發生後依臨床評估處理",
         "懷孕分級": "AU TGA: B3",
         "授乳": "短期可",
         "管制性藥品": "管 3"
@@ -2418,23 +2469,23 @@
       "id": "citosol",
       "generic": "Thiopental",
       "brand": "Citosol",
-      "concentration_note": "0.5 amp 加 N/S 至 20 mL；1/3-1/4 體重 mL 起始",
+      "concentration_note": "院內目前無藥；舊稀釋速算已停用",
       "kmuh_code": "2PENTO",
       "category": "sedation",
       "form": "vial",
       "route": "IV",
-      "calc": {
-        "type": "ml_by_weight_after_dilution",
-        "starting_ml": "BW÷4 ~ BW÷3 mL",
-        "max_ml": "BW mL",
-        "note": "0.5 amp 稀釋至 20 mL 後"
-      },
-      "notes": "影像檢查鎮靜（CT/MRI）；可重複到睡著為止；總量不超過體重 mL 數",
+      "notes": "供歷史資料查閱，不顯示「半瓶」或體重除數快捷結果。",
       "warnings": [
         "呼吸抑制",
         "低血壓"
       ],
-      "source": "藥丹",
+      "availability": {
+        "status": "unavailable",
+        "label": "院內目前無藥",
+        "checked_on": "2026-09-21",
+        "source": "使用者提供的院內現況，待藥劑科定期復核"
+      },
+      "source": "院內現況（2026-09-21） + 舊藥丹（僅歷史查閱）",
       "tags": [],
       "kmuh_detail": {
         "臨床用途": "Anesthesia induction、procedural sedation",
@@ -2449,37 +2500,37 @@
     {
       "id": "chloral_hydrate",
       "generic": "Chloral Hydrate 10%",
-      "brand": "Clodrin 10% solution",
+      "brand": "Clodrin 10% 可律靜內服液（晟德）",
       "concentration_mg_per_ml": 100,
       "package": "30 mL/bot",
-      "kmuh_code": "1CLO30",
+      "kmuh_code": "3CLO30",
       "category": "sedation",
       "form": "solution",
-      "route": "PO/PR",
-      "calc": {
-        "type": "mg_per_kg_per_dose",
-        "low": 25,
-        "high": 100,
-        "max_dose_mg": 1000,
-        "max_total_mg": 2000,
-        "note": "可在 30 min 後再給 25-50 mg/kg；總量 max 100 mg/kg/procedure 或 2000 mg/procedure"
-      },
-      "frequency": "ST，必要時 30 min 後 repeat",
-      "notes": "Procedural sedation（影像、EEG、AS）；onset 30-60 min，duration 1-2 hr。10% solution = 100 mg/mL，故 0.5 mL/kg = 50 mg/kg",
+      "route": "仿單：PO；岡山藥品頁：「灌腸用／外用局部用」（衝突待確認）",
+      "notes": "途徑資料衝突，快捷劑量與 mL 換算已暫停。官方仿單明寫「本品為口服使用，請避免肛門給藥」；需院內藥師確認實際作業後才能啟用預設。",
       "warnings": [
         "呼吸抑制",
         "心律不整（高劑量）",
-        "舊版指南止於 50 mg/kg；新版 Lexicomp 接受 25-100 mg/kg/dose"
+        "官方仿單要求在醫療機構執行並持續監測至符合出院標準",
+        "嬰兒不建議重複給藥；兒童依仿單至多追加一次"
       ],
-      "source": "Lexicomp + 中榮 PDF",
+      "availability": {
+        "status": "verification_required",
+        "label": "院內頁面與官方仿單的給藥途徑衝突",
+        "checked_on": "2026-09-21",
+        "source_url": "https://www.kmugh.org.tw/web/drugsearch/drugsearch.aspx?Search=3CLO30#Link"
+      },
+      "source": "高醫岡山藥品頁（3CLO30，2026-09-21） + 衛部罕藥製字第000020號官方仿單（CTRA-104 20190422）",
       "tags": [
         "sedation"
       ],
       "kmuh_detail": {
-        "臨床用途": "Procedural sedation（影像 / EEG）",
-        "禁忌": "嚴重肝腎衰竭、嚴重心律不整",
-        "副作用": "呼吸抑制（高劑量）、GI upset、罕見 arrhythmia",
-        "警語": "近年因安全考量歐美已停產；單次 procedure max 100 mg/kg or 2 g",
+        "臨床用途": "兒童無痛檢查前鎮靜（官方仿單）",
+        "仿單途徑": "PO；請避免肛門給藥",
+        "仿單劑量參考（非快捷預設）": "EEG：1個月至<1歲及兒童 25-50 mg/kg PO。無痛檢查：1個月至<1歲 30-50 mg/kg PO；兒童 50-60 mg/kg PO，需要時30分鐘後可追加10-20 mg/kg一次。累計不超過100 mg/kg，嬰兒不超過1 g，兒童不超過2 g。",
+        "禁忌": "明顯肝或腎功能損害、嚴重心臟疾病、嚴重胃炎／食道炎／潰瘍、紫質症、過敏、嚴重阻塞性睡眠呼吸中止",
+        "副作用": "胃部刺激、惡心、嘔吐、呼吸抑制（高劑量）、罕見心律不整",
+        "警語": "僅限醫療機構並需適當監測；嬰兒不建議重複給藥；未解決途徑衝突前不啟用快捷結果",
         "懷孕分級": "AU TGA: A",
         "授乳": "短期可",
         "管制性藥品": "—"
@@ -3011,7 +3062,7 @@
           "若以上皆不可用：IV Phenobarbital 15 mg/kg（Level A，院內 2PHENO）／ Rectal Diazepam 0.2–0.5 mg/kg, max 20 mg（Level B）／ IN 或 buccal Midazolam（Level B）"
         ],
         "drugs": [
-          "midazolam_dormicum",
+          "midazolam_midatin_5mg_shortage",
           "lorazepam_inj",
           "diazepam_iv",
           "diazepam_pr",

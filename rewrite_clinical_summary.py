@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """
-用自己整理的 pocket-card 風格短摘要，覆蓋 KMUH 抓出的 kmuh_detail。
+用自己整理的 pocket-card 風格短摘要，只補上尚未建立的 kmuh_detail。
 資料層級：universal pharmacology facts（事實，非任何單一來源逐字）。
-覆寫 → 同樣的「📋 藥典完整資料」按鈕，內容自己寫。
+已存在的審核內容一律保留，避免重跑後還原舊警語。
 """
 
 import json
@@ -291,7 +291,7 @@ CLINICAL = {
     "ketamine": {
         "臨床用途": "Procedural sedation、RSI induction、急性疼痛 sub-dissociative", "禁忌": "<3 月、active psychosis、未控制 HTN、global eyeball injury、thyrotoxicosis",
         "副作用": "BP↑、ICP↑、IOP↑、laryngospasm（罕見 ~0.4%）、emergence reaction、N/V、nystagmus、hypersalivation",
-        "警語": "Barbiturates 不可同 syringe（precipitate）；備 atropine + midaz 處理 emergence；hemodynamic-stable，適合 hypotension/shock",
+        "警語": "Barbiturates 不可同 syringe（precipitate）；不建議常規預先給予 atropine 或 midazolam，若出現分泌物或恢復期反應，應由臨床人員評估後處置；全程備妥氣道與監測設備",
         "懷孕分級": "AU TGA: B3", "授乳": "短期可", "管制性藥品": "管 3"
     },
     "citosol": {
@@ -301,9 +301,9 @@ CLINICAL = {
         "懷孕分級": "AU TGA: C", "授乳": "短期可", "管制性藥品": "管 4"
     },
     "chloral_hydrate": {
-        "臨床用途": "Procedural sedation（影像 / EEG）", "禁忌": "嚴重肝腎衰竭、嚴重心律不整",
+        "臨床用途": "非疼痛性檢查前鎮靜（院內網頁與仿單途徑互相衝突，需先確認）", "禁忌": "肝腎功能不全、嚴重心臟疾病、嚴重胃炎／食道炎／潰瘍、紫質症",
         "副作用": "呼吸抑制（高劑量）、GI upset、罕見 arrhythmia",
-        "警語": "近年因安全考量歐美已停產；單次 procedure max 100 mg/kg or 2 g",
+        "警語": "院內頁標示灌腸用，但核准仿單標示口服並要求避免直腸給藥；在藥師確認品項與途徑前，不提供快速劑量計算",
         "懷孕分級": "AU TGA: A", "授乳": "短期可", "管制性藥品": "—"
     },
     # ===== 抽搐 =====
@@ -416,24 +416,26 @@ CLINICAL = {
 
 
 def main():
-    with open(JSON) as f:
+    with open(JSON, encoding="utf-8") as f:
         data = json.load(f)
 
-    replaced = 0
+    added = 0
+    preserved = 0
     skipped = 0
     for d in data['drugs']:
-        # 清掉舊的 kmuh_detail
-        d.pop('kmuh_detail', None)
-        if d['id'] in CLINICAL:
+        if d.get('kmuh_detail'):
+            preserved += 1
+        elif d['id'] in CLINICAL:
             d['kmuh_detail'] = CLINICAL[d['id']]
-            replaced += 1
+            added += 1
         else:
             skipped += 1
 
-    with open(JSON, 'w') as f:
+    with open(JSON, 'w', encoding="utf-8", newline="\n") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
+        f.write("\n")
 
-    print(f"✅ {replaced} 個藥用自整理 clinical summary 取代 KMUH 抓出資料")
+    print(f"✅ {added} 個藥新增 clinical summary；{preserved} 個已有內容保留")
     if skipped:
         print(f"   {skipped} 個藥沒寫（無 7 欄位）")
 
